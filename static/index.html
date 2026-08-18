@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAG Pipeline</title>
+<style>
+  :root {
+    --bg: #fbfbfa;
+    --panel: #ffffff;
+    --border: #e4e2dd;
+    --text: #1a1a18;
+    --muted: #6b6a66;
+    --accent: #b8552f;
+    --accent-soft: #f5ece7;
+    --code-bg: #f4f3f0;
+    --radius: 10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #191917;
+      --panel: #222220;
+      --border: #35342f;
+      --text: #f0efec;
+      --muted: #a3a19b;
+      --accent: #e08461;
+      --accent-soft: #2e241f;
+      --code-bg: #2a2926;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 2rem 1.25rem 4rem;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.6 ui-sans-serif, -apple-system, "Segoe UI", Inter, sans-serif;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; }
+
+  header { margin-bottom: 1.75rem; }
+  h1 { font-size: 1.4rem; margin: 0 0 .3rem; letter-spacing: -.01em; }
+  .sub { color: var(--muted); font-size: .9rem; }
+  .sub code { background: var(--code-bg); padding: .1em .4em; border-radius: 4px; font-size: .85em; }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  form { display: flex; gap: .6rem; flex-wrap: wrap; }
+  input[type=text] {
+    flex: 1 1 340px;
+    padding: .7rem .85rem;
+    font: inherit;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  input[type=text]:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  button {
+    padding: .7rem 1.3rem;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  button:disabled { opacity: .55; cursor: default; }
+
+  .controls {
+    display: flex; gap: 1.1rem; align-items: center; flex-wrap: wrap;
+    margin-top: .85rem; font-size: .85rem; color: var(--muted);
+  }
+  select {
+    font: inherit; padding: .3rem .5rem; border-radius: 6px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--text);
+  }
+  label { display: flex; align-items: center; gap: .4rem; }
+
+  .examples { margin-top: .85rem; display: flex; gap: .4rem; flex-wrap: wrap; }
+  .chip {
+    font-size: .78rem; padding: .3rem .65rem; cursor: pointer;
+    background: var(--code-bg); border: 1px solid var(--border);
+    border-radius: 999px; color: var(--muted);
+  }
+  .chip:hover { color: var(--accent); border-color: var(--accent); }
+
+  .badges { display: flex; gap: .45rem; flex-wrap: wrap; margin-bottom: .9rem; }
+  .badge {
+    font-size: .72rem; letter-spacing: .02em; text-transform: uppercase;
+    padding: .22rem .55rem; border-radius: 5px;
+    background: var(--accent-soft); color: var(--accent); font-weight: 600;
+  }
+  .badge.plain { background: var(--code-bg); color: var(--muted); }
+
+  .answer { white-space: pre-wrap; margin-bottom: 1.2rem; }
+  .answer sup { color: var(--accent); font-weight: 700; }
+
+  h3 { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em;
+       color: var(--muted); margin: 1.3rem 0 .55rem; font-weight: 600; }
+
+  .cite { border-left: 2px solid var(--accent); padding: .1rem 0 .1rem .75rem; margin-bottom: .75rem; }
+  .cite .file { font-weight: 600; font-size: .87rem; }
+  .cite .prev { color: var(--muted); font-size: .83rem; }
+
+  .bars { display: grid; grid-template-columns: 8.5rem 1fr 4rem; gap: .3rem .6rem; align-items: center; font-size: .8rem; }
+  .bars .name { color: var(--muted); }
+  .bars .track { background: var(--code-bg); border-radius: 3px; height: 7px; overflow: hidden; }
+  .bars .fill { background: var(--accent); height: 100%; border-radius: 3px; }
+  .bars .val { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  .note { font-size: .82rem; color: var(--muted); margin-top: 1.1rem;
+          border-top: 1px solid var(--border); padding-top: .8rem; }
+  .err { color: #c0392b; }
+  @media (prefers-color-scheme: dark) { .err { color: #ef8b7b; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>RAG Pipeline</h1>
+    <div class="sub">
+      Hybrid retrieval &rarr; reciprocal rank fusion &rarr; cross-encoder reranking &rarr; grounded answer with citations.
+      Backend status: <span id="status">checking&hellip;</span>
+    </div>
+  </header>
+
+  <div class="card">
+    <form id="form">
+      <input type="text" id="q" placeholder="Ask something about RAG, retrieval, or LLM serving&hellip;" autocomplete="off" required>
+      <button type="submit" id="go">Ask</button>
+    </form>
+
+    <div class="controls">
+      <label>Retrieval
+        <select id="mode">
+          <option value="hybrid">hybrid (RRF)</option>
+          <option value="vector">vector only</option>
+          <option value="keyword">BM25 only</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="rerank" checked> cross-encoder rerank</label>
+      <span>Switch these to see retrieval quality change.</span>
+    </div>
+
+    <div class="examples" id="examples"></div>
+  </div>
+
+  <div id="out"></div>
+</div>
+
+<script>
+const EXAMPLES = [
+  "How does PagedAttention reduce GPU memory waste?",
+  "Why can't you just average BM25 and cosine scores?",
+  "What is the difference between a bi-encoder and a cross-encoder?",
+  "When should I fine-tune instead of retrieving?",
+  "What is indirect prompt injection?"
+];
+
+const $ = id => document.getElementById(id);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+EXAMPLES.forEach(text => {
+  const chip = document.createElement("span");
+  chip.className = "chip";
+  chip.textContent = text;
+  chip.onclick = () => { $("q").value = text; $("form").requestSubmit(); };
+  $("examples").appendChild(chip);
+});
+
+fetch("/health").then(r => r.json()).then(h => {
+  const offline = h.generation_backend === "extractive";
+  $("status").innerHTML = `<strong>${esc(h.generation_backend)}</strong>`
+    + (offline ? " (no API key set &mdash; answers are quoted from retrieved passages)" : ` &middot; ${esc(h.model)}`)
+    + ` &middot; ${h.chunks_indexed} chunks indexed`;
+}).catch(() => { $("status").textContent = "unavailable"; });
+
+$("form").onsubmit = async e => {
+  e.preventDefault();
+  const question = $("q").value.trim();
+  if (!question) return;
+
+  $("go").disabled = true;
+  $("out").innerHTML = `<div class="card">Searching&hellip;</div>`;
+
+  try {
+    const res = await fetch("/query", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query: question, mode: $("mode").value, rerank: $("rerank").checked })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || `HTTP ${res.status}`);
+    render(data);
+  } catch (err) {
+    $("out").innerHTML = `<div class="card err">${esc(err.message)}</div>`;
+  } finally {
+    $("go").disabled = false;
+  }
+};
+
+function render(d) {
+  // Citation markers become superscripts so the grounding is visible at a glance.
+  const answer = esc(d.answer).replace(/\[(\d+)\]/g, '<sup>[$1]</sup>');
+
+  const citations = d.citations.length
+    ? d.citations.map(c => `
+        <div class="cite">
+          <div class="file">${esc(c.marker)} ${esc(c.filename)}</div>
+          <div class="prev">${esc(c.text_preview)}&hellip;</div>
+        </div>`).join("")
+    : `<div class="prev">No sources were cited in this answer.</div>`;
+
+  const stages = Object.entries(d.timings_ms).filter(([k]) => k !== "total");
+  const peak = Math.max(...stages.map(([, v]) => v), 1);
+  const bars = stages.map(([name, ms]) => `
+      <div class="name">${esc(name)}</div>
+      <div class="track"><div class="fill" style="width:${Math.max(ms / peak * 100, 1.5)}%"></div></div>
+      <div class="val">${ms} ms</div>`).join("");
+
+  $("out").innerHTML = `
+    <div class="card">
+      <div class="badges">
+        <span class="badge">${esc(d.retrieval_mode)}</span>
+        ${d.chunks_used ? `<span class="badge plain">${d.candidates_retrieved} candidates &rarr; ${d.chunks_used} used</span>` : ""}
+        <span class="badge plain">${esc(d.backend)}</span>
+      </div>
+
+      <div class="answer">${answer}</div>
+
+      <h3>Sources</h3>
+      ${citations}
+
+      <h3>Per-stage latency</h3>
+      <div class="bars">${bars}
+        <div class="name"><strong>total</strong></div>
+        <div class="track"></div>
+        <div class="val"><strong>${d.timings_ms.total} ms</strong></div>
+      </div>
+
+      <div class="note">
+        Query sent to retrieval after rewriting: <em>${esc(d.rewritten_query)}</em>
+        ${d.backend === "extractive"
+          ? "<br>Answers are composed by quoting the retrieved passages, since no model credentials are configured. Retrieval, fusion, reranking and citation mapping are running exactly as they would otherwise."
+          : ""}
+      </div>
+    </div>`;
+}
+</script>
+</body>
+</html>

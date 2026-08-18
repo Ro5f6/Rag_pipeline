@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+.env.local
+
+# Test & tooling caches
+.pytest_cache/
+.benchmarks/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Persisted indexes (rebuilt by `make ingest`)
+data/index/
+
+# Model caches
+.cache/
+sentence_transformers/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp

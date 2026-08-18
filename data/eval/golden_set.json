@@ -1,0 +1,312 @@
+{
+  "description": "Golden evaluation set for the RAG pipeline. Each question is labelled with the document(s) that actually answer it, and with a query_type describing which retriever the question is expected to favour: 'lexical' questions hinge on a rare exact term (PagedAttention, ORA-01555, IndexFlatIP) that BM25 should catch, 'semantic' questions are paraphrases sharing few or no terms with the source text, and 'mixed' questions sit between the two. Breaking results down by query_type is what shows whether hybrid search is actually earning its cost or merely inheriting one retriever's wins.",
+  "corpus": "data/sample_docs",
+  "questions": [
+    {
+      "id": "q01",
+      "question": "What is PagedAttention and how does it manage the KV cache?",
+      "relevant_docs": ["vllm_overview.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q02",
+      "question": "How does continuous batching improve throughput over static batching?",
+      "relevant_docs": ["vllm_overview.txt", "llm_inference_optimization.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q03",
+      "question": "Why is generating one token at a time limited by memory bandwidth rather than raw compute?",
+      "relevant_docs": ["llm_inference_optimization.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q04",
+      "question": "What is speculative decoding?",
+      "relevant_docs": ["llm_inference_optimization.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q05",
+      "question": "What does time to first token measure?",
+      "relevant_docs": ["llm_inference_optimization.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q06",
+      "question": "Which two separate paths make up a RAG pipeline?",
+      "relevant_docs": ["rag_basics.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q07",
+      "question": "Why should consecutive pieces of a split document share some text?",
+      "relevant_docs": ["chunking_strategies.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q08",
+      "question": "What separators does recursive character splitting try, and in what order?",
+      "relevant_docs": ["chunking_strategies.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q09",
+      "question": "What happens to tables when you split a PDF with a plain character splitter?",
+      "relevant_docs": ["chunking_strategies.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q10",
+      "question": "What output dimension does all-MiniLM-L6-v2 produce?",
+      "relevant_docs": ["embedding_models.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q11",
+      "question": "What breaks if I switch to a different embedding model without rebuilding the index?",
+      "relevant_docs": ["embedding_models.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q12",
+      "question": "Why scale vectors to unit length before storing them?",
+      "relevant_docs": ["embedding_models.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q13",
+      "question": "What is IndexFlatIP and when is an exact flat index the right choice?",
+      "relevant_docs": ["vector_databases.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q14",
+      "question": "How does HNSW differ from IVF for approximate nearest neighbor search?",
+      "relevant_docs": ["vector_databases.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q15",
+      "question": "Why must results be filtered during the search rather than afterwards?",
+      "relevant_docs": ["vector_databases.txt", "rag_security.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q16",
+      "question": "What do the k1 and b parameters control in BM25?",
+      "relevant_docs": ["bm25_keyword_search.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q17",
+      "question": "What is the vocabulary mismatch problem?",
+      "relevant_docs": ["bm25_keyword_search.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q18",
+      "question": "Why does semantic search fail to find an error code like ORA-01555?",
+      "relevant_docs": ["bm25_keyword_search.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q19",
+      "question": "Why can't you simply average the scores from two different retrievers?",
+      "relevant_docs": ["hybrid_search_fusion.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q20",
+      "question": "What does the constant k do in reciprocal rank fusion, and what value is conventional?",
+      "relevant_docs": ["hybrid_search_fusion.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q21",
+      "question": "What is the difference between a bi-encoder and a cross-encoder?",
+      "relevant_docs": ["reranking_cross_encoders.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q22",
+      "question": "How much slower does a second scoring pass make each request on a CPU?",
+      "relevant_docs": ["reranking_cross_encoders.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q23",
+      "question": "What is mean reciprocal rank and what does it reward?",
+      "relevant_docs": ["rag_evaluation_metrics.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q24",
+      "question": "When is nDCG more informative than hit rate?",
+      "relevant_docs": ["rag_evaluation_metrics.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q25",
+      "question": "How do you tell whether a bad answer was the searcher's fault or the writer's fault?",
+      "relevant_docs": ["rag_evaluation_metrics.txt", "observability_tracing.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q26",
+      "question": "How many test questions do I actually need, and what makes them good ones?",
+      "relevant_docs": ["rag_evaluation_metrics.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q27",
+      "question": "How do you stop a model from mixing what it already knows into a sourced answer?",
+      "relevant_docs": ["prompt_grounding_citations.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q28",
+      "question": "Does it matter where in the context window a passage is placed?",
+      "relevant_docs": ["prompt_grounding_citations.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q29",
+      "question": "What is HyDE and when does it fail?",
+      "relevant_docs": ["query_rewriting.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q30",
+      "question": "What is multi-query expansion?",
+      "relevant_docs": ["query_rewriting.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q31",
+      "question": "What is indirect prompt injection through retrieved documents?",
+      "relevant_docs": ["rag_security.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q32",
+      "question": "Can the original text be recovered from a stored vector?",
+      "relevant_docs": ["rag_security.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q33",
+      "question": "Why keep each customer's documents in a separate collection instead of tagging them?",
+      "relevant_docs": ["rag_security.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q34",
+      "question": "How does semantic caching differ from exact-match caching?",
+      "relevant_docs": ["caching_and_memory.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q35",
+      "question": "Why should the unchanging part of a prompt go at the beginning?",
+      "relevant_docs": ["caching_and_memory.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q36",
+      "question": "How should a follow-up like 'what about the second one' be handled before searching?",
+      "relevant_docs": ["caching_and_memory.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q37",
+      "question": "What is the ReAct pattern of interleaved reasoning and acting?",
+      "relevant_docs": ["agentic_rag.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q38",
+      "question": "Why does looking things up once fail for questions that need two hops?",
+      "relevant_docs": ["agentic_rag.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q39",
+      "question": "What is query routing and why is it cheaper than a full agent loop?",
+      "relevant_docs": ["agentic_rag.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q40",
+      "question": "What is community summarization in a knowledge graph?",
+      "relevant_docs": ["graph_rag.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q41",
+      "question": "How would you find everything that depends on a service you want to deprecate?",
+      "relevant_docs": ["graph_rag.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q42",
+      "question": "Why does pulling text out of a two-column academic paper produce jumbled output?",
+      "relevant_docs": ["document_ingestion.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q43",
+      "question": "How does content hashing enable incremental ingestion?",
+      "relevant_docs": ["document_ingestion.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q44",
+      "question": "What goes wrong when the same policy exists in three slightly different versions?",
+      "relevant_docs": ["document_ingestion.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q45",
+      "question": "Why track p95 and p99 latency rather than the mean?",
+      "relevant_docs": ["observability_tracing.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q46",
+      "question": "What should be recorded so a bad answer can be investigated later?",
+      "relevant_docs": ["observability_tracing.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q47",
+      "question": "Why should ingestion run behind a queue instead of inside an HTTP request?",
+      "relevant_docs": ["deployment_scaling.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q48",
+      "question": "What is the difference between a liveness check and a readiness check?",
+      "relevant_docs": ["deployment_scaling.txt"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q49",
+      "question": "What should the system do if the reranker goes down?",
+      "relevant_docs": ["deployment_scaling.txt"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q50",
+      "question": "When should I fine-tune a model instead of retrieving documents?",
+      "relevant_docs": ["finetuning_vs_rag.txt"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q51",
+      "question": "What goes wrong when facts are baked into model weights instead of looked up?",
+      "relevant_docs": ["finetuning_vs_rag.txt"],
+      "query_type": "semantic"
+    }
+  ]
+}

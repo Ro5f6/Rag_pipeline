@@ -1,0 +1,13 @@
+Caching and Conversational Memory
+
+Two distinct mechanisms are frequently confused in RAG systems: caching, which avoids repeating work, and memory, which carries context across turns of a conversation.
+
+Exact-match caching stores a hash of the request and returns the stored response on a repeat. It is trivial to implement and rarely hits in practice, because two users almost never phrase the same question identically.
+
+Semantic caching embeds the incoming query and searches a cache of previous queries for one within a similarity threshold, returning the stored answer on a near match. This hits far more often, since "how do I reset my password" and "password reset steps" are semantically adjacent. The threshold is the entire design: set it loosely and users receive answers to questions they did not ask, set it tightly and the cache rarely helps. Semantic caches also need invalidation tied to the knowledge base, because an answer cached before a document was updated is stale in a way the cache cannot detect on its own.
+
+Prompt caching operates at the provider level. When many requests share a long common prefix, such as a fixed system prompt or a stable set of instructions, the provider can cache the computed attention state for that prefix and skip recomputing it. This reduces both latency and cost, and it rewards prompt layouts that keep stable content at the front and variable content at the end.
+
+Conversational memory is a different problem. A follow-up question such as "what about the second one" is meaningless in isolation, so the system must resolve it against prior turns. The simplest approach appends recent turns to the prompt, which works until the conversation outgrows the context window. Summarizing older turns into a running digest extends this considerably. Storing durable facts about a user in a separate store and retrieving them alongside documents scales furthest, and effectively makes memory a second retrieval source fused with the first.
+
+The interaction between memory and retrieval is where subtle bugs live. Retrieval must run against a query that has already been resolved against conversation history; retrieving for the literal text "what about the second one" returns nothing useful no matter how good the index is.

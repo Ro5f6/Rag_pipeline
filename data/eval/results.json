@@ -1,0 +1,4234 @@
+{
+  "bm25": {
+    "overall": {
+      "hit@1": 0.6667,
+      "hit@3": 0.9412,
+      "hit@5": 0.9412,
+      "mrr": 0.7941,
+      "ndcg@5": 0.8322
+    },
+    "by_query_type": {
+      "lexical": {
+        "hit@1": 0.6667,
+        "hit@3": 0.9333,
+        "hit@5": 0.9333,
+        "mrr": 0.7778,
+        "ndcg@5": 0.8175
+      },
+      "mixed": {
+        "hit@1": 0.9231,
+        "hit@3": 0.9231,
+        "hit@5": 0.9231,
+        "mrr": 0.9231,
+        "ndcg@5": 0.9231
+      },
+      "semantic": {
+        "hit@1": 0.5217,
+        "hit@3": 0.9565,
+        "hit@5": 0.9565,
+        "mrr": 0.7319,
+        "ndcg@5": 0.7904
+      }
+    },
+    "latency_ms_avg": 0.2,
+    "per_question": [
+      {
+        "id": "q01",
+        "question": "What is PagedAttention and how does it manage the KV cache?",
+        "query_type": "lexical",
+        "expected": [
+          "vllm_overview.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "finetuning_vs_rag.txt",
+          "observability_tracing.txt",
+          "agentic_rag.txt",
+          "agentic_rag.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q02",
+        "question": "How does continuous batching improve throughput over static batching?",
+        "query_type": "mixed",
+        "expected": [
+          "vllm_overview.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "vllm_overview.txt",
+          "rag_security.txt",
+          "llm_inference_optimization.txt",
+          "query_rewriting.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q03",
+        "question": "Why is generating one token at a time limited by memory bandwidth rather than raw compute?",
+        "query_type": "semantic",
+        "expected": [
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "query_rewriting.txt",
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q04",
+        "question": "What is speculative decoding?",
+        "query_type": "lexical",
+        "expected": [
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "document_ingestion.txt",
+          "reranking_cross_encoders.txt",
+          "finetuning_vs_rag.txt",
+          "graph_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q05",
+        "question": "What does time to first token measure?",
+        "query_type": "mixed",
+        "expected": [
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "rag_security.txt",
+          "document_ingestion.txt",
+          "deployment_scaling.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q06",
+        "question": "Which two separate paths make up a RAG pipeline?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_basics.txt"
+        ],
+        "retrieved": [
+          "caching_and_memory.txt",
+          "rag_basics.txt",
+          "chunking_strategies.txt",
+          "rag_evaluation_metrics.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q07",
+        "question": "Why should consecutive pieces of a split document share some text?",
+        "query_type": "semantic",
+        "expected": [
+          "chunking_strategies.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "document_ingestion.txt",
+          "chunking_strategies.txt",
+          "caching_and_memory.txt",
+          "vector_databases.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q08",
+        "question": "What separators does recursive character splitting try, and in what order?",
+        "query_type": "mixed",
+        "expected": [
+          "chunking_strategies.txt"
+        ],
+        "retrieved": [
+          "chunking_strategies.txt",
+          "rag_security.txt",
+          "chunking_strategies.txt",
+          "reranking_cross_encoders.txt",
+          "agentic_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q09",
+        "question": "What happens to tables when you split a PDF with a plain character splitter?",
+        "query_type": "semantic",
+        "expected": [
+          "chunking_strategies.txt"
+        ],
+        "retrieved": [
+          "chunking_strategies.txt",
+          "document_ingestion.txt",
+          "embedding_models.txt",
+          "chunking_strategies.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q10",
+        "question": "What output dimension does all-MiniLM-L6-v2 produce?",
+        "query_type": "lexical",
+        "expected": [
+          "embedding_models.txt"
+        ],
+        "retrieved": [
+          "embedding_models.txt",
+          "finetuning_vs_rag.txt",
+          "rag_security.txt",
+          "prompt_grounding_citations.txt",
+          "embedding_models.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q11",
+        "question": "What breaks if I switch to a different embedding model without rebuilding the index?",
+        "query_type": "semantic",
+        "expected": [
+          "embedding_models.txt"
+        ],
+        "retrieved": [
+          "prompt_grounding_citations.txt",
+          "embedding_models.txt",
+          "rag_security.txt",
+          "graph_rag.txt",
+          "query_rewriting.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q12",
+        "question": "Why scale vectors to unit length before storing them?",
+        "query_type": "semantic",
+        "expected": [
+          "embedding_models.txt"
+        ],
+        "retrieved": [
+          "embedding_models.txt",
+          "embedding_models.txt",
+          "prompt_grounding_citations.txt",
+          "llm_inference_optimization.txt",
+          "deployment_scaling.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q13",
+        "question": "What is IndexFlatIP and when is an exact flat index the right choice?",
+        "query_type": "lexical",
+        "expected": [
+          "vector_databases.txt"
+        ],
+        "retrieved": [
+          "vector_databases.txt",
+          "deployment_scaling.txt",
+          "rag_evaluation_metrics.txt",
+          "vector_databases.txt",
+          "vector_databases.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q14",
+        "question": "How does HNSW differ from IVF for approximate nearest neighbor search?",
+        "query_type": "lexical",
+        "expected": [
+          "vector_databases.txt"
+        ],
+        "retrieved": [
+          "vector_databases.txt",
+          "vector_databases.txt",
+          "vector_databases.txt",
+          "llm_inference_optimization.txt",
+          "deployment_scaling.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q15",
+        "question": "Why must results be filtered during the search rather than afterwards?",
+        "query_type": "mixed",
+        "expected": [
+          "vector_databases.txt",
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "vector_databases.txt",
+          "rag_security.txt",
+          "prompt_grounding_citations.txt",
+          "hybrid_search_fusion.txt",
+          "document_ingestion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q16",
+        "question": "What do the k1 and b parameters control in BM25?",
+        "query_type": "lexical",
+        "expected": [
+          "bm25_keyword_search.txt"
+        ],
+        "retrieved": [
+          "bm25_keyword_search.txt",
+          "rag_security.txt",
+          "prompt_grounding_citations.txt",
+          "agentic_rag.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q17",
+        "question": "What is the vocabulary mismatch problem?",
+        "query_type": "mixed",
+        "expected": [
+          "bm25_keyword_search.txt"
+        ],
+        "retrieved": [
+          "bm25_keyword_search.txt",
+          "reranking_cross_encoders.txt",
+          "finetuning_vs_rag.txt",
+          "prompt_grounding_citations.txt",
+          "graph_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q18",
+        "question": "Why does semantic search fail to find an error code like ORA-01555?",
+        "query_type": "lexical",
+        "expected": [
+          "bm25_keyword_search.txt"
+        ],
+        "retrieved": [
+          "rag_basics.txt",
+          "vector_databases.txt",
+          "bm25_keyword_search.txt",
+          "embedding_models.txt",
+          "hybrid_search_fusion.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5
+      },
+      {
+        "id": "q19",
+        "question": "Why can't you simply average the scores from two different retrievers?",
+        "query_type": "semantic",
+        "expected": [
+          "hybrid_search_fusion.txt"
+        ],
+        "retrieved": [
+          "embedding_models.txt",
+          "rag_basics.txt",
+          "hybrid_search_fusion.txt",
+          "prompt_grounding_citations.txt",
+          "rag_evaluation_metrics.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5
+      },
+      {
+        "id": "q20",
+        "question": "What does the constant k do in reciprocal rank fusion, and what value is conventional?",
+        "query_type": "mixed",
+        "expected": [
+          "hybrid_search_fusion.txt"
+        ],
+        "retrieved": [
+          "hybrid_search_fusion.txt",
+          "rag_basics.txt",
+          "prompt_grounding_citations.txt",
+          "rag_security.txt",
+          "hybrid_search_fusion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q21",
+        "question": "What is the difference between a bi-encoder and a cross-encoder?",
+        "query_type": "lexical",
+        "expected": [
+          "reranking_cross_encoders.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "reranking_cross_encoders.txt",
+          "reranking_cross_encoders.txt",
+          "chunking_strategies.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q22",
+        "question": "How much slower does a second scoring pass make each request on a CPU?",
+        "query_type": "semantic",
+        "expected": [
+          "reranking_cross_encoders.txt"
+        ],
+        "retrieved": [
+          "deployment_scaling.txt",
+          "reranking_cross_encoders.txt",
+          "observability_tracing.txt",
+          "caching_and_memory.txt",
+          "agentic_rag.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q23",
+        "question": "What is mean reciprocal rank and what does it reward?",
+        "query_type": "lexical",
+        "expected": [
+          "rag_evaluation_metrics.txt"
+        ],
+        "retrieved": [
+          "rag_evaluation_metrics.txt",
+          "hybrid_search_fusion.txt",
+          "rag_security.txt",
+          "hybrid_search_fusion.txt",
+          "graph_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q24",
+        "question": "When is nDCG more informative than hit rate?",
+        "query_type": "lexical",
+        "expected": [
+          "rag_evaluation_metrics.txt"
+        ],
+        "retrieved": [
+          "rag_evaluation_metrics.txt",
+          "observability_tracing.txt",
+          "prompt_grounding_citations.txt",
+          "rag_evaluation_metrics.txt",
+          "query_rewriting.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q25",
+        "question": "How do you tell whether a bad answer was the searcher's fault or the writer's fault?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_evaluation_metrics.txt",
+          "observability_tracing.txt"
+        ],
+        "retrieved": [
+          "observability_tracing.txt",
+          "rag_evaluation_metrics.txt",
+          "prompt_grounding_citations.txt",
+          "caching_and_memory.txt",
+          "rag_evaluation_metrics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q26",
+        "question": "How many test questions do I actually need, and what makes them good ones?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_evaluation_metrics.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "caching_and_memory.txt",
+          "document_ingestion.txt",
+          "graph_rag.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q27",
+        "question": "How do you stop a model from mixing what it already knows into a sourced answer?",
+        "query_type": "semantic",
+        "expected": [
+          "prompt_grounding_citations.txt"
+        ],
+        "retrieved": [
+          "finetuning_vs_rag.txt",
+          "prompt_grounding_citations.txt",
+          "agentic_rag.txt",
+          "prompt_grounding_citations.txt",
+          "graph_rag.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q28",
+        "question": "Does it matter where in the context window a passage is placed?",
+        "query_type": "semantic",
+        "expected": [
+          "prompt_grounding_citations.txt"
+        ],
+        "retrieved": [
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "chunking_strategies.txt",
+          "hybrid_search_fusion.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q29",
+        "question": "What is HyDE and when does it fail?",
+        "query_type": "lexical",
+        "expected": [
+          "query_rewriting.txt"
+        ],
+        "retrieved": [
+          "query_rewriting.txt",
+          "rag_security.txt",
+          "hybrid_search_fusion.txt",
+          "agentic_rag.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q30",
+        "question": "What is multi-query expansion?",
+        "query_type": "mixed",
+        "expected": [
+          "query_rewriting.txt"
+        ],
+        "retrieved": [
+          "query_rewriting.txt",
+          "document_ingestion.txt",
+          "reranking_cross_encoders.txt",
+          "finetuning_vs_rag.txt",
+          "graph_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q31",
+        "question": "What is indirect prompt injection through retrieved documents?",
+        "query_type": "mixed",
+        "expected": [
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "prompt_grounding_citations.txt",
+          "finetuning_vs_rag.txt",
+          "rag_security.txt",
+          "rag_evaluation_metrics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q32",
+        "question": "Can the original text be recovered from a stored vector?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "document_ingestion.txt",
+          "prompt_grounding_citations.txt",
+          "observability_tracing.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q33",
+        "question": "Why keep each customer's documents in a separate collection instead of tagging them?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "document_ingestion.txt",
+          "graph_rag.txt",
+          "vector_databases.txt",
+          "rag_basics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q34",
+        "question": "How does semantic caching differ from exact-match caching?",
+        "query_type": "mixed",
+        "expected": [
+          "caching_and_memory.txt"
+        ],
+        "retrieved": [
+          "caching_and_memory.txt",
+          "llm_inference_optimization.txt",
+          "caching_and_memory.txt",
+          "deployment_scaling.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q35",
+        "question": "Why should the unchanging part of a prompt go at the beginning?",
+        "query_type": "semantic",
+        "expected": [
+          "caching_and_memory.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "caching_and_memory.txt",
+          "observability_tracing.txt",
+          "embedding_models.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q36",
+        "question": "How should a follow-up like 'what about the second one' be handled before searching?",
+        "query_type": "semantic",
+        "expected": [
+          "caching_and_memory.txt"
+        ],
+        "retrieved": [
+          "caching_and_memory.txt",
+          "caching_and_memory.txt",
+          "query_rewriting.txt",
+          "rag_evaluation_metrics.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q37",
+        "question": "What is the ReAct pattern of interleaved reasoning and acting?",
+        "query_type": "lexical",
+        "expected": [
+          "agentic_rag.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "reranking_cross_encoders.txt",
+          "query_rewriting.txt",
+          "graph_rag.txt",
+          "document_ingestion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q38",
+        "question": "Why does looking things up once fail for questions that need two hops?",
+        "query_type": "semantic",
+        "expected": [
+          "agentic_rag.txt"
+        ],
+        "retrieved": [
+          "hybrid_search_fusion.txt",
+          "agentic_rag.txt",
+          "hybrid_search_fusion.txt",
+          "llm_inference_optimization.txt",
+          "vector_databases.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q39",
+        "question": "What is query routing and why is it cheaper than a full agent loop?",
+        "query_type": "mixed",
+        "expected": [
+          "agentic_rag.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "agentic_rag.txt",
+          "vector_databases.txt",
+          "prompt_grounding_citations.txt",
+          "deployment_scaling.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q40",
+        "question": "What is community summarization in a knowledge graph?",
+        "query_type": "lexical",
+        "expected": [
+          "graph_rag.txt"
+        ],
+        "retrieved": [
+          "graph_rag.txt",
+          "prompt_grounding_citations.txt",
+          "caching_and_memory.txt",
+          "reranking_cross_encoders.txt",
+          "finetuning_vs_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q41",
+        "question": "How would you find everything that depends on a service you want to deprecate?",
+        "query_type": "semantic",
+        "expected": [
+          "graph_rag.txt"
+        ],
+        "retrieved": [
+          "graph_rag.txt",
+          "graph_rag.txt",
+          "chunking_strategies.txt",
+          "finetuning_vs_rag.txt",
+          "hybrid_search_fusion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q42",
+        "question": "Why does pulling text out of a two-column academic paper produce jumbled output?",
+        "query_type": "semantic",
+        "expected": [
+          "document_ingestion.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "deployment_scaling.txt",
+          "hybrid_search_fusion.txt",
+          "vector_databases.txt",
+          "finetuning_vs_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q43",
+        "question": "How does content hashing enable incremental ingestion?",
+        "query_type": "mixed",
+        "expected": [
+          "document_ingestion.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "caching_and_memory.txt",
+          "rag_security.txt",
+          "rag_security.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q44",
+        "question": "What goes wrong when the same policy exists in three slightly different versions?",
+        "query_type": "semantic",
+        "expected": [
+          "document_ingestion.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "query_rewriting.txt",
+          "query_rewriting.txt",
+          "rag_security.txt",
+          "finetuning_vs_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q45",
+        "question": "Why track p95 and p99 latency rather than the mean?",
+        "query_type": "lexical",
+        "expected": [
+          "observability_tracing.txt"
+        ],
+        "retrieved": [
+          "prompt_grounding_citations.txt",
+          "observability_tracing.txt",
+          "agentic_rag.txt",
+          "vector_databases.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q46",
+        "question": "What should be recorded so a bad answer can be investigated later?",
+        "query_type": "semantic",
+        "expected": [
+          "observability_tracing.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "observability_tracing.txt",
+          "query_rewriting.txt",
+          "chunking_strategies.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q47",
+        "question": "Why should ingestion run behind a queue instead of inside an HTTP request?",
+        "query_type": "mixed",
+        "expected": [
+          "deployment_scaling.txt"
+        ],
+        "retrieved": [
+          "deployment_scaling.txt",
+          "document_ingestion.txt",
+          "rag_security.txt",
+          "document_ingestion.txt",
+          "deployment_scaling.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q48",
+        "question": "What is the difference between a liveness check and a readiness check?",
+        "query_type": "lexical",
+        "expected": [
+          "deployment_scaling.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "chunking_strategies.txt",
+          "deployment_scaling.txt",
+          "reranking_cross_encoders.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5
+      },
+      {
+        "id": "q49",
+        "question": "What should the system do if the reranker goes down?",
+        "query_type": "semantic",
+        "expected": [
+          "deployment_scaling.txt"
+        ],
+        "retrieved": [
+          "deployment_scaling.txt",
+          "rag_security.txt",
+          "prompt_grounding_citations.txt",
+          "rag_security.txt",
+          "chunking_strategies.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q50",
+        "question": "When should I fine-tune a model instead of retrieving documents?",
+        "query_type": "mixed",
+        "expected": [
+          "finetuning_vs_rag.txt"
+        ],
+        "retrieved": [
+          "observability_tracing.txt",
+          "query_rewriting.txt",
+          "rag_basics.txt",
+          "rag_security.txt",
+          "document_ingestion.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q51",
+        "question": "What goes wrong when facts are baked into model weights instead of looked up?",
+        "query_type": "semantic",
+        "expected": [
+          "finetuning_vs_rag.txt"
+        ],
+        "retrieved": [
+          "rag_basics.txt",
+          "finetuning_vs_rag.txt",
+          "finetuning_vs_rag.txt",
+          "rag_security.txt",
+          "deployment_scaling.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      }
+    ]
+  },
+  "vector": {
+    "overall": {
+      "hit@1": 0.902,
+      "hit@3": 0.9804,
+      "hit@5": 1.0,
+      "mrr": 0.9461,
+      "ndcg@5": 0.9575
+    },
+    "by_query_type": {
+      "lexical": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "mixed": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic": {
+        "hit@1": 0.7826,
+        "hit@3": 0.9565,
+        "hit@5": 1.0,
+        "mrr": 0.8804,
+        "ndcg@5": 0.9057
+      }
+    },
+    "latency_ms_avg": 8.7,
+    "per_question": [
+      {
+        "id": "q01",
+        "question": "What is PagedAttention and how does it manage the KV cache?",
+        "query_type": "lexical",
+        "expected": [
+          "vllm_overview.txt"
+        ],
+        "retrieved": [
+          "vllm_overview.txt",
+          "caching_and_memory.txt",
+          "llm_inference_optimization.txt",
+          "vllm_overview.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q02",
+        "question": "How does continuous batching improve throughput over static batching?",
+        "query_type": "mixed",
+        "expected": [
+          "vllm_overview.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "vllm_overview.txt",
+          "agentic_rag.txt",
+          "deployment_scaling.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q03",
+        "question": "Why is generating one token at a time limited by memory bandwidth rather than raw compute?",
+        "query_type": "semantic",
+        "expected": [
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "vllm_overview.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q04",
+        "question": "What is speculative decoding?",
+        "query_type": "lexical",
+        "expected": [
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "rag_security.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q05",
+        "question": "What does time to first token measure?",
+        "query_type": "mixed",
+        "expected": [
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "observability_tracing.txt",
+          "llm_inference_optimization.txt",
+          "observability_tracing.txt",
+          "rag_evaluation_metrics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q06",
+        "question": "Which two separate paths make up a RAG pipeline?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_basics.txt"
+        ],
+        "retrieved": [
+          "rag_basics.txt",
+          "rag_basics.txt",
+          "rag_evaluation_metrics.txt",
+          "agentic_rag.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q07",
+        "question": "Why should consecutive pieces of a split document share some text?",
+        "query_type": "semantic",
+        "expected": [
+          "chunking_strategies.txt"
+        ],
+        "retrieved": [
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q08",
+        "question": "What separators does recursive character splitting try, and in what order?",
+        "query_type": "mixed",
+        "expected": [
+          "chunking_strategies.txt"
+        ],
+        "retrieved": [
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q09",
+        "question": "What happens to tables when you split a PDF with a plain character splitter?",
+        "query_type": "semantic",
+        "expected": [
+          "chunking_strategies.txt"
+        ],
+        "retrieved": [
+          "chunking_strategies.txt",
+          "document_ingestion.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q10",
+        "question": "What output dimension does all-MiniLM-L6-v2 produce?",
+        "query_type": "lexical",
+        "expected": [
+          "embedding_models.txt"
+        ],
+        "retrieved": [
+          "embedding_models.txt",
+          "embedding_models.txt",
+          "reranking_cross_encoders.txt",
+          "embedding_models.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q11",
+        "question": "What breaks if I switch to a different embedding model without rebuilding the index?",
+        "query_type": "semantic",
+        "expected": [
+          "embedding_models.txt"
+        ],
+        "retrieved": [
+          "embedding_models.txt",
+          "embedding_models.txt",
+          "reranking_cross_encoders.txt",
+          "graph_rag.txt",
+          "embedding_models.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q12",
+        "question": "Why scale vectors to unit length before storing them?",
+        "query_type": "semantic",
+        "expected": [
+          "embedding_models.txt"
+        ],
+        "retrieved": [
+          "embedding_models.txt",
+          "embedding_models.txt",
+          "vector_databases.txt",
+          "llm_inference_optimization.txt",
+          "embedding_models.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q13",
+        "question": "What is IndexFlatIP and when is an exact flat index the right choice?",
+        "query_type": "lexical",
+        "expected": [
+          "vector_databases.txt"
+        ],
+        "retrieved": [
+          "vector_databases.txt",
+          "vector_databases.txt",
+          "deployment_scaling.txt",
+          "reranking_cross_encoders.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q14",
+        "question": "How does HNSW differ from IVF for approximate nearest neighbor search?",
+        "query_type": "lexical",
+        "expected": [
+          "vector_databases.txt"
+        ],
+        "retrieved": [
+          "vector_databases.txt",
+          "vector_databases.txt",
+          "reranking_cross_encoders.txt",
+          "hybrid_search_fusion.txt",
+          "rag_basics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q15",
+        "question": "Why must results be filtered during the search rather than afterwards?",
+        "query_type": "mixed",
+        "expected": [
+          "vector_databases.txt",
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "vector_databases.txt",
+          "query_rewriting.txt",
+          "caching_and_memory.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q16",
+        "question": "What do the k1 and b parameters control in BM25?",
+        "query_type": "lexical",
+        "expected": [
+          "bm25_keyword_search.txt"
+        ],
+        "retrieved": [
+          "bm25_keyword_search.txt",
+          "bm25_keyword_search.txt",
+          "bm25_keyword_search.txt",
+          "reranking_cross_encoders.txt",
+          "hybrid_search_fusion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q17",
+        "question": "What is the vocabulary mismatch problem?",
+        "query_type": "mixed",
+        "expected": [
+          "bm25_keyword_search.txt"
+        ],
+        "retrieved": [
+          "bm25_keyword_search.txt",
+          "bm25_keyword_search.txt",
+          "bm25_keyword_search.txt",
+          "query_rewriting.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q18",
+        "question": "Why does semantic search fail to find an error code like ORA-01555?",
+        "query_type": "lexical",
+        "expected": [
+          "bm25_keyword_search.txt"
+        ],
+        "retrieved": [
+          "bm25_keyword_search.txt",
+          "bm25_keyword_search.txt",
+          "caching_and_memory.txt",
+          "bm25_keyword_search.txt",
+          "query_rewriting.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q19",
+        "question": "Why can't you simply average the scores from two different retrievers?",
+        "query_type": "semantic",
+        "expected": [
+          "hybrid_search_fusion.txt"
+        ],
+        "retrieved": [
+          "rag_evaluation_metrics.txt",
+          "hybrid_search_fusion.txt",
+          "rag_basics.txt",
+          "observability_tracing.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q20",
+        "question": "What does the constant k do in reciprocal rank fusion, and what value is conventional?",
+        "query_type": "mixed",
+        "expected": [
+          "hybrid_search_fusion.txt"
+        ],
+        "retrieved": [
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "bm25_keyword_search.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q21",
+        "question": "What is the difference between a bi-encoder and a cross-encoder?",
+        "query_type": "lexical",
+        "expected": [
+          "reranking_cross_encoders.txt"
+        ],
+        "retrieved": [
+          "reranking_cross_encoders.txt",
+          "reranking_cross_encoders.txt",
+          "reranking_cross_encoders.txt",
+          "reranking_cross_encoders.txt",
+          "embedding_models.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q22",
+        "question": "How much slower does a second scoring pass make each request on a CPU?",
+        "query_type": "semantic",
+        "expected": [
+          "reranking_cross_encoders.txt"
+        ],
+        "retrieved": [
+          "reranking_cross_encoders.txt",
+          "llm_inference_optimization.txt",
+          "agentic_rag.txt",
+          "reranking_cross_encoders.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q23",
+        "question": "What is mean reciprocal rank and what does it reward?",
+        "query_type": "lexical",
+        "expected": [
+          "rag_evaluation_metrics.txt"
+        ],
+        "retrieved": [
+          "rag_evaluation_metrics.txt",
+          "hybrid_search_fusion.txt",
+          "reranking_cross_encoders.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q24",
+        "question": "When is nDCG more informative than hit rate?",
+        "query_type": "lexical",
+        "expected": [
+          "rag_evaluation_metrics.txt"
+        ],
+        "retrieved": [
+          "rag_evaluation_metrics.txt",
+          "observability_tracing.txt",
+          "llm_inference_optimization.txt",
+          "rag_evaluation_metrics.txt",
+          "rag_evaluation_metrics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q25",
+        "question": "How do you tell whether a bad answer was the searcher's fault or the writer's fault?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_evaluation_metrics.txt",
+          "observability_tracing.txt"
+        ],
+        "retrieved": [
+          "observability_tracing.txt",
+          "rag_security.txt",
+          "query_rewriting.txt",
+          "rag_evaluation_metrics.txt",
+          "rag_evaluation_metrics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 0.8772153153380493
+      },
+      {
+        "id": "q26",
+        "question": "How many test questions do I actually need, and what makes them good ones?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_evaluation_metrics.txt"
+        ],
+        "retrieved": [
+          "rag_evaluation_metrics.txt",
+          "finetuning_vs_rag.txt",
+          "agentic_rag.txt",
+          "rag_evaluation_metrics.txt",
+          "query_rewriting.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q27",
+        "question": "How do you stop a model from mixing what it already knows into a sourced answer?",
+        "query_type": "semantic",
+        "expected": [
+          "prompt_grounding_citations.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "rag_security.txt",
+          "prompt_grounding_citations.txt",
+          "finetuning_vs_rag.txt",
+          "rag_basics.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q28",
+        "question": "Does it matter where in the context window a passage is placed?",
+        "query_type": "semantic",
+        "expected": [
+          "prompt_grounding_citations.txt"
+        ],
+        "retrieved": [
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q29",
+        "question": "What is HyDE and when does it fail?",
+        "query_type": "lexical",
+        "expected": [
+          "query_rewriting.txt"
+        ],
+        "retrieved": [
+          "query_rewriting.txt",
+          "document_ingestion.txt",
+          "deployment_scaling.txt",
+          "deployment_scaling.txt",
+          "finetuning_vs_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q30",
+        "question": "What is multi-query expansion?",
+        "query_type": "mixed",
+        "expected": [
+          "query_rewriting.txt"
+        ],
+        "retrieved": [
+          "query_rewriting.txt",
+          "hybrid_search_fusion.txt",
+          "query_rewriting.txt",
+          "agentic_rag.txt",
+          "agentic_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q31",
+        "question": "What is indirect prompt injection through retrieved documents?",
+        "query_type": "mixed",
+        "expected": [
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "rag_security.txt",
+          "document_ingestion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q32",
+        "question": "Can the original text be recovered from a stored vector?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "vector_databases.txt",
+          "bm25_keyword_search.txt",
+          "graph_rag.txt",
+          "embedding_models.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q33",
+        "question": "Why keep each customer's documents in a separate collection instead of tagging them?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "caching_and_memory.txt",
+          "document_ingestion.txt",
+          "graph_rag.txt",
+          "document_ingestion.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 1.0,
+        "mrr": 0.25,
+        "ndcg@5": 0.43067655807339306
+      },
+      {
+        "id": "q34",
+        "question": "How does semantic caching differ from exact-match caching?",
+        "query_type": "mixed",
+        "expected": [
+          "caching_and_memory.txt"
+        ],
+        "retrieved": [
+          "caching_and_memory.txt",
+          "caching_and_memory.txt",
+          "llm_inference_optimization.txt",
+          "caching_and_memory.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q35",
+        "question": "Why should the unchanging part of a prompt go at the beginning?",
+        "query_type": "semantic",
+        "expected": [
+          "caching_and_memory.txt"
+        ],
+        "retrieved": [
+          "caching_and_memory.txt",
+          "prompt_grounding_citations.txt",
+          "rag_security.txt",
+          "finetuning_vs_rag.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q36",
+        "question": "How should a follow-up like 'what about the second one' be handled before searching?",
+        "query_type": "semantic",
+        "expected": [
+          "caching_and_memory.txt"
+        ],
+        "retrieved": [
+          "caching_and_memory.txt",
+          "hybrid_search_fusion.txt",
+          "query_rewriting.txt",
+          "query_rewriting.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q37",
+        "question": "What is the ReAct pattern of interleaved reasoning and acting?",
+        "query_type": "lexical",
+        "expected": [
+          "agentic_rag.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "query_rewriting.txt",
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q38",
+        "question": "Why does looking things up once fail for questions that need two hops?",
+        "query_type": "semantic",
+        "expected": [
+          "agentic_rag.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "agentic_rag.txt",
+          "hybrid_search_fusion.txt",
+          "agentic_rag.txt",
+          "agentic_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q39",
+        "question": "What is query routing and why is it cheaper than a full agent loop?",
+        "query_type": "mixed",
+        "expected": [
+          "agentic_rag.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "agentic_rag.txt",
+          "agentic_rag.txt",
+          "deployment_scaling.txt",
+          "agentic_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q40",
+        "question": "What is community summarization in a knowledge graph?",
+        "query_type": "lexical",
+        "expected": [
+          "graph_rag.txt"
+        ],
+        "retrieved": [
+          "graph_rag.txt",
+          "graph_rag.txt",
+          "graph_rag.txt",
+          "graph_rag.txt",
+          "graph_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q41",
+        "question": "How would you find everything that depends on a service you want to deprecate?",
+        "query_type": "semantic",
+        "expected": [
+          "graph_rag.txt"
+        ],
+        "retrieved": [
+          "graph_rag.txt",
+          "query_rewriting.txt",
+          "deployment_scaling.txt",
+          "vector_databases.txt",
+          "document_ingestion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q42",
+        "question": "Why does pulling text out of a two-column academic paper produce jumbled output?",
+        "query_type": "semantic",
+        "expected": [
+          "document_ingestion.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q43",
+        "question": "How does content hashing enable incremental ingestion?",
+        "query_type": "mixed",
+        "expected": [
+          "document_ingestion.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "deployment_scaling.txt",
+          "document_ingestion.txt",
+          "rag_basics.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q44",
+        "question": "What goes wrong when the same policy exists in three slightly different versions?",
+        "query_type": "semantic",
+        "expected": [
+          "document_ingestion.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "hybrid_search_fusion.txt",
+          "caching_and_memory.txt",
+          "rag_evaluation_metrics.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q45",
+        "question": "Why track p95 and p99 latency rather than the mean?",
+        "query_type": "lexical",
+        "expected": [
+          "observability_tracing.txt"
+        ],
+        "retrieved": [
+          "observability_tracing.txt",
+          "llm_inference_optimization.txt",
+          "reranking_cross_encoders.txt",
+          "reranking_cross_encoders.txt",
+          "vector_databases.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q46",
+        "question": "What should be recorded so a bad answer can be investigated later?",
+        "query_type": "semantic",
+        "expected": [
+          "observability_tracing.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "observability_tracing.txt",
+          "caching_and_memory.txt",
+          "rag_security.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q47",
+        "question": "Why should ingestion run behind a queue instead of inside an HTTP request?",
+        "query_type": "mixed",
+        "expected": [
+          "deployment_scaling.txt"
+        ],
+        "retrieved": [
+          "deployment_scaling.txt",
+          "deployment_scaling.txt",
+          "rag_security.txt",
+          "deployment_scaling.txt",
+          "rag_basics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q48",
+        "question": "What is the difference between a liveness check and a readiness check?",
+        "query_type": "lexical",
+        "expected": [
+          "deployment_scaling.txt"
+        ],
+        "retrieved": [
+          "deployment_scaling.txt",
+          "prompt_grounding_citations.txt",
+          "llm_inference_optimization.txt",
+          "rag_evaluation_metrics.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q49",
+        "question": "What should the system do if the reranker goes down?",
+        "query_type": "semantic",
+        "expected": [
+          "deployment_scaling.txt"
+        ],
+        "retrieved": [
+          "reranking_cross_encoders.txt",
+          "deployment_scaling.txt",
+          "reranking_cross_encoders.txt",
+          "hybrid_search_fusion.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q50",
+        "question": "When should I fine-tune a model instead of retrieving documents?",
+        "query_type": "mixed",
+        "expected": [
+          "finetuning_vs_rag.txt"
+        ],
+        "retrieved": [
+          "finetuning_vs_rag.txt",
+          "finetuning_vs_rag.txt",
+          "finetuning_vs_rag.txt",
+          "observability_tracing.txt",
+          "embedding_models.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q51",
+        "question": "What goes wrong when facts are baked into model weights instead of looked up?",
+        "query_type": "semantic",
+        "expected": [
+          "finetuning_vs_rag.txt"
+        ],
+        "retrieved": [
+          "finetuning_vs_rag.txt",
+          "finetuning_vs_rag.txt",
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "finetuning_vs_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    ]
+  },
+  "hybrid": {
+    "overall": {
+      "hit@1": 0.902,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "mrr": 0.9444,
+      "ndcg@5": 0.9587
+    },
+    "by_query_type": {
+      "lexical": {
+        "hit@1": 0.8667,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.9222,
+        "ndcg@5": 0.9421
+      },
+      "mixed": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic": {
+        "hit@1": 0.8696,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.9275,
+        "ndcg@5": 0.9462
+      }
+    },
+    "latency_ms_avg": 5.9,
+    "per_question": [
+      {
+        "id": "q01",
+        "question": "What is PagedAttention and how does it manage the KV cache?",
+        "query_type": "lexical",
+        "expected": [
+          "vllm_overview.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "llm_inference_optimization.txt",
+          "vllm_overview.txt",
+          "vllm_overview.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5
+      },
+      {
+        "id": "q02",
+        "question": "How does continuous batching improve throughput over static batching?",
+        "query_type": "mixed",
+        "expected": [
+          "vllm_overview.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "vllm_overview.txt",
+          "llm_inference_optimization.txt",
+          "deployment_scaling.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q03",
+        "question": "Why is generating one token at a time limited by memory bandwidth rather than raw compute?",
+        "query_type": "semantic",
+        "expected": [
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "vllm_overview.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q04",
+        "question": "What is speculative decoding?",
+        "query_type": "lexical",
+        "expected": [
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "embedding_models.txt",
+          "document_ingestion.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q05",
+        "question": "What does time to first token measure?",
+        "query_type": "mixed",
+        "expected": [
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "rag_evaluation_metrics.txt",
+          "llm_inference_optimization.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q06",
+        "question": "Which two separate paths make up a RAG pipeline?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_basics.txt"
+        ],
+        "retrieved": [
+          "rag_basics.txt",
+          "rag_evaluation_metrics.txt",
+          "agentic_rag.txt",
+          "observability_tracing.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q07",
+        "question": "Why should consecutive pieces of a split document share some text?",
+        "query_type": "semantic",
+        "expected": [
+          "chunking_strategies.txt"
+        ],
+        "retrieved": [
+          "chunking_strategies.txt",
+          "document_ingestion.txt",
+          "chunking_strategies.txt",
+          "document_ingestion.txt",
+          "document_ingestion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q08",
+        "question": "What separators does recursive character splitting try, and in what order?",
+        "query_type": "mixed",
+        "expected": [
+          "chunking_strategies.txt"
+        ],
+        "retrieved": [
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q09",
+        "question": "What happens to tables when you split a PDF with a plain character splitter?",
+        "query_type": "semantic",
+        "expected": [
+          "chunking_strategies.txt"
+        ],
+        "retrieved": [
+          "chunking_strategies.txt",
+          "document_ingestion.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q10",
+        "question": "What output dimension does all-MiniLM-L6-v2 produce?",
+        "query_type": "lexical",
+        "expected": [
+          "embedding_models.txt"
+        ],
+        "retrieved": [
+          "embedding_models.txt",
+          "embedding_models.txt",
+          "finetuning_vs_rag.txt",
+          "reranking_cross_encoders.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q11",
+        "question": "What breaks if I switch to a different embedding model without rebuilding the index?",
+        "query_type": "semantic",
+        "expected": [
+          "embedding_models.txt"
+        ],
+        "retrieved": [
+          "embedding_models.txt",
+          "embedding_models.txt",
+          "reranking_cross_encoders.txt",
+          "deployment_scaling.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q12",
+        "question": "Why scale vectors to unit length before storing them?",
+        "query_type": "semantic",
+        "expected": [
+          "embedding_models.txt"
+        ],
+        "retrieved": [
+          "embedding_models.txt",
+          "embedding_models.txt",
+          "llm_inference_optimization.txt",
+          "vector_databases.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q13",
+        "question": "What is IndexFlatIP and when is an exact flat index the right choice?",
+        "query_type": "lexical",
+        "expected": [
+          "vector_databases.txt"
+        ],
+        "retrieved": [
+          "vector_databases.txt",
+          "deployment_scaling.txt",
+          "vector_databases.txt",
+          "reranking_cross_encoders.txt",
+          "vector_databases.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q14",
+        "question": "How does HNSW differ from IVF for approximate nearest neighbor search?",
+        "query_type": "lexical",
+        "expected": [
+          "vector_databases.txt"
+        ],
+        "retrieved": [
+          "vector_databases.txt",
+          "vector_databases.txt",
+          "vector_databases.txt",
+          "bm25_keyword_search.txt",
+          "hybrid_search_fusion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q15",
+        "question": "Why must results be filtered during the search rather than afterwards?",
+        "query_type": "mixed",
+        "expected": [
+          "vector_databases.txt",
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "vector_databases.txt",
+          "rag_security.txt",
+          "document_ingestion.txt",
+          "hybrid_search_fusion.txt",
+          "vector_databases.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q16",
+        "question": "What do the k1 and b parameters control in BM25?",
+        "query_type": "lexical",
+        "expected": [
+          "bm25_keyword_search.txt"
+        ],
+        "retrieved": [
+          "bm25_keyword_search.txt",
+          "reranking_cross_encoders.txt",
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "bm25_keyword_search.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q17",
+        "question": "What is the vocabulary mismatch problem?",
+        "query_type": "mixed",
+        "expected": [
+          "bm25_keyword_search.txt"
+        ],
+        "retrieved": [
+          "bm25_keyword_search.txt",
+          "rag_security.txt",
+          "query_rewriting.txt",
+          "bm25_keyword_search.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q18",
+        "question": "Why does semantic search fail to find an error code like ORA-01555?",
+        "query_type": "lexical",
+        "expected": [
+          "bm25_keyword_search.txt"
+        ],
+        "retrieved": [
+          "bm25_keyword_search.txt",
+          "rag_basics.txt",
+          "hybrid_search_fusion.txt",
+          "caching_and_memory.txt",
+          "rag_basics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q19",
+        "question": "Why can't you simply average the scores from two different retrievers?",
+        "query_type": "semantic",
+        "expected": [
+          "hybrid_search_fusion.txt"
+        ],
+        "retrieved": [
+          "rag_basics.txt",
+          "rag_evaluation_metrics.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5
+      },
+      {
+        "id": "q20",
+        "question": "What does the constant k do in reciprocal rank fusion, and what value is conventional?",
+        "query_type": "mixed",
+        "expected": [
+          "hybrid_search_fusion.txt"
+        ],
+        "retrieved": [
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "rag_basics.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q21",
+        "question": "What is the difference between a bi-encoder and a cross-encoder?",
+        "query_type": "lexical",
+        "expected": [
+          "reranking_cross_encoders.txt"
+        ],
+        "retrieved": [
+          "reranking_cross_encoders.txt",
+          "reranking_cross_encoders.txt",
+          "reranking_cross_encoders.txt",
+          "graph_rag.txt",
+          "document_ingestion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q22",
+        "question": "How much slower does a second scoring pass make each request on a CPU?",
+        "query_type": "semantic",
+        "expected": [
+          "reranking_cross_encoders.txt"
+        ],
+        "retrieved": [
+          "reranking_cross_encoders.txt",
+          "agentic_rag.txt",
+          "deployment_scaling.txt",
+          "observability_tracing.txt",
+          "agentic_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q23",
+        "question": "What is mean reciprocal rank and what does it reward?",
+        "query_type": "lexical",
+        "expected": [
+          "rag_evaluation_metrics.txt"
+        ],
+        "retrieved": [
+          "rag_evaluation_metrics.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q24",
+        "question": "When is nDCG more informative than hit rate?",
+        "query_type": "lexical",
+        "expected": [
+          "rag_evaluation_metrics.txt"
+        ],
+        "retrieved": [
+          "observability_tracing.txt",
+          "rag_evaluation_metrics.txt",
+          "rag_evaluation_metrics.txt",
+          "hybrid_search_fusion.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q25",
+        "question": "How do you tell whether a bad answer was the searcher's fault or the writer's fault?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_evaluation_metrics.txt",
+          "observability_tracing.txt"
+        ],
+        "retrieved": [
+          "observability_tracing.txt",
+          "rag_evaluation_metrics.txt",
+          "prompt_grounding_citations.txt",
+          "caching_and_memory.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q26",
+        "question": "How many test questions do I actually need, and what makes them good ones?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_evaluation_metrics.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "rag_evaluation_metrics.txt",
+          "caching_and_memory.txt",
+          "graph_rag.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q27",
+        "question": "How do you stop a model from mixing what it already knows into a sourced answer?",
+        "query_type": "semantic",
+        "expected": [
+          "prompt_grounding_citations.txt"
+        ],
+        "retrieved": [
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "rag_security.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q28",
+        "question": "Does it matter where in the context window a passage is placed?",
+        "query_type": "semantic",
+        "expected": [
+          "prompt_grounding_citations.txt"
+        ],
+        "retrieved": [
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "chunking_strategies.txt",
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q29",
+        "question": "What is HyDE and when does it fail?",
+        "query_type": "lexical",
+        "expected": [
+          "query_rewriting.txt"
+        ],
+        "retrieved": [
+          "query_rewriting.txt",
+          "agentic_rag.txt",
+          "deployment_scaling.txt",
+          "prompt_grounding_citations.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q30",
+        "question": "What is multi-query expansion?",
+        "query_type": "mixed",
+        "expected": [
+          "query_rewriting.txt"
+        ],
+        "retrieved": [
+          "query_rewriting.txt",
+          "graph_rag.txt",
+          "document_ingestion.txt",
+          "hybrid_search_fusion.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q31",
+        "question": "What is indirect prompt injection through retrieved documents?",
+        "query_type": "mixed",
+        "expected": [
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "prompt_grounding_citations.txt",
+          "finetuning_vs_rag.txt",
+          "rag_security.txt",
+          "document_ingestion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q32",
+        "question": "Can the original text be recovered from a stored vector?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "prompt_grounding_citations.txt",
+          "vector_databases.txt",
+          "document_ingestion.txt",
+          "document_ingestion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q33",
+        "question": "Why keep each customer's documents in a separate collection instead of tagging them?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "graph_rag.txt",
+          "vector_databases.txt",
+          "document_ingestion.txt",
+          "chunking_strategies.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q34",
+        "question": "How does semantic caching differ from exact-match caching?",
+        "query_type": "mixed",
+        "expected": [
+          "caching_and_memory.txt"
+        ],
+        "retrieved": [
+          "caching_and_memory.txt",
+          "caching_and_memory.txt",
+          "caching_and_memory.txt",
+          "llm_inference_optimization.txt",
+          "rag_basics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q35",
+        "question": "Why should the unchanging part of a prompt go at the beginning?",
+        "query_type": "semantic",
+        "expected": [
+          "caching_and_memory.txt"
+        ],
+        "retrieved": [
+          "caching_and_memory.txt",
+          "prompt_grounding_citations.txt",
+          "rag_security.txt",
+          "prompt_grounding_citations.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q36",
+        "question": "How should a follow-up like 'what about the second one' be handled before searching?",
+        "query_type": "semantic",
+        "expected": [
+          "caching_and_memory.txt"
+        ],
+        "retrieved": [
+          "caching_and_memory.txt",
+          "query_rewriting.txt",
+          "caching_and_memory.txt",
+          "caching_and_memory.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q37",
+        "question": "What is the ReAct pattern of interleaved reasoning and acting?",
+        "query_type": "lexical",
+        "expected": [
+          "agentic_rag.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "query_rewriting.txt",
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "rag_evaluation_metrics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q38",
+        "question": "Why does looking things up once fail for questions that need two hops?",
+        "query_type": "semantic",
+        "expected": [
+          "agentic_rag.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "agentic_rag.txt",
+          "prompt_grounding_citations.txt",
+          "hybrid_search_fusion.txt",
+          "agentic_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q39",
+        "question": "What is query routing and why is it cheaper than a full agent loop?",
+        "query_type": "mixed",
+        "expected": [
+          "agentic_rag.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "agentic_rag.txt",
+          "deployment_scaling.txt",
+          "query_rewriting.txt",
+          "agentic_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q40",
+        "question": "What is community summarization in a knowledge graph?",
+        "query_type": "lexical",
+        "expected": [
+          "graph_rag.txt"
+        ],
+        "retrieved": [
+          "graph_rag.txt",
+          "graph_rag.txt",
+          "graph_rag.txt",
+          "finetuning_vs_rag.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q41",
+        "question": "How would you find everything that depends on a service you want to deprecate?",
+        "query_type": "semantic",
+        "expected": [
+          "graph_rag.txt"
+        ],
+        "retrieved": [
+          "graph_rag.txt",
+          "vector_databases.txt",
+          "deployment_scaling.txt",
+          "graph_rag.txt",
+          "agentic_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q42",
+        "question": "Why does pulling text out of a two-column academic paper produce jumbled output?",
+        "query_type": "semantic",
+        "expected": [
+          "document_ingestion.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "chunking_strategies.txt",
+          "document_ingestion.txt",
+          "prompt_grounding_citations.txt",
+          "deployment_scaling.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q43",
+        "question": "How does content hashing enable incremental ingestion?",
+        "query_type": "mixed",
+        "expected": [
+          "document_ingestion.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "caching_and_memory.txt",
+          "deployment_scaling.txt",
+          "agentic_rag.txt",
+          "rag_evaluation_metrics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q44",
+        "question": "What goes wrong when the same policy exists in three slightly different versions?",
+        "query_type": "semantic",
+        "expected": [
+          "document_ingestion.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "query_rewriting.txt",
+          "hybrid_search_fusion.txt",
+          "document_ingestion.txt",
+          "embedding_models.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q45",
+        "question": "Why track p95 and p99 latency rather than the mean?",
+        "query_type": "lexical",
+        "expected": [
+          "observability_tracing.txt"
+        ],
+        "retrieved": [
+          "observability_tracing.txt",
+          "reranking_cross_encoders.txt",
+          "prompt_grounding_citations.txt",
+          "agentic_rag.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q46",
+        "question": "What should be recorded so a bad answer can be investigated later?",
+        "query_type": "semantic",
+        "expected": [
+          "observability_tracing.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "observability_tracing.txt",
+          "document_ingestion.txt",
+          "rag_evaluation_metrics.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q47",
+        "question": "Why should ingestion run behind a queue instead of inside an HTTP request?",
+        "query_type": "mixed",
+        "expected": [
+          "deployment_scaling.txt"
+        ],
+        "retrieved": [
+          "deployment_scaling.txt",
+          "document_ingestion.txt",
+          "deployment_scaling.txt",
+          "rag_security.txt",
+          "rag_basics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q48",
+        "question": "What is the difference between a liveness check and a readiness check?",
+        "query_type": "lexical",
+        "expected": [
+          "deployment_scaling.txt"
+        ],
+        "retrieved": [
+          "deployment_scaling.txt",
+          "document_ingestion.txt",
+          "rag_security.txt",
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q49",
+        "question": "What should the system do if the reranker goes down?",
+        "query_type": "semantic",
+        "expected": [
+          "deployment_scaling.txt"
+        ],
+        "retrieved": [
+          "deployment_scaling.txt",
+          "reranking_cross_encoders.txt",
+          "observability_tracing.txt",
+          "reranking_cross_encoders.txt",
+          "graph_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q50",
+        "question": "When should I fine-tune a model instead of retrieving documents?",
+        "query_type": "mixed",
+        "expected": [
+          "finetuning_vs_rag.txt"
+        ],
+        "retrieved": [
+          "finetuning_vs_rag.txt",
+          "query_rewriting.txt",
+          "rag_security.txt",
+          "agentic_rag.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q51",
+        "question": "What goes wrong when facts are baked into model weights instead of looked up?",
+        "query_type": "semantic",
+        "expected": [
+          "finetuning_vs_rag.txt"
+        ],
+        "retrieved": [
+          "finetuning_vs_rag.txt",
+          "finetuning_vs_rag.txt",
+          "deployment_scaling.txt",
+          "rag_security.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    ]
+  },
+  "hybrid+rerank": {
+    "overall": {
+      "hit@1": 0.9412,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "mrr": 0.9706,
+      "ndcg@5": 0.9707
+    },
+    "by_query_type": {
+      "lexical": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "mixed": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic": {
+        "hit@1": 0.8696,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.9348,
+        "ndcg@5": 0.935
+      }
+    },
+    "latency_ms_avg": 66.9,
+    "per_question": [
+      {
+        "id": "q01",
+        "question": "What is PagedAttention and how does it manage the KV cache?",
+        "query_type": "lexical",
+        "expected": [
+          "vllm_overview.txt"
+        ],
+        "retrieved": [
+          "vllm_overview.txt",
+          "vllm_overview.txt",
+          "llm_inference_optimization.txt",
+          "caching_and_memory.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q02",
+        "question": "How does continuous batching improve throughput over static batching?",
+        "query_type": "mixed",
+        "expected": [
+          "vllm_overview.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "vllm_overview.txt",
+          "llm_inference_optimization.txt",
+          "deployment_scaling.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q03",
+        "question": "Why is generating one token at a time limited by memory bandwidth rather than raw compute?",
+        "query_type": "semantic",
+        "expected": [
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "query_rewriting.txt",
+          "llm_inference_optimization.txt",
+          "vector_databases.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q04",
+        "question": "What is speculative decoding?",
+        "query_type": "lexical",
+        "expected": [
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "rag_security.txt",
+          "llm_inference_optimization.txt",
+          "embedding_models.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q05",
+        "question": "What does time to first token measure?",
+        "query_type": "mixed",
+        "expected": [
+          "llm_inference_optimization.txt"
+        ],
+        "retrieved": [
+          "llm_inference_optimization.txt",
+          "llm_inference_optimization.txt",
+          "observability_tracing.txt",
+          "llm_inference_optimization.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q06",
+        "question": "Which two separate paths make up a RAG pipeline?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_basics.txt"
+        ],
+        "retrieved": [
+          "rag_basics.txt",
+          "observability_tracing.txt",
+          "deployment_scaling.txt",
+          "prompt_grounding_citations.txt",
+          "document_ingestion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q07",
+        "question": "Why should consecutive pieces of a split document share some text?",
+        "query_type": "semantic",
+        "expected": [
+          "chunking_strategies.txt"
+        ],
+        "retrieved": [
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "document_ingestion.txt",
+          "chunking_strategies.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q08",
+        "question": "What separators does recursive character splitting try, and in what order?",
+        "query_type": "mixed",
+        "expected": [
+          "chunking_strategies.txt"
+        ],
+        "retrieved": [
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q09",
+        "question": "What happens to tables when you split a PDF with a plain character splitter?",
+        "query_type": "semantic",
+        "expected": [
+          "chunking_strategies.txt"
+        ],
+        "retrieved": [
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "chunking_strategies.txt",
+          "document_ingestion.txt",
+          "chunking_strategies.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q10",
+        "question": "What output dimension does all-MiniLM-L6-v2 produce?",
+        "query_type": "lexical",
+        "expected": [
+          "embedding_models.txt"
+        ],
+        "retrieved": [
+          "embedding_models.txt",
+          "embedding_models.txt",
+          "embedding_models.txt",
+          "reranking_cross_encoders.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q11",
+        "question": "What breaks if I switch to a different embedding model without rebuilding the index?",
+        "query_type": "semantic",
+        "expected": [
+          "embedding_models.txt"
+        ],
+        "retrieved": [
+          "embedding_models.txt",
+          "bm25_keyword_search.txt",
+          "vector_databases.txt",
+          "embedding_models.txt",
+          "graph_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q12",
+        "question": "Why scale vectors to unit length before storing them?",
+        "query_type": "semantic",
+        "expected": [
+          "embedding_models.txt"
+        ],
+        "retrieved": [
+          "embedding_models.txt",
+          "chunking_strategies.txt",
+          "embedding_models.txt",
+          "llm_inference_optimization.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q13",
+        "question": "What is IndexFlatIP and when is an exact flat index the right choice?",
+        "query_type": "lexical",
+        "expected": [
+          "vector_databases.txt"
+        ],
+        "retrieved": [
+          "vector_databases.txt",
+          "vector_databases.txt",
+          "deployment_scaling.txt",
+          "graph_rag.txt",
+          "rag_evaluation_metrics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q14",
+        "question": "How does HNSW differ from IVF for approximate nearest neighbor search?",
+        "query_type": "lexical",
+        "expected": [
+          "vector_databases.txt"
+        ],
+        "retrieved": [
+          "vector_databases.txt",
+          "vector_databases.txt",
+          "vector_databases.txt",
+          "hybrid_search_fusion.txt",
+          "vector_databases.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q15",
+        "question": "Why must results be filtered during the search rather than afterwards?",
+        "query_type": "mixed",
+        "expected": [
+          "vector_databases.txt",
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "vector_databases.txt",
+          "document_ingestion.txt",
+          "bm25_keyword_search.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q16",
+        "question": "What do the k1 and b parameters control in BM25?",
+        "query_type": "lexical",
+        "expected": [
+          "bm25_keyword_search.txt"
+        ],
+        "retrieved": [
+          "bm25_keyword_search.txt",
+          "bm25_keyword_search.txt",
+          "bm25_keyword_search.txt",
+          "reranking_cross_encoders.txt",
+          "hybrid_search_fusion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q17",
+        "question": "What is the vocabulary mismatch problem?",
+        "query_type": "mixed",
+        "expected": [
+          "bm25_keyword_search.txt"
+        ],
+        "retrieved": [
+          "bm25_keyword_search.txt",
+          "document_ingestion.txt",
+          "chunking_strategies.txt",
+          "bm25_keyword_search.txt",
+          "bm25_keyword_search.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q18",
+        "question": "Why does semantic search fail to find an error code like ORA-01555?",
+        "query_type": "lexical",
+        "expected": [
+          "bm25_keyword_search.txt"
+        ],
+        "retrieved": [
+          "bm25_keyword_search.txt",
+          "rag_basics.txt",
+          "caching_and_memory.txt",
+          "bm25_keyword_search.txt",
+          "embedding_models.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q19",
+        "question": "Why can't you simply average the scores from two different retrievers?",
+        "query_type": "semantic",
+        "expected": [
+          "hybrid_search_fusion.txt"
+        ],
+        "retrieved": [
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q20",
+        "question": "What does the constant k do in reciprocal rank fusion, and what value is conventional?",
+        "query_type": "mixed",
+        "expected": [
+          "hybrid_search_fusion.txt"
+        ],
+        "retrieved": [
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "query_rewriting.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q21",
+        "question": "What is the difference between a bi-encoder and a cross-encoder?",
+        "query_type": "lexical",
+        "expected": [
+          "reranking_cross_encoders.txt"
+        ],
+        "retrieved": [
+          "reranking_cross_encoders.txt",
+          "reranking_cross_encoders.txt",
+          "reranking_cross_encoders.txt",
+          "reranking_cross_encoders.txt",
+          "embedding_models.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q22",
+        "question": "How much slower does a second scoring pass make each request on a CPU?",
+        "query_type": "semantic",
+        "expected": [
+          "reranking_cross_encoders.txt"
+        ],
+        "retrieved": [
+          "reranking_cross_encoders.txt",
+          "reranking_cross_encoders.txt",
+          "observability_tracing.txt",
+          "llm_inference_optimization.txt",
+          "reranking_cross_encoders.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q23",
+        "question": "What is mean reciprocal rank and what does it reward?",
+        "query_type": "lexical",
+        "expected": [
+          "rag_evaluation_metrics.txt"
+        ],
+        "retrieved": [
+          "rag_evaluation_metrics.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt",
+          "query_rewriting.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q24",
+        "question": "When is nDCG more informative than hit rate?",
+        "query_type": "lexical",
+        "expected": [
+          "rag_evaluation_metrics.txt"
+        ],
+        "retrieved": [
+          "rag_evaluation_metrics.txt",
+          "rag_evaluation_metrics.txt",
+          "observability_tracing.txt",
+          "prompt_grounding_citations.txt",
+          "hybrid_search_fusion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q25",
+        "question": "How do you tell whether a bad answer was the searcher's fault or the writer's fault?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_evaluation_metrics.txt",
+          "observability_tracing.txt"
+        ],
+        "retrieved": [
+          "observability_tracing.txt",
+          "rag_security.txt",
+          "query_rewriting.txt",
+          "query_rewriting.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584
+      },
+      {
+        "id": "q26",
+        "question": "How many test questions do I actually need, and what makes them good ones?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_evaluation_metrics.txt"
+        ],
+        "retrieved": [
+          "rag_evaluation_metrics.txt",
+          "agentic_rag.txt",
+          "graph_rag.txt",
+          "bm25_keyword_search.txt",
+          "rag_evaluation_metrics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q27",
+        "question": "How do you stop a model from mixing what it already knows into a sourced answer?",
+        "query_type": "semantic",
+        "expected": [
+          "prompt_grounding_citations.txt"
+        ],
+        "retrieved": [
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "finetuning_vs_rag.txt",
+          "prompt_grounding_citations.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q28",
+        "question": "Does it matter where in the context window a passage is placed?",
+        "query_type": "semantic",
+        "expected": [
+          "prompt_grounding_citations.txt"
+        ],
+        "retrieved": [
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "rag_evaluation_metrics.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q29",
+        "question": "What is HyDE and when does it fail?",
+        "query_type": "lexical",
+        "expected": [
+          "query_rewriting.txt"
+        ],
+        "retrieved": [
+          "query_rewriting.txt",
+          "finetuning_vs_rag.txt",
+          "prompt_grounding_citations.txt",
+          "deployment_scaling.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q30",
+        "question": "What is multi-query expansion?",
+        "query_type": "mixed",
+        "expected": [
+          "query_rewriting.txt"
+        ],
+        "retrieved": [
+          "query_rewriting.txt",
+          "query_rewriting.txt",
+          "agentic_rag.txt",
+          "hybrid_search_fusion.txt",
+          "rag_basics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q31",
+        "question": "What is indirect prompt injection through retrieved documents?",
+        "query_type": "mixed",
+        "expected": [
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "finetuning_vs_rag.txt",
+          "prompt_grounding_citations.txt",
+          "prompt_grounding_citations.txt",
+          "rag_security.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q32",
+        "question": "Can the original text be recovered from a stored vector?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "embedding_models.txt",
+          "bm25_keyword_search.txt",
+          "vector_databases.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q33",
+        "question": "Why keep each customer's documents in a separate collection instead of tagging them?",
+        "query_type": "semantic",
+        "expected": [
+          "rag_security.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "vector_databases.txt",
+          "graph_rag.txt",
+          "document_ingestion.txt",
+          "document_ingestion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q34",
+        "question": "How does semantic caching differ from exact-match caching?",
+        "query_type": "mixed",
+        "expected": [
+          "caching_and_memory.txt"
+        ],
+        "retrieved": [
+          "caching_and_memory.txt",
+          "caching_and_memory.txt",
+          "rag_basics.txt",
+          "bm25_keyword_search.txt",
+          "chunking_strategies.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q35",
+        "question": "Why should the unchanging part of a prompt go at the beginning?",
+        "query_type": "semantic",
+        "expected": [
+          "caching_and_memory.txt"
+        ],
+        "retrieved": [
+          "prompt_grounding_citations.txt",
+          "caching_and_memory.txt",
+          "caching_and_memory.txt",
+          "rag_security.txt",
+          "finetuning_vs_rag.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q36",
+        "question": "How should a follow-up like 'what about the second one' be handled before searching?",
+        "query_type": "semantic",
+        "expected": [
+          "caching_and_memory.txt"
+        ],
+        "retrieved": [
+          "caching_and_memory.txt",
+          "caching_and_memory.txt",
+          "document_ingestion.txt",
+          "agentic_rag.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q37",
+        "question": "What is the ReAct pattern of interleaved reasoning and acting?",
+        "query_type": "lexical",
+        "expected": [
+          "agentic_rag.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "reranking_cross_encoders.txt",
+          "query_rewriting.txt",
+          "finetuning_vs_rag.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q38",
+        "question": "Why does looking things up once fail for questions that need two hops?",
+        "query_type": "semantic",
+        "expected": [
+          "agentic_rag.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "agentic_rag.txt",
+          "observability_tracing.txt",
+          "hybrid_search_fusion.txt",
+          "hybrid_search_fusion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q39",
+        "question": "What is query routing and why is it cheaper than a full agent loop?",
+        "query_type": "mixed",
+        "expected": [
+          "agentic_rag.txt"
+        ],
+        "retrieved": [
+          "agentic_rag.txt",
+          "agentic_rag.txt",
+          "agentic_rag.txt",
+          "agentic_rag.txt",
+          "query_rewriting.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q40",
+        "question": "What is community summarization in a knowledge graph?",
+        "query_type": "lexical",
+        "expected": [
+          "graph_rag.txt"
+        ],
+        "retrieved": [
+          "graph_rag.txt",
+          "graph_rag.txt",
+          "finetuning_vs_rag.txt",
+          "hybrid_search_fusion.txt",
+          "graph_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q41",
+        "question": "How would you find everything that depends on a service you want to deprecate?",
+        "query_type": "semantic",
+        "expected": [
+          "graph_rag.txt"
+        ],
+        "retrieved": [
+          "graph_rag.txt",
+          "graph_rag.txt",
+          "document_ingestion.txt",
+          "vector_databases.txt",
+          "agentic_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q42",
+        "question": "Why does pulling text out of a two-column academic paper produce jumbled output?",
+        "query_type": "semantic",
+        "expected": [
+          "document_ingestion.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "chunking_strategies.txt",
+          "finetuning_vs_rag.txt",
+          "chunking_strategies.txt",
+          "document_ingestion.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q43",
+        "question": "How does content hashing enable incremental ingestion?",
+        "query_type": "mixed",
+        "expected": [
+          "document_ingestion.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "deployment_scaling.txt",
+          "rag_basics.txt",
+          "document_ingestion.txt",
+          "deployment_scaling.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q44",
+        "question": "What goes wrong when the same policy exists in three slightly different versions?",
+        "query_type": "semantic",
+        "expected": [
+          "document_ingestion.txt"
+        ],
+        "retrieved": [
+          "document_ingestion.txt",
+          "query_rewriting.txt",
+          "hybrid_search_fusion.txt",
+          "embedding_models.txt",
+          "deployment_scaling.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q45",
+        "question": "Why track p95 and p99 latency rather than the mean?",
+        "query_type": "lexical",
+        "expected": [
+          "observability_tracing.txt"
+        ],
+        "retrieved": [
+          "observability_tracing.txt",
+          "reranking_cross_encoders.txt",
+          "agentic_rag.txt",
+          "llm_inference_optimization.txt",
+          "observability_tracing.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q46",
+        "question": "What should be recorded so a bad answer can be investigated later?",
+        "query_type": "semantic",
+        "expected": [
+          "observability_tracing.txt"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "observability_tracing.txt",
+          "document_ingestion.txt",
+          "rag_evaluation_metrics.txt",
+          "caching_and_memory.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q47",
+        "question": "Why should ingestion run behind a queue instead of inside an HTTP request?",
+        "query_type": "mixed",
+        "expected": [
+          "deployment_scaling.txt"
+        ],
+        "retrieved": [
+          "deployment_scaling.txt",
+          "document_ingestion.txt",
+          "rag_security.txt",
+          "deployment_scaling.txt",
+          "rag_basics.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q48",
+        "question": "What is the difference between a liveness check and a readiness check?",
+        "query_type": "lexical",
+        "expected": [
+          "deployment_scaling.txt"
+        ],
+        "retrieved": [
+          "deployment_scaling.txt",
+          "document_ingestion.txt",
+          "rag_evaluation_metrics.txt",
+          "prompt_grounding_citations.txt",
+          "llm_inference_optimization.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q49",
+        "question": "What should the system do if the reranker goes down?",
+        "query_type": "semantic",
+        "expected": [
+          "deployment_scaling.txt"
+        ],
+        "retrieved": [
+          "reranking_cross_encoders.txt",
+          "deployment_scaling.txt",
+          "observability_tracing.txt",
+          "reranking_cross_encoders.txt",
+          "prompt_grounding_citations.txt"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q50",
+        "question": "When should I fine-tune a model instead of retrieving documents?",
+        "query_type": "mixed",
+        "expected": [
+          "finetuning_vs_rag.txt"
+        ],
+        "retrieved": [
+          "finetuning_vs_rag.txt",
+          "finetuning_vs_rag.txt",
+          "finetuning_vs_rag.txt",
+          "finetuning_vs_rag.txt",
+          "finetuning_vs_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q51",
+        "question": "What goes wrong when facts are baked into model weights instead of looked up?",
+        "query_type": "semantic",
+        "expected": [
+          "finetuning_vs_rag.txt"
+        ],
+        "retrieved": [
+          "finetuning_vs_rag.txt",
+          "rag_basics.txt",
+          "deployment_scaling.txt",
+          "rag_security.txt",
+          "finetuning_vs_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    ]
+  }
+}

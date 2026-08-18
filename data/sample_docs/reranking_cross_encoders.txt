@@ -1,0 +1,13 @@
+Reranking with Cross-Encoders
+
+Reranking is a second retrieval stage that re-scores a small candidate set with a slower, more accurate model. A first-stage retriever fetches perhaps twenty candidates cheaply, and the reranker orders them precisely so that only the best three to five reach the language model's context window.
+
+The distinction between the two stages is architectural. Embedding models and BM25 are bi-encoders: they process the query and the document independently, then compare the resulting representations. Because documents can be encoded ahead of time, a bi-encoder scales to millions of passages, but encoding independently means the model never sees the query and the document together, so it cannot reason about how a specific query term relates to a specific document term.
+
+A cross-encoder feeds the query and the candidate passage through a transformer as a single concatenated input. Every query token can attend to every document token, which captures precisely the interactions a bi-encoder discards. This yields substantially better relevance judgments, and it is far too slow to run over an entire corpus, since every query requires a fresh forward pass for every candidate.
+
+The resulting pattern is retrieve broad and cheap, then rerank narrow and precise. Candidate count is the tuning knob: retrieving more candidates raises the ceiling on what reranking can find, at a linear cost in reranking latency.
+
+Reranking is usually the highest-return improvement available to a RAG system. It commonly lifts precision at k by a large margin without any change to chunking, embedding, or indexing, because it repairs first-stage ranking mistakes rather than requiring the first stage to be perfect.
+
+Its cost is latency. A cross-encoder scoring twenty candidates on CPU typically adds between fifty and three hundred milliseconds. Options for reducing this include scoring fewer candidates, using a smaller reranker such as the MiniLM cross-encoders, moving inference to a GPU, or calling a hosted reranking service. Whether that latency is acceptable is a product decision, and it should be measured per stage rather than absorbed into an unexplained total.

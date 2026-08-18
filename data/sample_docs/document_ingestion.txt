@@ -1,0 +1,15 @@
+Document Loading and Ingestion Pipelines
+
+Before any text can be split or embedded, it has to be extracted from wherever it lives, and this stage is where most real RAG projects lose the most time.
+
+Source diversity is the first problem. Documents arrive as PDFs, Word files, HTML pages, Confluence spaces, Slack threads, database rows, and scanned images. Each requires a different loader, and each loader produces text of a different quality. Building every downstream stage against a single normalized document shape, rather than against any particular loader, is what keeps the rest of the pipeline stable as sources are added.
+
+PDF extraction deserves specific attention because it is deceptively hard. A PDF stores glyph positions rather than logical text flow, so a naive extractor reading a two-column academic paper interleaves the columns into nonsense. Headers, footers, and page numbers get spliced into the middle of sentences. Scanned PDFs contain no text at all and require optical character recognition, which introduces its own error rate.
+
+Deduplication matters more than it appears. Corporate corpora are full of near-identical documents: the same policy in three revisions, the same page exported twice. Without deduplication, retrieval returns five copies of the same passage, consuming the entire context budget with one fact.
+
+Metadata captured at load time is what makes filtering possible later. Author, creation date, source system, access level, and document type must be attached to every chunk during ingestion, because reconstructing them afterwards is usually impossible.
+
+Incremental ingestion is the difference between a demo and a system. Re-embedding an entire corpus because one document changed is acceptable at a thousand documents and ruinous at a million. Content hashing detects which documents actually changed so only those are reprocessed, and stable document identifiers ensure a re-ingested file replaces its previous chunks instead of duplicating them.
+
+Failure handling should be explicit. In any large ingestion run some documents will fail to parse, and the job should record which ones and continue rather than aborting, because a corpus that is ninety-eight percent indexed is far more useful than one that is zero percent indexed.

@@ -1,0 +1,13 @@
+Chunking Strategies for Retrieval
+
+Chunking is the process of splitting source documents into smaller passages before embedding them. It exists because both embedding models and retrieval quality degrade on long inputs: an embedding of an entire 40-page document is an average of every topic it covers, which places it near nothing in particular in vector space.
+
+Fixed-size character splitting is the simplest strategy. Text is cut every N characters with an overlap of M characters between consecutive pieces. The overlap matters because a naive cut can slice a sentence, or a definition and its explanation, into two separate chunks where neither is retrievable on its own. A typical starting point is 500 characters with 50 characters of overlap.
+
+Recursive character splitting improves on this by trying a prioritized list of separators in order: paragraph breaks first, then line breaks, then sentence boundaries, then individual spaces. It only falls back to a hard character cut when no natural boundary exists inside the size budget. The result respects document structure far more often, which means fewer chunks that begin or end mid-thought.
+
+Semantic chunking goes further by embedding individual sentences and cutting wherever consecutive sentences become dissimilar, placing boundaries at genuine topic shifts. It produces the highest quality chunks and costs the most, since it requires embedding the corpus twice.
+
+Layout-aware chunking is necessary for PDFs, HTML, and documents containing tables. Character splitters destroy tables by cutting them mid-row, and they interleave headers with body text. Parsers that understand document layout keep a table intact as a single chunk and attach section headings to the passages beneath them.
+
+Chunk size is a genuine tradeoff, not a value to be optimized once. Small chunks retrieve precisely but often lack the surrounding context needed to answer a question. Large chunks carry more context but dilute the embedding and waste context window on irrelevant text. The right size depends on the corpus and should be measured with a retrieval evaluation set rather than guessed.

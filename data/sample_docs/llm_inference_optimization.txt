@@ -1,0 +1,15 @@
+LLM Inference Optimization
+
+Serving a language model efficiently is a memory management problem before it is a compute problem. Understanding where the memory goes explains nearly every optimization technique in production inference.
+
+Generation proceeds in two phases with opposite characteristics. Prefill processes the entire input prompt in parallel and is compute-bound, saturating the GPU's arithmetic units. Decode produces one token at a time, each step depending on the last, and is memory-bandwidth-bound: the GPU spends most of its time reading weights and cached state rather than computing. A serving stack that treats both phases identically will underutilize hardware in one of them.
+
+The key-value cache is what makes decode tractable. Without it, generating each new token would require recomputing attention over every previous token. The cache stores the key and value tensors for all prior positions so each step only computes attention for the newest token. Its cost is memory that grows linearly with both sequence length and batch size, and for long contexts the cache can exceed the size of the model weights themselves.
+
+Continuous batching addresses throughput. Static batching waits for every sequence in a batch to finish before starting the next, so a batch containing one long generation leaves the GPU idle while short sequences have already completed. Continuous batching admits new requests into the running batch as soon as any slot frees, which raises utilization dramatically under mixed workloads.
+
+Quantization reduces the memory footprint of the weights by storing them at lower precision. Moving from 16-bit to 8-bit or 4-bit representations shrinks the model proportionally and speeds up the memory-bound decode phase, with a quality cost that varies by method and model.
+
+Speculative decoding uses a small fast model to draft several tokens ahead, then verifies them in a single forward pass of the large model. Accepted drafts are kept and rejected ones discarded, producing multiple tokens per large-model step when the draft model is accurate.
+
+The metrics that matter differ by workload. Time to first token measures responsiveness and is dominated by prefill. Inter-token latency governs how fast text appears once streaming begins. Total throughput in tokens per second across all concurrent requests determines cost per request, and optimizing one of these often degrades another.

@@ -1,0 +1,15 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.benchmarks/
+.git/
+.github/
+.DS_Store
+.env
+data/index/
+htmlcov/
+.coverage
+*.md
+!README.md

@@ -1,0 +1,24 @@
+[project]
+name = "rag-pipeline"
+version = "1.0.0"
+description = "A hybrid-search RAG pipeline with reciprocal rank fusion, cross-encoder reranking, grounded citations, and a retrieval evaluation harness."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Rohith Sai Gude" }]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["pipeline", "evaluation"]
+py-modules = ["config", "main"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-v --strict-markers"
+markers = [
+    "slow: tests that download or run transformer models",
+]

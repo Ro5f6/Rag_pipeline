@@ -1,0 +1,24 @@
+services:
+  rag:
+    build: .
+    image: rag-pipeline
+    ports:
+      - "8000:8000"
+    environment:
+      # All optional. With none of these set, the service runs the offline
+      # extractive backend -- no credentials required. See .env.example.
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      RAG_LLM_PROVIDER: ${RAG_LLM_PROVIDER:-auto}
+      RAG_LOG_LEVEL: ${RAG_LOG_LEVEL:-INFO}
+    volumes:
+      # Mount your own documents here to index them instead of the samples:
+      #   ./my-docs:/app/data/sample_docs:ro
+      - ./data/sample_docs:/app/data/sample_docs:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      start_period: 40s
+      retries: 3
+    restart: unless-stopped
