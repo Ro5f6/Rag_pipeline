@@ -16,13 +16,14 @@ question. Every backend implements exactly one method:
     generate(prompt, *, query, chunks) -> str
 
 so switching from a hosted API to a self-hosted GPU server is a config change,
-not a code change. Three backends ship here:
+not a code change. Four backends ship here:
 
   AnthropicGenerator        Claude, via the Anthropic Messages API.
   OpenAICompatibleGenerator Any OpenAI-shaped /chat/completions endpoint. One
                             class covers OpenAI, a self-hosted vLLM or TGI
                             server, Ollama, Together, Groq, OpenRouter, and
                             most gateways -- they differ only by base_url.
+  GoogleGenerator           Gemini, via the google-genai SDK.
   ExtractiveGenerator       No API, no key, no network, no cost.
 
 Adding a fourth (Bedrock, Vertex, a bespoke internal endpoint) means writing
@@ -193,6 +194,66 @@ class OpenAICompatibleGenerator:
 
 
 # --------------------------------------------------------------------- #
+# Backend: Google Gemini
+# --------------------------------------------------------------------- #
+class GoogleGenerator:
+    """
+    Google Gemini via the google-genai SDK.
+
+    The key is read from GOOGLE_API_KEY (or GEMINI_API_KEY) when not passed
+    explicitly. base_url is honoured for gateways or a Vertex-backed endpoint.
+    """
+
+    name = "google"
+
+    def __init__(
+        self,
+        model: str = "gemini-3.5-flash",
+        max_tokens: int = 1024,
+        api_key: str = "",
+        base_url: str = "",
+        timeout: float = 60.0,
+        max_retries: int = 3,
+    ):
+        from google import genai  # imported lazily: only this backend needs the SDK
+        from google.genai import types
+
+        self._types = types
+        self.model = model
+        self.max_tokens = max_tokens
+        self.max_retries = max_retries
+        self.client = genai.Client(
+            api_key=api_key or os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY"),
+            http_options=types.HttpOptions(
+                base_url=base_url or None,
+                timeout=int(timeout * 1000) if timeout else None,  # google-genai expects milliseconds
+            ),
+        )
+
+    def _is_retryable(self, exc: Exception) -> bool:
+        from google.genai import errors
+
+        if isinstance(exc, errors.APIError):
+            code = getattr(exc, "code", None)
+            # 429 (rate limit) and 5xx are transient; a 4xx like a bad key or
+            # unknown model will never fix itself on retry.
+            return code == 429 or (isinstance(code, int) and code >= 500)
+        # Connection-level failures carry no API status code.
+        return "connection" in type(exc).__name__.lower()
+
+    def generate(self, prompt: str, *, query: str = "", chunks: Sequence = ()) -> str:
+        def call() -> str:
+            response = self.client.models.generate_content(
+                model=self.model,
+                contents=prompt,
+                config=self._types.GenerateContentConfig(max_output_tokens=self.max_tokens),
+            )
+            return response.text or ""
+
+        return _retry(call, self.max_retries, self._is_retryable, "Google")
+
+
+# --------------------------------------------------------------------- #
 # Backend: extractive (no API key, no network, no cost)
 # --------------------------------------------------------------------- #
 _STOPWORDS = {
@@ -295,6 +356,7 @@ class ExtractiveGenerator:
 _BACKENDS: Dict[str, type] = {
     "anthropic": AnthropicGenerator,
     "openai": OpenAICompatibleGenerator,
+    "google": GoogleGenerator,
     "extractive": ExtractiveGenerator,
 }
 
@@ -302,12 +364,14 @@ _BACKENDS: Dict[str, type] = {
 _DEFAULT_MODELS = {
     "anthropic": "claude-sonnet-5",
     "openai": "gpt-4o-mini",
+    "google": "gemini-3.5-flash",
 }
 
 # Which env var implies "this provider is configured and ready".
 _PROVIDER_KEY_VARS = {
     "anthropic": "ANTHROPIC_API_KEY",
     "openai": "OPENAI_API_KEY",
+    "google": "GOOGLE_API_KEY",
 }
 
 
@@ -326,6 +390,8 @@ def detect_provider(api_key: str = "", base_url: str = "") -> str:
         return "anthropic"
     if os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_BASE_URL"):
         return "openai"
+    if os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY"):
+        return "google"
     return "extractive"
 
 

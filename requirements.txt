@@ -14,6 +14,7 @@ numpy<2.0
 # httpx 0.28 removed, so the client raises TypeError the moment a key is set.
 anthropic==0.122.0
 # openai==1.51.0   # uncomment for OpenAI / vLLM / Ollama / Groq / Together
+google-genai==1.15.0   # Google Gemini backend
 
 # Test / dev
 pytest==8.3.3
