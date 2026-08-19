@@ -134,7 +134,8 @@ CI runs both on every push, so retrieval quality is a regression gate.
 - **Small corpus** (20 docs) — Hit@5 saturates, so Hit@1 is the discriminating
   metric.
 - **BM25 rebuilds fully on every ingest** — fine for batch, wrong for high-write.
-- **`.txt` only** — no PDF/HTML layout parsing.
+- **`.txt` and `.pdf`** — PDF text is extracted per-page via `pypdf`; scanned
+  or image-only PDFs (no text layer) are skipped, and no layout/table awareness.
 - **No generation-quality eval** — would need an LLM judge, breaking the no-key
   guarantee; retrieval metrics cap everything downstream, so they came first.
 

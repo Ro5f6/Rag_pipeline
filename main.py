@@ -66,7 +66,7 @@ app = FastAPI(
 # Schemas
 # --------------------------------------------------------------------- #
 class IngestRequest(BaseModel):
-    directory: str = Field(default="./data/sample_docs", description="Directory of .txt documents")
+    directory: str = Field(default="./data/sample_docs", description="Directory of .txt or .pdf documents")
 
 
 class IngestResponse(BaseModel):

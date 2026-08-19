@@ -14,8 +14,11 @@ a database dump, a CDC stream from Postgres) while every downstream block
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import Callable, List, Dict, Any
 import hashlib
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -43,9 +46,53 @@ def _stable_id(source: str) -> str:
     return hashlib.sha256(source.encode("utf-8")).hexdigest()[:16]
 
 
-def load_documents_from_dir(directory: str, glob_pattern: str = "*.txt") -> List[Document]:
+def _read_txt(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
+
+
+def _read_pdf(path: Path) -> str:
     """
-    Load all text files in a directory into Document objects.
+    Extract text from a PDF, page by page.
+
+    pypdf is imported lazily so the dependency is only needed by corpora that
+    actually contain PDFs -- a .txt-only project never pays for it. Extraction
+    reads the PDF's text layer; a scanned or image-only PDF yields no text and
+    is skipped by the loader (OCR is a separate, heavier problem this does not
+    pretend to solve).
+    """
+    from pypdf import PdfReader
+
+    reader = PdfReader(str(path))
+    return "\n".join(page.extract_text() or "" for page in reader.pages)
+
+
+# One reader per extension. Adding a format (.md, .html, .docx) is one entry
+# here plus its reader function -- nothing downstream of `Document` changes.
+_READERS: Dict[str, Callable[[Path], str]] = {
+    ".txt": _read_txt,
+    ".pdf": _read_pdf,
+}
+
+SUPPORTED_SUFFIXES = tuple(_READERS)
+
+
+def _iter_corpus_files(directory: str) -> List[Path]:
+    """Every supported document file in the directory, sorted for determinism."""
+    return sorted(
+        p
+        for p in Path(directory).glob("*")
+        if p.is_file() and p.suffix.lower() in _READERS
+    )
+
+
+def load_documents_from_dir(directory: str) -> List[Document]:
+    """
+    Load every supported file in a directory into Document objects.
+
+    File type is dispatched by extension (see _READERS): .txt and .pdf today.
+    A file that cannot be read, or a PDF with no extractable text layer, is
+    skipped with a warning rather than aborting the whole ingest -- one bad
+    file in a large corpus should not take the rest down with it.
 
     In an enterprise iteration you would replace this single function with a
     pluggable `DocumentLoader` interface (LoaderFromS3, LoaderFromConfluence,
@@ -53,8 +100,17 @@ def load_documents_from_dir(directory: str, glob_pattern: str = "*.txt") -> List
     never has to know the difference.
     """
     docs: List[Document] = []
-    for path in sorted(Path(directory).glob(glob_pattern)):
-        text = path.read_text(encoding="utf-8")
+    for path in _iter_corpus_files(directory):
+        try:
+            text = _READERS[path.suffix.lower()](path)
+        except Exception as exc:  # noqa: BLE001 - one unreadable file must not abort ingest
+            logger.warning("Skipping %s: could not read (%s)", path.name, exc)
+            continue
+
+        if not text.strip():
+            logger.warning("Skipping %s: no extractable text (scanned/image PDF?)", path.name)
+            continue
+
         docs.append(
             Document(
                 id=_stable_id(str(path)),
@@ -66,7 +122,7 @@ def load_documents_from_dir(directory: str, glob_pattern: str = "*.txt") -> List
     return docs
 
 
-def corpus_fingerprint(directory: str, glob_pattern: str = "*.txt") -> str:
+def corpus_fingerprint(directory: str) -> str:
     """
     A cheap identity for "the corpus as it currently exists on disk".
 
@@ -80,9 +136,12 @@ def corpus_fingerprint(directory: str, glob_pattern: str = "*.txt") -> str:
     reading every document to decide whether to read every document defeats the
     purpose on a large corpus. This misses an edit that preserves both size and
     mtime, which is rare enough to accept and is why `--rebuild` exists.
+
+    Uses the same file enumeration as loading, so a PDF added to the corpus
+    invalidates the index exactly as a .txt would.
     """
     parts = []
-    for path in sorted(Path(directory).glob(glob_pattern)):
+    for path in _iter_corpus_files(directory):
         stat = path.stat()
         parts.append(f"{path.name}:{stat.st_size}:{stat.st_mtime_ns}")
 
