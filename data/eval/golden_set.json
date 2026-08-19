@@ -307,6 +307,156 @@
       "question": "What goes wrong when facts are baked into model weights instead of looked up?",
       "relevant_docs": ["finetuning_vs_rag.txt"],
       "query_type": "semantic"
+    },
+    {
+      "id": "q52",
+      "question": "What is the jump consistent hash algorithm and why does it use minimal memory?",
+      "relevant_docs": ["A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q53",
+      "question": "How does ShockHash achieve near optimal-space minimal perfect hashing beyond brute force?",
+      "relevant_docs": ["2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q54",
+      "question": "How can SAT solver technology be used to construct minimal perfect hash functions?",
+      "relevant_docs": ["2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q55",
+      "question": "What is the hash, displace, and compress (CHD) technique for building minimal perfect hash functions?",
+      "relevant_docs": ["2009 - Hash, Displace, and Compress (esa09).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q56",
+      "question": "How does the original hash-and-displace method efficiently evaluate minimum perfect hash functions?",
+      "relevant_docs": ["1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q57",
+      "question": "What is monotone minimal perfect hashing and how does it search a sorted table in O(1) accesses?",
+      "relevant_docs": ["2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q58",
+      "question": "How does the CHM algorithm generate minimal perfect hash functions using random graphs?",
+      "relevant_docs": ["1992 - An Optimal Algorithm for Generating Minimal Perfect Hash Functions (CHM92) (10.1.1.51.5566).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q59",
+      "question": "What is Cichelli's method for constructing minimal perfect hash functions?",
+      "relevant_docs": ["1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q60",
+      "question": "How can minimal perfect hash functions be constructed for very large databases that exceed internal memory?",
+      "relevant_docs": ["2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q61",
+      "question": "What are balanced families of perfect hash functions and what are they applied to?",
+      "relevant_docs": ["2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q62",
+      "question": "How can perfect hash families be constructed in polynomial time?",
+      "relevant_docs": ["2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q63",
+      "question": "How does the fast scalable construction approach build minimal perfect hash functions?",
+      "relevant_docs": ["2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q64",
+      "question": "What makes the 2005 practical minimal perfect hashing method scalable to large key sets?",
+      "relevant_docs": ["2005 - A Practical Minimal Perfect Hashing Method.pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q65",
+      "question": "What graph-theoretic obstacles arise when trying to build perfect hash functions?",
+      "relevant_docs": ["1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q66",
+      "question": "What common family unifies several perfect hashing methods based on random graphs and hypergraphs?",
+      "relevant_docs": ["A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q67",
+      "question": "What is an extended hash indicator table and how does it define a dynamic perfect hash function?",
+      "relevant_docs": ["A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q68",
+      "question": "What does an informal analysis conclude about the cost of searching for perfect hash functions?",
+      "relevant_docs": ["1989 - An Informal Analysis of Perfect Hash Function Search.pdf"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q69",
+      "question": "What versatile graph data structure is designed for edge-oriented graph algorithms?",
+      "relevant_docs": ["1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q70",
+      "question": "What is 5-level paging and 5-level EPT, and how much address space do they enable on Intel processors?",
+      "relevant_docs": ["5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q71",
+      "question": "What are the main architectural components and security vulnerabilities of Microsoft Hyper-V?",
+      "relevant_docs": ["A Dive in to Hyper-V Architecture and Vulnerabilities.pdf", "A Dive in to Hyper-V Architecture and Vulnerabilities - Slides (BlackHat 2018).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q72",
+      "question": "What technologies underpin 100G networking?",
+      "relevant_docs": ["100G Networking Technology Overview - Slides - Toronto (August 2016).pdf"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q73",
+      "question": "How do different programming languages compare in performance for economic computation?",
+      "relevant_docs": ["A Comparison of Programming Languages in Economics (16-Jun-2014).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q74",
+      "question": "How does main-memory partitioning speed up large-scale comparison and radix sort?",
+      "relevant_docs": ["A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q75",
+      "question": "How can hardware transactional memory optimize Patricia trie data structures?",
+      "relevant_docs": ["A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q76",
+      "question": "What foundational machine learning topics does Hal Daume's course cover?",
+      "relevant_docs": ["A Course in Machine Learning (ciml-v0_9-all).pdf"],
+      "query_type": "semantic"
     }
   ]
 }
