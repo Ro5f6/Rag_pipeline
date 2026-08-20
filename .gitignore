@@ -26,6 +26,10 @@ htmlcov/
 # Persisted indexes (rebuilt by `make ingest`)
 data/index/
 
+# Corpus documents -- kept out of git (large / third-party); shared out of band.
+# The golden set in data/eval/ still documents which files the eval expects.
+data/sample_docs/
+
 # Model caches
 .cache/
 sentence_transformers/
