@@ -28,6 +28,17 @@ Or in Docker (model weights baked into the image):
 docker compose up --build
 ```
 
+### Corpus data
+
+The evaluation corpus (`data/sample_docs/`) is **not** tracked in git — it is
+large and partly third-party. Download it and drop the files into
+`data/sample_docs/` before running ingest or `make eval`:
+
+> **Corpus:** https://drive.google.com/drive/folders/19ctQULoc0GW9M9MpEqVjeMwQiZ_hiHjs
+
+The labelled golden set in `data/eval/golden_set.json` stays in the repo and
+documents exactly which files the evaluation expects.
+
 ## Results
 
 Four retrieval configurations over a 20-document corpus, 51 labelled questions.
