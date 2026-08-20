@@ -1,36 +1,36 @@
 {
   "bm25": {
     "overall": {
-      "hit@1": 0.6667,
-      "hit@3": 0.9412,
-      "hit@5": 0.9412,
-      "mrr": 0.7941,
-      "ndcg@5": 0.8322
+      "hit@1": 0.6842,
+      "hit@3": 0.7895,
+      "hit@5": 0.8289,
+      "mrr": 0.7423,
+      "ndcg@5": 0.7631
     },
     "by_query_type": {
       "lexical": {
-        "hit@1": 0.6667,
-        "hit@3": 0.9333,
-        "hit@5": 0.9333,
-        "mrr": 0.7778,
-        "ndcg@5": 0.8175
+        "hit@1": 0.7083,
+        "hit@3": 0.8333,
+        "hit@5": 0.9167,
+        "mrr": 0.7917,
+        "ndcg@5": 0.8231
       },
       "mixed": {
-        "hit@1": 0.9231,
-        "hit@3": 0.9231,
-        "hit@5": 0.9231,
-        "mrr": 0.9231,
-        "ndcg@5": 0.9231
+        "hit@1": 0.8261,
+        "hit@3": 0.8261,
+        "hit@5": 0.8261,
+        "mrr": 0.8261,
+        "ndcg@5": 0.8261
       },
       "semantic": {
-        "hit@1": 0.5217,
-        "hit@3": 0.9565,
-        "hit@5": 0.9565,
-        "mrr": 0.7319,
-        "ndcg@5": 0.7904
+        "hit@1": 0.5517,
+        "hit@3": 0.7241,
+        "hit@5": 0.7586,
+        "mrr": 0.6351,
+        "ndcg@5": 0.6636
       }
     },
-    "latency_ms_avg": 0.2,
+    "latency_ms_avg": 3.6,
     "per_question": [
       {
         "id": "q01",
@@ -40,11 +40,11 @@
           "vllm_overview.txt"
         ],
         "retrieved": [
-          "rag_security.txt",
-          "finetuning_vs_rag.txt",
-          "observability_tracing.txt",
-          "agentic_rag.txt",
-          "agentic_rag.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 0.0,
         "hit@3": 0.0,
@@ -63,9 +63,9 @@
         "retrieved": [
           "llm_inference_optimization.txt",
           "vllm_overview.txt",
-          "rag_security.txt",
-          "llm_inference_optimization.txt",
-          "query_rewriting.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -83,9 +83,9 @@
         "retrieved": [
           "llm_inference_optimization.txt",
           "query_rewriting.txt",
-          "llm_inference_optimization.txt",
-          "llm_inference_optimization.txt",
-          "observability_tracing.txt"
+          "vector_databases.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -102,10 +102,10 @@
         ],
         "retrieved": [
           "llm_inference_optimization.txt",
-          "document_ingestion.txt",
-          "reranking_cross_encoders.txt",
-          "finetuning_vs_rag.txt",
-          "graph_rag.txt"
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -122,10 +122,10 @@
         ],
         "retrieved": [
           "llm_inference_optimization.txt",
-          "rag_security.txt",
-          "document_ingestion.txt",
-          "deployment_scaling.txt",
-          "prompt_grounding_citations.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -141,17 +141,17 @@
           "rag_basics.txt"
         ],
         "retrieved": [
-          "caching_and_memory.txt",
           "rag_basics.txt",
-          "chunking_strategies.txt",
           "rag_evaluation_metrics.txt",
-          "rag_security.txt"
+          "caching_and_memory.txt",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "agentic_rag.txt"
         ],
-        "hit@1": 0.0,
+        "hit@1": 1.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 0.5,
-        "ndcg@5": 0.6309297535714575
+        "mrr": 1.0,
+        "ndcg@5": 1.0
       },
       {
         "id": "q07",
@@ -161,17 +161,17 @@
           "chunking_strategies.txt"
         ],
         "retrieved": [
-          "document_ingestion.txt",
-          "document_ingestion.txt",
-          "chunking_strategies.txt",
-          "caching_and_memory.txt",
-          "vector_databases.txt"
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 0.0,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "mrr": 0.5,
-        "ndcg@5": 0.6309297535714575
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
       },
       {
         "id": "q08",
@@ -182,10 +182,10 @@
         ],
         "retrieved": [
           "chunking_strategies.txt",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "rag_security.txt",
-          "chunking_strategies.txt",
-          "reranking_cross_encoders.txt",
-          "agentic_rag.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -201,17 +201,17 @@
           "chunking_strategies.txt"
         ],
         "retrieved": [
-          "chunking_strategies.txt",
           "document_ingestion.txt",
-          "embedding_models.txt",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
           "chunking_strategies.txt",
-          "prompt_grounding_citations.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
         ],
-        "hit@1": 1.0,
+        "hit@1": 0.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5
       },
       {
         "id": "q10",
@@ -222,9 +222,9 @@
         ],
         "retrieved": [
           "embedding_models.txt",
-          "finetuning_vs_rag.txt",
-          "rag_security.txt",
-          "prompt_grounding_citations.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "embedding_models.txt"
         ],
         "hit@1": 1.0,
@@ -241,17 +241,17 @@
           "embedding_models.txt"
         ],
         "retrieved": [
-          "prompt_grounding_citations.txt",
           "embedding_models.txt",
-          "rag_security.txt",
-          "graph_rag.txt",
-          "query_rewriting.txt"
+          "query_rewriting.txt",
+          "prompt_grounding_citations.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "embedding_models.txt"
         ],
-        "hit@1": 0.0,
+        "hit@1": 1.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 0.5,
-        "ndcg@5": 0.6309297535714575
+        "mrr": 1.0,
+        "ndcg@5": 1.0
       },
       {
         "id": "q12",
@@ -261,17 +261,17 @@
           "embedding_models.txt"
         ],
         "retrieved": [
-          "embedding_models.txt",
-          "embedding_models.txt",
-          "prompt_grounding_citations.txt",
-          "llm_inference_optimization.txt",
-          "deployment_scaling.txt"
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "embedding_models.txt"
         ],
-        "hit@1": 1.0,
-        "hit@3": 1.0,
+        "hit@1": 0.0,
+        "hit@3": 0.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.25,
+        "ndcg@5": 0.43067655807339306
       },
       {
         "id": "q13",
@@ -283,9 +283,9 @@
         "retrieved": [
           "vector_databases.txt",
           "deployment_scaling.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "rag_evaluation_metrics.txt",
-          "vector_databases.txt",
-          "vector_databases.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -304,8 +304,8 @@
           "vector_databases.txt",
           "vector_databases.txt",
           "vector_databases.txt",
-          "llm_inference_optimization.txt",
-          "deployment_scaling.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -325,8 +325,8 @@
           "vector_databases.txt",
           "rag_security.txt",
           "prompt_grounding_citations.txt",
-          "hybrid_search_fusion.txt",
-          "document_ingestion.txt"
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "prompt_grounding_citations.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -343,10 +343,10 @@
         ],
         "retrieved": [
           "bm25_keyword_search.txt",
-          "rag_security.txt",
-          "prompt_grounding_citations.txt",
-          "agentic_rag.txt",
-          "reranking_cross_encoders.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -363,10 +363,10 @@
         ],
         "retrieved": [
           "bm25_keyword_search.txt",
-          "reranking_cross_encoders.txt",
-          "finetuning_vs_rag.txt",
-          "prompt_grounding_citations.txt",
-          "graph_rag.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -383,16 +383,16 @@
         ],
         "retrieved": [
           "rag_basics.txt",
-          "vector_databases.txt",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
           "bm25_keyword_search.txt",
-          "embedding_models.txt",
-          "hybrid_search_fusion.txt"
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf"
         ],
         "hit@1": 0.0,
-        "hit@3": 1.0,
+        "hit@3": 0.0,
         "hit@5": 1.0,
-        "mrr": 0.3333333333333333,
-        "ndcg@5": 0.5
+        "mrr": 0.25,
+        "ndcg@5": 0.43067655807339306
       },
       {
         "id": "q19",
@@ -402,17 +402,17 @@
           "hybrid_search_fusion.txt"
         ],
         "retrieved": [
-          "embedding_models.txt",
-          "rag_basics.txt",
-          "hybrid_search_fusion.txt",
-          "prompt_grounding_citations.txt",
-          "rag_evaluation_metrics.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 0.0,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "mrr": 0.3333333333333333,
-        "ndcg@5": 0.5
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
       },
       {
         "id": "q20",
@@ -424,8 +424,8 @@
         "retrieved": [
           "hybrid_search_fusion.txt",
           "rag_basics.txt",
-          "prompt_grounding_citations.txt",
-          "rag_security.txt",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "hybrid_search_fusion.txt"
         ],
         "hit@1": 1.0,
@@ -442,17 +442,17 @@
           "reranking_cross_encoders.txt"
         ],
         "retrieved": [
-          "document_ingestion.txt",
           "reranking_cross_encoders.txt",
-          "reranking_cross_encoders.txt",
-          "chunking_strategies.txt",
-          "reranking_cross_encoders.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "document_ingestion.txt"
         ],
-        "hit@1": 0.0,
+        "hit@1": 1.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 0.5,
-        "ndcg@5": 0.6309297535714575
+        "mrr": 1.0,
+        "ndcg@5": 1.0
       },
       {
         "id": "q22",
@@ -462,17 +462,17 @@
           "reranking_cross_encoders.txt"
         ],
         "retrieved": [
-          "deployment_scaling.txt",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "reranking_cross_encoders.txt",
-          "observability_tracing.txt",
-          "caching_and_memory.txt",
-          "agentic_rag.txt"
+          "deployment_scaling.txt",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
         ],
         "hit@1": 0.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 0.5,
-        "ndcg@5": 0.6309297535714575
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5
       },
       {
         "id": "q23",
@@ -483,10 +483,10 @@
         ],
         "retrieved": [
           "rag_evaluation_metrics.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "hybrid_search_fusion.txt",
-          "rag_security.txt",
-          "hybrid_search_fusion.txt",
-          "graph_rag.txt"
+          "hybrid_search_fusion.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -503,10 +503,10 @@
         ],
         "retrieved": [
           "rag_evaluation_metrics.txt",
-          "observability_tracing.txt",
-          "prompt_grounding_citations.txt",
-          "rag_evaluation_metrics.txt",
-          "query_rewriting.txt"
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -524,16 +524,16 @@
         ],
         "retrieved": [
           "observability_tracing.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "rag_evaluation_metrics.txt",
-          "prompt_grounding_citations.txt",
-          "caching_and_memory.txt",
-          "rag_evaluation_metrics.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
         "mrr": 1.0,
-        "ndcg@5": 1.0
+        "ndcg@5": 0.9197207891481876
       },
       {
         "id": "q26",
@@ -543,11 +543,11 @@
           "rag_evaluation_metrics.txt"
         ],
         "retrieved": [
-          "agentic_rag.txt",
-          "caching_and_memory.txt",
-          "document_ingestion.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "graph_rag.txt",
-          "caching_and_memory.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 0.0,
         "hit@3": 0.0,
@@ -563,17 +563,17 @@
           "prompt_grounding_citations.txt"
         ],
         "retrieved": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "finetuning_vs_rag.txt",
-          "prompt_grounding_citations.txt",
-          "agentic_rag.txt",
-          "prompt_grounding_citations.txt",
-          "graph_rag.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 0.0,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "mrr": 0.5,
-        "ndcg@5": 0.6309297535714575
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
       },
       {
         "id": "q28",
@@ -584,10 +584,10 @@
         ],
         "retrieved": [
           "prompt_grounding_citations.txt",
-          "prompt_grounding_citations.txt",
           "chunking_strategies.txt",
-          "hybrid_search_fusion.txt",
-          "caching_and_memory.txt"
+          "prompt_grounding_citations.txt",
+          "rag_evaluation_metrics.txt",
+          "hybrid_search_fusion.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -603,17 +603,17 @@
           "query_rewriting.txt"
         ],
         "retrieved": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "query_rewriting.txt",
-          "rag_security.txt",
-          "hybrid_search_fusion.txt",
-          "agentic_rag.txt",
-          "prompt_grounding_citations.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
-        "hit@1": 1.0,
+        "hit@1": 0.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
       },
       {
         "id": "q30",
@@ -624,10 +624,10 @@
         ],
         "retrieved": [
           "query_rewriting.txt",
-          "document_ingestion.txt",
-          "reranking_cross_encoders.txt",
-          "finetuning_vs_rag.txt",
-          "graph_rag.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -645,8 +645,8 @@
         "retrieved": [
           "rag_security.txt",
           "prompt_grounding_citations.txt",
-          "finetuning_vs_rag.txt",
-          "rag_security.txt",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
           "rag_evaluation_metrics.txt"
         ],
         "hit@1": 1.0,
@@ -664,10 +664,10 @@
         ],
         "retrieved": [
           "rag_security.txt",
-          "document_ingestion.txt",
           "prompt_grounding_citations.txt",
-          "observability_tracing.txt",
-          "rag_security.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -684,10 +684,10 @@
         ],
         "retrieved": [
           "rag_security.txt",
-          "document_ingestion.txt",
           "graph_rag.txt",
-          "vector_databases.txt",
-          "rag_basics.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "document_ingestion.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -704,10 +704,10 @@
         ],
         "retrieved": [
           "caching_and_memory.txt",
-          "llm_inference_optimization.txt",
           "caching_and_memory.txt",
-          "deployment_scaling.txt",
-          "prompt_grounding_citations.txt"
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "llm_inference_optimization.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -723,17 +723,17 @@
           "caching_and_memory.txt"
         ],
         "retrieved": [
-          "agentic_rag.txt",
           "caching_and_memory.txt",
           "observability_tracing.txt",
-          "embedding_models.txt",
-          "llm_inference_optimization.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "agentic_rag.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
-        "hit@1": 0.0,
+        "hit@1": 1.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 0.5,
-        "ndcg@5": 0.6309297535714575
+        "mrr": 1.0,
+        "ndcg@5": 1.0
       },
       {
         "id": "q36",
@@ -744,10 +744,10 @@
         ],
         "retrieved": [
           "caching_and_memory.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "caching_and_memory.txt",
-          "query_rewriting.txt",
-          "rag_evaluation_metrics.txt",
-          "reranking_cross_encoders.txt"
+          "query_rewriting.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -766,8 +766,8 @@
           "agentic_rag.txt",
           "reranking_cross_encoders.txt",
           "query_rewriting.txt",
-          "graph_rag.txt",
-          "document_ingestion.txt"
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "graph_rag.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -783,17 +783,17 @@
           "agentic_rag.txt"
         ],
         "retrieved": [
-          "hybrid_search_fusion.txt",
-          "agentic_rag.txt",
-          "hybrid_search_fusion.txt",
-          "llm_inference_optimization.txt",
-          "vector_databases.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 0.0,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "mrr": 0.5,
-        "ndcg@5": 0.6309297535714575
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
       },
       {
         "id": "q39",
@@ -806,8 +806,8 @@
           "agentic_rag.txt",
           "agentic_rag.txt",
           "vector_databases.txt",
-          "prompt_grounding_citations.txt",
-          "deployment_scaling.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "query_rewriting.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -824,10 +824,10 @@
         ],
         "retrieved": [
           "graph_rag.txt",
-          "prompt_grounding_citations.txt",
           "caching_and_memory.txt",
-          "reranking_cross_encoders.txt",
-          "finetuning_vs_rag.txt"
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "prompt_grounding_citations.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -843,17 +843,17 @@
           "graph_rag.txt"
         ],
         "retrieved": [
-          "graph_rag.txt",
-          "graph_rag.txt",
-          "chunking_strategies.txt",
-          "finetuning_vs_rag.txt",
-          "hybrid_search_fusion.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
-        "hit@1": 1.0,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
       },
       {
         "id": "q42",
@@ -864,10 +864,10 @@
         ],
         "retrieved": [
           "document_ingestion.txt",
-          "deployment_scaling.txt",
-          "hybrid_search_fusion.txt",
-          "vector_databases.txt",
-          "finetuning_vs_rag.txt"
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -885,9 +885,9 @@
         "retrieved": [
           "document_ingestion.txt",
           "caching_and_memory.txt",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
           "rag_security.txt",
-          "rag_security.txt",
-          "prompt_grounding_citations.txt"
+          "rag_security.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -904,10 +904,10 @@
         ],
         "retrieved": [
           "document_ingestion.txt",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
           "query_rewriting.txt",
           "query_rewriting.txt",
-          "rag_security.txt",
-          "finetuning_vs_rag.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -923,11 +923,11 @@
           "observability_tracing.txt"
         ],
         "retrieved": [
-          "prompt_grounding_citations.txt",
-          "observability_tracing.txt",
           "agentic_rag.txt",
-          "vector_databases.txt",
-          "reranking_cross_encoders.txt"
+          "observability_tracing.txt",
+          "reranking_cross_encoders.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 0.0,
         "hit@3": 1.0,
@@ -945,8 +945,8 @@
         "retrieved": [
           "rag_security.txt",
           "observability_tracing.txt",
-          "query_rewriting.txt",
-          "chunking_strategies.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "prompt_grounding_citations.txt"
         ],
         "hit@1": 0.0,
@@ -964,10 +964,10 @@
         ],
         "retrieved": [
           "deployment_scaling.txt",
-          "document_ingestion.txt",
           "rag_security.txt",
           "document_ingestion.txt",
-          "deployment_scaling.txt"
+          "document_ingestion.txt",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -983,17 +983,17 @@
           "deployment_scaling.txt"
         ],
         "retrieved": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "document_ingestion.txt",
-          "chunking_strategies.txt",
-          "deployment_scaling.txt",
-          "reranking_cross_encoders.txt",
-          "prompt_grounding_citations.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 0.0,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "mrr": 0.3333333333333333,
-        "ndcg@5": 0.5
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
       },
       {
         "id": "q49",
@@ -1003,17 +1003,17 @@
           "deployment_scaling.txt"
         ],
         "retrieved": [
-          "deployment_scaling.txt",
-          "rag_security.txt",
-          "prompt_grounding_citations.txt",
-          "rag_security.txt",
-          "chunking_strategies.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
-        "hit@1": 1.0,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
       },
       {
         "id": "q50",
@@ -1024,10 +1024,10 @@
         ],
         "retrieved": [
           "observability_tracing.txt",
-          "query_rewriting.txt",
-          "rag_basics.txt",
-          "rag_security.txt",
-          "document_ingestion.txt"
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "rag_security.txt"
         ],
         "hit@1": 0.0,
         "hit@3": 0.0,
@@ -1045,8 +1045,8 @@
         "retrieved": [
           "rag_basics.txt",
           "finetuning_vs_rag.txt",
-          "finetuning_vs_rag.txt",
           "rag_security.txt",
+          "finetuning_vs_rag.txt",
           "deployment_scaling.txt"
         ],
         "hit@1": 0.0,
@@ -1054,41 +1054,542 @@
         "hit@5": 1.0,
         "mrr": 0.5,
         "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q52",
+        "question": "What is the jump consistent hash algorithm and why does it use minimal memory?",
+        "query_type": "lexical",
+        "expected": [
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
+        ],
+        "retrieved": [
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q53",
+        "question": "How does ShockHash achieve near optimal-space minimal perfect hashing beyond brute force?",
+        "query_type": "lexical",
+        "expected": [
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
+        ],
+        "retrieved": [
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q54",
+        "question": "How can SAT solver technology be used to construct minimal perfect hash functions?",
+        "query_type": "mixed",
+        "expected": [
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf"
+        ],
+        "retrieved": [
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q55",
+        "question": "What is the hash, displace, and compress (CHD) technique for building minimal perfect hash functions?",
+        "query_type": "lexical",
+        "expected": [
+          "2009 - Hash, Displace, and Compress (esa09).pdf"
+        ],
+        "retrieved": [
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2009 - Hash, Displace, and Compress (esa09).pdf",
+          "2009 - Hash, Displace, and Compress (esa09).pdf",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q56",
+        "question": "How does the original hash-and-displace method efficiently evaluate minimum perfect hash functions?",
+        "query_type": "mixed",
+        "expected": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf"
+        ],
+        "retrieved": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q57",
+        "question": "What is monotone minimal perfect hashing and how does it search a sorted table in O(1) accesses?",
+        "query_type": "lexical",
+        "expected": [
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf"
+        ],
+        "retrieved": [
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q58",
+        "question": "How does the CHM algorithm generate minimal perfect hash functions using random graphs?",
+        "query_type": "mixed",
+        "expected": [
+          "1992 - An Optimal Algorithm for Generating Minimal Perfect Hash Functions (CHM92) (10.1.1.51.5566).pdf"
+        ],
+        "retrieved": [
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q59",
+        "question": "What is Cichelli's method for constructing minimal perfect hash functions?",
+        "query_type": "mixed",
+        "expected": [
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf"
+        ],
+        "retrieved": [
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q60",
+        "question": "How can minimal perfect hash functions be constructed for very large databases that exceed internal memory?",
+        "query_type": "semantic",
+        "expected": [
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf"
+        ],
+        "retrieved": [
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2009 - Hash, Displace, and Compress (esa09).pdf",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q61",
+        "question": "What are balanced families of perfect hash functions and what are they applied to?",
+        "query_type": "lexical",
+        "expected": [
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf"
+        ],
+        "retrieved": [
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q62",
+        "question": "How can perfect hash families be constructed in polynomial time?",
+        "query_type": "mixed",
+        "expected": [
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf"
+        ],
+        "retrieved": [
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q63",
+        "question": "How does the fast scalable construction approach build minimal perfect hash functions?",
+        "query_type": "semantic",
+        "expected": [
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf"
+        ],
+        "retrieved": [
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q64",
+        "question": "What makes the 2005 practical minimal perfect hashing method scalable to large key sets?",
+        "query_type": "mixed",
+        "expected": [
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "retrieved": [
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q65",
+        "question": "What graph-theoretic obstacles arise when trying to build perfect hash functions?",
+        "query_type": "lexical",
+        "expected": [
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf"
+        ],
+        "retrieved": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 1.0,
+        "mrr": 0.25,
+        "ndcg@5": 0.43067655807339306
+      },
+      {
+        "id": "q66",
+        "question": "What common family unifies several perfect hashing methods based on random graphs and hypergraphs?",
+        "query_type": "semantic",
+        "expected": [
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"
+        ],
+        "retrieved": [
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q67",
+        "question": "What is an extended hash indicator table and how does it define a dynamic perfect hash function?",
+        "query_type": "lexical",
+        "expected": [
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF"
+        ],
+        "retrieved": [
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q68",
+        "question": "What does an informal analysis conclude about the cost of searching for perfect hash functions?",
+        "query_type": "semantic",
+        "expected": [
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf"
+        ],
+        "retrieved": [
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q69",
+        "question": "What versatile graph data structure is designed for edge-oriented graph algorithms?",
+        "query_type": "mixed",
+        "expected": [
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf"
+        ],
+        "retrieved": [
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q70",
+        "question": "What is 5-level paging and 5-level EPT, and how much address space do they enable on Intel processors?",
+        "query_type": "lexical",
+        "expected": [
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf"
+        ],
+        "retrieved": [
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q71",
+        "question": "What are the main architectural components and security vulnerabilities of Microsoft Hyper-V?",
+        "query_type": "mixed",
+        "expected": [
+          "A Dive in to Hyper-V Architecture and Vulnerabilities.pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities - Slides (BlackHat 2018).pdf"
+        ],
+        "retrieved": [
+          "rag_security.txt",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q72",
+        "question": "What technologies underpin 100G networking?",
+        "query_type": "semantic",
+        "expected": [
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf"
+        ],
+        "retrieved": [
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q73",
+        "question": "How do different programming languages compare in performance for economic computation?",
+        "query_type": "mixed",
+        "expected": [
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf"
+        ],
+        "retrieved": [
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q74",
+        "question": "How does main-memory partitioning speed up large-scale comparison and radix sort?",
+        "query_type": "mixed",
+        "expected": [
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
+        ],
+        "retrieved": [
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q75",
+        "question": "How can hardware transactional memory optimize Patricia trie data structures?",
+        "query_type": "lexical",
+        "expected": [
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"
+        ],
+        "retrieved": [
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q76",
+        "question": "What foundational machine learning topics does Hal Daume's course cover?",
+        "query_type": "semantic",
+        "expected": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
+        ],
+        "retrieved": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
       }
     ]
   },
   "vector": {
     "overall": {
-      "hit@1": 0.902,
-      "hit@3": 0.9804,
-      "hit@5": 1.0,
-      "mrr": 0.9461,
-      "ndcg@5": 0.9575
+      "hit@1": 0.8158,
+      "hit@3": 0.9342,
+      "hit@5": 0.9605,
+      "mrr": 0.8816,
+      "ndcg@5": 0.9002
     },
     "by_query_type": {
       "lexical": {
-        "hit@1": 1.0,
+        "hit@1": 0.9167,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.9583,
+        "ndcg@5": 0.9692
       },
       "mixed": {
-        "hit@1": 1.0,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "hit@1": 0.8261,
+        "hit@3": 0.913,
+        "hit@5": 0.913,
+        "mrr": 0.8696,
+        "ndcg@5": 0.881
       },
       "semantic": {
-        "hit@1": 0.7826,
-        "hit@3": 0.9565,
-        "hit@5": 1.0,
-        "mrr": 0.8804,
-        "ndcg@5": 0.9057
+        "hit@1": 0.7241,
+        "hit@3": 0.8966,
+        "hit@5": 0.9655,
+        "mrr": 0.8276,
+        "ndcg@5": 0.8584
       }
     },
-    "latency_ms_avg": 8.7,
+    "latency_ms_avg": 10.5,
     "per_question": [
       {
         "id": "q01",
@@ -1101,8 +1602,8 @@
           "vllm_overview.txt",
           "caching_and_memory.txt",
           "llm_inference_optimization.txt",
-          "vllm_overview.txt",
-          "caching_and_memory.txt"
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1121,9 +1622,9 @@
         "retrieved": [
           "llm_inference_optimization.txt",
           "vllm_overview.txt",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
           "agentic_rag.txt",
-          "deployment_scaling.txt",
-          "llm_inference_optimization.txt"
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1141,9 +1642,9 @@
         "retrieved": [
           "llm_inference_optimization.txt",
           "llm_inference_optimization.txt",
-          "llm_inference_optimization.txt",
-          "llm_inference_optimization.txt",
-          "vllm_overview.txt"
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "llm_inference_optimization.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1160,10 +1661,10 @@
         ],
         "retrieved": [
           "llm_inference_optimization.txt",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
           "llm_inference_optimization.txt",
-          "llm_inference_optimization.txt",
-          "rag_security.txt",
-          "caching_and_memory.txt"
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "llm_inference_optimization.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1180,10 +1681,10 @@
         ],
         "retrieved": [
           "llm_inference_optimization.txt",
-          "observability_tracing.txt",
-          "llm_inference_optimization.txt",
-          "observability_tracing.txt",
-          "rag_evaluation_metrics.txt"
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1242,8 +1743,8 @@
           "chunking_strategies.txt",
           "chunking_strategies.txt",
           "chunking_strategies.txt",
-          "chunking_strategies.txt",
-          "chunking_strategies.txt"
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1280,10 +1781,10 @@
         ],
         "retrieved": [
           "embedding_models.txt",
-          "embedding_models.txt",
-          "reranking_cross_encoders.txt",
-          "embedding_models.txt",
-          "reranking_cross_encoders.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1320,10 +1821,10 @@
         ],
         "retrieved": [
           "embedding_models.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "embedding_models.txt",
-          "vector_databases.txt",
-          "llm_inference_optimization.txt",
-          "embedding_models.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1340,10 +1841,10 @@
         ],
         "retrieved": [
           "vector_databases.txt",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
           "vector_databases.txt",
-          "deployment_scaling.txt",
-          "reranking_cross_encoders.txt",
-          "caching_and_memory.txt"
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1360,10 +1861,10 @@
         ],
         "retrieved": [
           "vector_databases.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "vector_databases.txt",
-          "reranking_cross_encoders.txt",
-          "hybrid_search_fusion.txt",
-          "rag_basics.txt"
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1382,9 +1883,9 @@
         "retrieved": [
           "rag_security.txt",
           "vector_databases.txt",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
           "query_rewriting.txt",
-          "caching_and_memory.txt",
-          "observability_tracing.txt"
+          "caching_and_memory.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1403,8 +1904,8 @@
           "bm25_keyword_search.txt",
           "bm25_keyword_search.txt",
           "bm25_keyword_search.txt",
-          "reranking_cross_encoders.txt",
-          "hybrid_search_fusion.txt"
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1421,10 +1922,10 @@
         ],
         "retrieved": [
           "bm25_keyword_search.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "bm25_keyword_search.txt",
-          "bm25_keyword_search.txt",
-          "query_rewriting.txt",
-          "rag_security.txt"
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1442,9 +1943,9 @@
         "retrieved": [
           "bm25_keyword_search.txt",
           "bm25_keyword_search.txt",
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf",
           "caching_and_memory.txt",
-          "bm25_keyword_search.txt",
-          "query_rewriting.txt"
+          "bm25_keyword_search.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1483,8 +1984,8 @@
           "hybrid_search_fusion.txt",
           "hybrid_search_fusion.txt",
           "hybrid_search_fusion.txt",
-          "bm25_keyword_search.txt",
-          "reranking_cross_encoders.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1504,7 +2005,7 @@
           "reranking_cross_encoders.txt",
           "reranking_cross_encoders.txt",
           "reranking_cross_encoders.txt",
-          "embedding_models.txt"
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1521,10 +2022,10 @@
         ],
         "retrieved": [
           "reranking_cross_encoders.txt",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
           "llm_inference_optimization.txt",
-          "agentic_rag.txt",
-          "reranking_cross_encoders.txt",
-          "observability_tracing.txt"
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1561,10 +2062,10 @@
         ],
         "retrieved": [
           "rag_evaluation_metrics.txt",
-          "observability_tracing.txt",
-          "llm_inference_optimization.txt",
-          "rag_evaluation_metrics.txt",
-          "rag_evaluation_metrics.txt"
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "observability_tracing.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1602,10 +2103,10 @@
         ],
         "retrieved": [
           "rag_evaluation_metrics.txt",
-          "finetuning_vs_rag.txt",
-          "agentic_rag.txt",
-          "rag_evaluation_metrics.txt",
-          "query_rewriting.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1645,7 +2146,7 @@
           "prompt_grounding_citations.txt",
           "prompt_grounding_citations.txt",
           "prompt_grounding_citations.txt",
-          "rag_security.txt"
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1661,17 +2162,17 @@
           "query_rewriting.txt"
         ],
         "retrieved": [
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
           "query_rewriting.txt",
-          "document_ingestion.txt",
-          "deployment_scaling.txt",
-          "deployment_scaling.txt",
-          "finetuning_vs_rag.txt"
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
         ],
-        "hit@1": 1.0,
+        "hit@1": 0.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
       },
       {
         "id": "q30",
@@ -1724,8 +2225,8 @@
           "rag_security.txt",
           "vector_databases.txt",
           "bm25_keyword_search.txt",
-          "graph_rag.txt",
-          "embedding_models.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "graph_rag.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1765,7 +2266,7 @@
           "caching_and_memory.txt",
           "llm_inference_optimization.txt",
           "caching_and_memory.txt",
-          "caching_and_memory.txt"
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1783,9 +2284,9 @@
         "retrieved": [
           "caching_and_memory.txt",
           "prompt_grounding_citations.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "rag_security.txt",
-          "finetuning_vs_rag.txt",
-          "prompt_grounding_citations.txt"
+          "finetuning_vs_rag.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1822,10 +2323,10 @@
         ],
         "retrieved": [
           "agentic_rag.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "query_rewriting.txt",
-          "prompt_grounding_citations.txt",
-          "prompt_grounding_citations.txt",
-          "caching_and_memory.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1883,7 +2384,7 @@
         "retrieved": [
           "graph_rag.txt",
           "graph_rag.txt",
-          "graph_rag.txt",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
           "graph_rag.txt",
           "graph_rag.txt"
         ],
@@ -1904,8 +2405,8 @@
           "graph_rag.txt",
           "query_rewriting.txt",
           "deployment_scaling.txt",
-          "vector_databases.txt",
-          "document_ingestion.txt"
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "vector_databases.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1925,7 +2426,7 @@
           "chunking_strategies.txt",
           "chunking_strategies.txt",
           "chunking_strategies.txt",
-          "chunking_strategies.txt"
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1942,10 +2443,10 @@
         ],
         "retrieved": [
           "document_ingestion.txt",
-          "deployment_scaling.txt",
-          "document_ingestion.txt",
-          "rag_basics.txt",
-          "llm_inference_optimization.txt"
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -1961,17 +2462,17 @@
           "document_ingestion.txt"
         ],
         "retrieved": [
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
           "document_ingestion.txt",
-          "hybrid_search_fusion.txt",
-          "caching_and_memory.txt",
-          "rag_evaluation_metrics.txt",
-          "prompt_grounding_citations.txt"
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf"
         ],
-        "hit@1": 1.0,
+        "hit@1": 0.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
       },
       {
         "id": "q45",
@@ -1983,9 +2484,9 @@
         "retrieved": [
           "observability_tracing.txt",
           "llm_inference_optimization.txt",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
           "reranking_cross_encoders.txt",
-          "reranking_cross_encoders.txt",
-          "vector_databases.txt"
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2005,7 +2506,7 @@
           "observability_tracing.txt",
           "caching_and_memory.txt",
           "rag_security.txt",
-          "prompt_grounding_citations.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 0.0,
         "hit@3": 1.0,
@@ -2042,10 +2543,10 @@
         ],
         "retrieved": [
           "deployment_scaling.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
           "prompt_grounding_citations.txt",
-          "llm_inference_optimization.txt",
-          "rag_evaluation_metrics.txt",
-          "observability_tracing.txt"
+          "2009 - Hash, Displace, and Compress (esa09).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2064,8 +2565,8 @@
           "reranking_cross_encoders.txt",
           "deployment_scaling.txt",
           "reranking_cross_encoders.txt",
-          "hybrid_search_fusion.txt",
-          "reranking_cross_encoders.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "hybrid_search_fusion.txt"
         ],
         "hit@1": 0.0,
         "hit@3": 1.0,
@@ -2102,10 +2603,511 @@
         ],
         "retrieved": [
           "finetuning_vs_rag.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "finetuning_vs_rag.txt",
-          "prompt_grounding_citations.txt",
-          "prompt_grounding_citations.txt",
-          "finetuning_vs_rag.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q52",
+        "question": "What is the jump consistent hash algorithm and why does it use minimal memory?",
+        "query_type": "lexical",
+        "expected": [
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
+        ],
+        "retrieved": [
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q53",
+        "question": "How does ShockHash achieve near optimal-space minimal perfect hashing beyond brute force?",
+        "query_type": "lexical",
+        "expected": [
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
+        ],
+        "retrieved": [
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q54",
+        "question": "How can SAT solver technology be used to construct minimal perfect hash functions?",
+        "query_type": "mixed",
+        "expected": [
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf"
+        ],
+        "retrieved": [
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q55",
+        "question": "What is the hash, displace, and compress (CHD) technique for building minimal perfect hash functions?",
+        "query_type": "lexical",
+        "expected": [
+          "2009 - Hash, Displace, and Compress (esa09).pdf"
+        ],
+        "retrieved": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "2009 - Hash, Displace, and Compress (esa09).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q56",
+        "question": "How does the original hash-and-displace method efficiently evaluate minimum perfect hash functions?",
+        "query_type": "mixed",
+        "expected": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf"
+        ],
+        "retrieved": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "2009 - Hash, Displace, and Compress (esa09).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q57",
+        "question": "What is monotone minimal perfect hashing and how does it search a sorted table in O(1) accesses?",
+        "query_type": "lexical",
+        "expected": [
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf"
+        ],
+        "retrieved": [
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q58",
+        "question": "How does the CHM algorithm generate minimal perfect hash functions using random graphs?",
+        "query_type": "mixed",
+        "expected": [
+          "1992 - An Optimal Algorithm for Generating Minimal Perfect Hash Functions (CHM92) (10.1.1.51.5566).pdf"
+        ],
+        "retrieved": [
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q59",
+        "question": "What is Cichelli's method for constructing minimal perfect hash functions?",
+        "query_type": "mixed",
+        "expected": [
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf"
+        ],
+        "retrieved": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q60",
+        "question": "How can minimal perfect hash functions be constructed for very large databases that exceed internal memory?",
+        "query_type": "semantic",
+        "expected": [
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf"
+        ],
+        "retrieved": [
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q61",
+        "question": "What are balanced families of perfect hash functions and what are they applied to?",
+        "query_type": "lexical",
+        "expected": [
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf"
+        ],
+        "retrieved": [
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q62",
+        "question": "How can perfect hash families be constructed in polynomial time?",
+        "query_type": "mixed",
+        "expected": [
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf"
+        ],
+        "retrieved": [
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q63",
+        "question": "How does the fast scalable construction approach build minimal perfect hash functions?",
+        "query_type": "semantic",
+        "expected": [
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf"
+        ],
+        "retrieved": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q64",
+        "question": "What makes the 2005 practical minimal perfect hashing method scalable to large key sets?",
+        "query_type": "mixed",
+        "expected": [
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "retrieved": [
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q65",
+        "question": "What graph-theoretic obstacles arise when trying to build perfect hash functions?",
+        "query_type": "lexical",
+        "expected": [
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf"
+        ],
+        "retrieved": [
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q66",
+        "question": "What common family unifies several perfect hashing methods based on random graphs and hypergraphs?",
+        "query_type": "semantic",
+        "expected": [
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"
+        ],
+        "retrieved": [
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 1.0,
+        "mrr": 0.25,
+        "ndcg@5": 0.43067655807339306
+      },
+      {
+        "id": "q67",
+        "question": "What is an extended hash indicator table and how does it define a dynamic perfect hash function?",
+        "query_type": "lexical",
+        "expected": [
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF"
+        ],
+        "retrieved": [
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q68",
+        "question": "What does an informal analysis conclude about the cost of searching for perfect hash functions?",
+        "query_type": "semantic",
+        "expected": [
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf"
+        ],
+        "retrieved": [
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "2009 - Hash, Displace, and Compress (esa09).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q69",
+        "question": "What versatile graph data structure is designed for edge-oriented graph algorithms?",
+        "query_type": "mixed",
+        "expected": [
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf"
+        ],
+        "retrieved": [
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q70",
+        "question": "What is 5-level paging and 5-level EPT, and how much address space do they enable on Intel processors?",
+        "query_type": "lexical",
+        "expected": [
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf"
+        ],
+        "retrieved": [
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q71",
+        "question": "What are the main architectural components and security vulnerabilities of Microsoft Hyper-V?",
+        "query_type": "mixed",
+        "expected": [
+          "A Dive in to Hyper-V Architecture and Vulnerabilities.pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities - Slides (BlackHat 2018).pdf"
+        ],
+        "retrieved": [
+          "A Dive in to Hyper-V Architecture and Vulnerabilities.pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities - Slides (BlackHat 2018).pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities.pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities - Slides (BlackHat 2018).pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q72",
+        "question": "What technologies underpin 100G networking?",
+        "query_type": "semantic",
+        "expected": [
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf"
+        ],
+        "retrieved": [
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q73",
+        "question": "How do different programming languages compare in performance for economic computation?",
+        "query_type": "mixed",
+        "expected": [
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf"
+        ],
+        "retrieved": [
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q74",
+        "question": "How does main-memory partitioning speed up large-scale comparison and radix sort?",
+        "query_type": "mixed",
+        "expected": [
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
+        ],
+        "retrieved": [
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q75",
+        "question": "How can hardware transactional memory optimize Patricia trie data structures?",
+        "query_type": "lexical",
+        "expected": [
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"
+        ],
+        "retrieved": [
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q76",
+        "question": "What foundational machine learning topics does Hal Daume's course cover?",
+        "query_type": "semantic",
+        "expected": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
+        ],
+        "retrieved": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2117,36 +3119,36 @@
   },
   "hybrid": {
     "overall": {
-      "hit@1": 0.902,
-      "hit@3": 1.0,
-      "hit@5": 1.0,
-      "mrr": 0.9444,
-      "ndcg@5": 0.9587
+      "hit@1": 0.7895,
+      "hit@3": 0.9211,
+      "hit@5": 0.9474,
+      "mrr": 0.8596,
+      "ndcg@5": 0.881
     },
     "by_query_type": {
       "lexical": {
-        "hit@1": 0.8667,
-        "hit@3": 1.0,
+        "hit@1": 0.875,
+        "hit@3": 0.9583,
         "hit@5": 1.0,
-        "mrr": 0.9222,
-        "ndcg@5": 0.9421
+        "mrr": 0.9271,
+        "ndcg@5": 0.9455
       },
       "mixed": {
-        "hit@1": 1.0,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "hit@1": 0.7826,
+        "hit@3": 0.8696,
+        "hit@5": 0.913,
+        "mrr": 0.8297,
+        "ndcg@5": 0.847
       },
       "semantic": {
-        "hit@1": 0.8696,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "mrr": 0.9275,
-        "ndcg@5": 0.9462
+        "hit@1": 0.7241,
+        "hit@3": 0.931,
+        "hit@5": 0.931,
+        "mrr": 0.8276,
+        "ndcg@5": 0.8547
       }
     },
-    "latency_ms_avg": 5.9,
+    "latency_ms_avg": 12.1,
     "per_question": [
       {
         "id": "q01",
@@ -2156,17 +3158,17 @@
           "vllm_overview.txt"
         ],
         "retrieved": [
-          "agentic_rag.txt",
-          "llm_inference_optimization.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "vllm_overview.txt",
-          "vllm_overview.txt",
-          "rag_security.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "caching_and_memory.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 0.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 0.3333333333333333,
-        "ndcg@5": 0.5
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
       },
       {
         "id": "q02",
@@ -2179,9 +3181,9 @@
         "retrieved": [
           "llm_inference_optimization.txt",
           "vllm_overview.txt",
-          "llm_inference_optimization.txt",
-          "deployment_scaling.txt",
-          "llm_inference_optimization.txt"
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2198,10 +3200,10 @@
         ],
         "retrieved": [
           "llm_inference_optimization.txt",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
           "llm_inference_optimization.txt",
           "llm_inference_optimization.txt",
-          "vllm_overview.txt",
-          "llm_inference_optimization.txt"
+          "agentic_rag.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2218,9 +3220,9 @@
         ],
         "retrieved": [
           "llm_inference_optimization.txt",
-          "llm_inference_optimization.txt",
-          "embedding_models.txt",
-          "document_ingestion.txt",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
           "llm_inference_optimization.txt"
         ],
         "hit@1": 1.0,
@@ -2239,9 +3241,9 @@
         "retrieved": [
           "llm_inference_optimization.txt",
           "llm_inference_optimization.txt",
-          "rag_evaluation_metrics.txt",
-          "llm_inference_optimization.txt",
-          "observability_tracing.txt"
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2261,7 +3263,7 @@
           "rag_evaluation_metrics.txt",
           "agentic_rag.txt",
           "observability_tracing.txt",
-          "caching_and_memory.txt"
+          "graph_rag.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2278,10 +3280,10 @@
         ],
         "retrieved": [
           "chunking_strategies.txt",
-          "document_ingestion.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
           "chunking_strategies.txt",
-          "document_ingestion.txt",
-          "document_ingestion.txt"
+          "chunking_strategies.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2298,10 +3300,10 @@
         ],
         "retrieved": [
           "chunking_strategies.txt",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
           "chunking_strategies.txt",
-          "chunking_strategies.txt",
-          "chunking_strategies.txt",
-          "rag_security.txt"
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2317,17 +3319,17 @@
           "chunking_strategies.txt"
         ],
         "retrieved": [
-          "chunking_strategies.txt",
           "document_ingestion.txt",
           "chunking_strategies.txt",
           "chunking_strategies.txt",
-          "rag_security.txt"
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
-        "hit@1": 1.0,
+        "hit@1": 0.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
       },
       {
         "id": "q10",
@@ -2338,10 +3340,10 @@
         ],
         "retrieved": [
           "embedding_models.txt",
-          "embedding_models.txt",
-          "finetuning_vs_rag.txt",
-          "reranking_cross_encoders.txt",
-          "reranking_cross_encoders.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2360,8 +3362,8 @@
           "embedding_models.txt",
           "embedding_models.txt",
           "reranking_cross_encoders.txt",
-          "deployment_scaling.txt",
-          "observability_tracing.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "query_rewriting.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2378,10 +3380,10 @@
         ],
         "retrieved": [
           "embedding_models.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "embedding_models.txt",
-          "llm_inference_optimization.txt",
-          "vector_databases.txt",
-          "prompt_grounding_citations.txt"
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2399,9 +3401,9 @@
         "retrieved": [
           "vector_databases.txt",
           "deployment_scaling.txt",
-          "vector_databases.txt",
-          "reranking_cross_encoders.txt",
-          "vector_databases.txt"
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2419,9 +3421,9 @@
         "retrieved": [
           "vector_databases.txt",
           "vector_databases.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "vector_databases.txt",
-          "bm25_keyword_search.txt",
-          "hybrid_search_fusion.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2440,9 +3442,9 @@
         "retrieved": [
           "vector_databases.txt",
           "rag_security.txt",
-          "document_ingestion.txt",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
           "hybrid_search_fusion.txt",
-          "vector_databases.txt"
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2459,10 +3461,10 @@
         ],
         "retrieved": [
           "bm25_keyword_search.txt",
-          "reranking_cross_encoders.txt",
-          "llm_inference_optimization.txt",
-          "llm_inference_optimization.txt",
-          "bm25_keyword_search.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "bm25_keyword_search.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2479,10 +3481,10 @@
         ],
         "retrieved": [
           "bm25_keyword_search.txt",
-          "rag_security.txt",
-          "query_rewriting.txt",
-          "bm25_keyword_search.txt",
-          "reranking_cross_encoders.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2500,9 +3502,9 @@
         "retrieved": [
           "bm25_keyword_search.txt",
           "rag_basics.txt",
-          "hybrid_search_fusion.txt",
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf",
           "caching_and_memory.txt",
-          "rag_basics.txt"
+          "hybrid_search_fusion.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2519,16 +3521,16 @@
         ],
         "retrieved": [
           "rag_basics.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "rag_evaluation_metrics.txt",
-          "hybrid_search_fusion.txt",
-          "hybrid_search_fusion.txt",
-          "hybrid_search_fusion.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 0.0,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "mrr": 0.3333333333333333,
-        "ndcg@5": 0.5
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
       },
       {
         "id": "q20",
@@ -2540,9 +3542,9 @@
         "retrieved": [
           "hybrid_search_fusion.txt",
           "hybrid_search_fusion.txt",
-          "rag_basics.txt",
           "hybrid_search_fusion.txt",
-          "hybrid_search_fusion.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2560,9 +3562,9 @@
         "retrieved": [
           "reranking_cross_encoders.txt",
           "reranking_cross_encoders.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "reranking_cross_encoders.txt",
-          "graph_rag.txt",
-          "document_ingestion.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2579,10 +3581,10 @@
         ],
         "retrieved": [
           "reranking_cross_encoders.txt",
-          "agentic_rag.txt",
-          "deployment_scaling.txt",
-          "observability_tracing.txt",
-          "agentic_rag.txt"
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2602,7 +3604,7 @@
           "hybrid_search_fusion.txt",
           "hybrid_search_fusion.txt",
           "hybrid_search_fusion.txt",
-          "reranking_cross_encoders.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2620,9 +3622,9 @@
         "retrieved": [
           "observability_tracing.txt",
           "rag_evaluation_metrics.txt",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
           "rag_evaluation_metrics.txt",
-          "hybrid_search_fusion.txt",
-          "reranking_cross_encoders.txt"
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF"
         ],
         "hit@1": 0.0,
         "hit@3": 1.0,
@@ -2641,9 +3643,9 @@
         "retrieved": [
           "observability_tracing.txt",
           "rag_evaluation_metrics.txt",
-          "prompt_grounding_citations.txt",
-          "caching_and_memory.txt",
-          "rag_security.txt"
+          "rag_evaluation_metrics.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "caching_and_memory.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2659,11 +3661,11 @@
           "rag_evaluation_metrics.txt"
         ],
         "retrieved": [
-          "agentic_rag.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "rag_evaluation_metrics.txt",
-          "caching_and_memory.txt",
-          "graph_rag.txt",
-          "observability_tracing.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 0.0,
         "hit@3": 1.0,
@@ -2681,9 +3683,9 @@
         "retrieved": [
           "prompt_grounding_citations.txt",
           "prompt_grounding_citations.txt",
-          "prompt_grounding_citations.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "rag_security.txt",
-          "observability_tracing.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2720,10 +3722,10 @@
         ],
         "retrieved": [
           "query_rewriting.txt",
-          "agentic_rag.txt",
-          "deployment_scaling.txt",
-          "prompt_grounding_citations.txt",
-          "rag_security.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2740,10 +3742,10 @@
         ],
         "retrieved": [
           "query_rewriting.txt",
-          "graph_rag.txt",
-          "document_ingestion.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "hybrid_search_fusion.txt",
-          "reranking_cross_encoders.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "query_rewriting.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2762,8 +3764,8 @@
           "rag_security.txt",
           "prompt_grounding_citations.txt",
           "finetuning_vs_rag.txt",
-          "rag_security.txt",
-          "document_ingestion.txt"
+          "caching_and_memory.txt",
+          "rag_security.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2781,9 +3783,9 @@
         "retrieved": [
           "rag_security.txt",
           "prompt_grounding_citations.txt",
-          "vector_databases.txt",
           "document_ingestion.txt",
-          "document_ingestion.txt"
+          "vector_databases.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2799,17 +3801,17 @@
           "rag_security.txt"
         ],
         "retrieved": [
-          "rag_security.txt",
           "graph_rag.txt",
+          "rag_security.txt",
           "vector_databases.txt",
-          "document_ingestion.txt",
-          "chunking_strategies.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "caching_and_memory.txt"
         ],
-        "hit@1": 1.0,
+        "hit@1": 0.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
       },
       {
         "id": "q34",
@@ -2821,9 +3823,9 @@
         "retrieved": [
           "caching_and_memory.txt",
           "caching_and_memory.txt",
-          "caching_and_memory.txt",
           "llm_inference_optimization.txt",
-          "rag_basics.txt"
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2841,9 +3843,9 @@
         "retrieved": [
           "caching_and_memory.txt",
           "prompt_grounding_citations.txt",
-          "rag_security.txt",
-          "prompt_grounding_citations.txt",
-          "llm_inference_optimization.txt"
+          "observability_tracing.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2860,10 +3862,10 @@
         ],
         "retrieved": [
           "caching_and_memory.txt",
+          "caching_and_memory.txt",
           "query_rewriting.txt",
-          "caching_and_memory.txt",
-          "caching_and_memory.txt",
-          "observability_tracing.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "hybrid_search_fusion.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2881,9 +3883,9 @@
         "retrieved": [
           "agentic_rag.txt",
           "query_rewriting.txt",
-          "prompt_grounding_citations.txt",
-          "prompt_grounding_citations.txt",
-          "rag_evaluation_metrics.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2900,10 +3902,10 @@
         ],
         "retrieved": [
           "agentic_rag.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "agentic_rag.txt",
-          "prompt_grounding_citations.txt",
-          "hybrid_search_fusion.txt",
-          "agentic_rag.txt"
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2921,8 +3923,8 @@
         "retrieved": [
           "agentic_rag.txt",
           "agentic_rag.txt",
-          "deployment_scaling.txt",
           "query_rewriting.txt",
+          "deployment_scaling.txt",
           "agentic_rag.txt"
         ],
         "hit@1": 1.0,
@@ -2941,9 +3943,9 @@
         "retrieved": [
           "graph_rag.txt",
           "graph_rag.txt",
-          "graph_rag.txt",
-          "finetuning_vs_rag.txt",
-          "prompt_grounding_citations.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "caching_and_memory.txt",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -2959,17 +3961,17 @@
           "graph_rag.txt"
         ],
         "retrieved": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "graph_rag.txt",
-          "vector_databases.txt",
-          "deployment_scaling.txt",
-          "graph_rag.txt",
-          "agentic_rag.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "query_rewriting.txt",
+          "deployment_scaling.txt"
         ],
-        "hit@1": 1.0,
+        "hit@1": 0.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
       },
       {
         "id": "q42",
@@ -2980,10 +3982,10 @@
         ],
         "retrieved": [
           "document_ingestion.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "chunking_strategies.txt",
-          "document_ingestion.txt",
-          "prompt_grounding_citations.txt",
-          "deployment_scaling.txt"
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3001,9 +4003,9 @@
         "retrieved": [
           "document_ingestion.txt",
           "caching_and_memory.txt",
-          "deployment_scaling.txt",
-          "agentic_rag.txt",
-          "rag_evaluation_metrics.txt"
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3019,17 +4021,17 @@
           "document_ingestion.txt"
         ],
         "retrieved": [
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
           "document_ingestion.txt",
-          "query_rewriting.txt",
-          "hybrid_search_fusion.txt",
-          "document_ingestion.txt",
-          "embedding_models.txt"
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "query_rewriting.txt"
         ],
-        "hit@1": 1.0,
+        "hit@1": 0.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
       },
       {
         "id": "q45",
@@ -3041,7 +4043,7 @@
         "retrieved": [
           "observability_tracing.txt",
           "reranking_cross_encoders.txt",
-          "prompt_grounding_citations.txt",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
           "agentic_rag.txt",
           "llm_inference_optimization.txt"
         ],
@@ -3061,9 +4063,9 @@
         "retrieved": [
           "rag_security.txt",
           "observability_tracing.txt",
-          "document_ingestion.txt",
           "rag_evaluation_metrics.txt",
-          "observability_tracing.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "caching_and_memory.txt"
         ],
         "hit@1": 0.0,
         "hit@3": 1.0,
@@ -3082,8 +4084,8 @@
           "deployment_scaling.txt",
           "document_ingestion.txt",
           "deployment_scaling.txt",
-          "rag_security.txt",
-          "rag_basics.txt"
+          "rag_basics.txt",
+          "deployment_scaling.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3100,10 +4102,10 @@
         ],
         "retrieved": [
           "deployment_scaling.txt",
-          "document_ingestion.txt",
-          "rag_security.txt",
-          "prompt_grounding_citations.txt",
-          "prompt_grounding_citations.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3121,9 +4123,9 @@
         "retrieved": [
           "deployment_scaling.txt",
           "reranking_cross_encoders.txt",
-          "observability_tracing.txt",
-          "reranking_cross_encoders.txt",
-          "graph_rag.txt"
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "reranking_cross_encoders.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3139,17 +4141,17 @@
           "finetuning_vs_rag.txt"
         ],
         "retrieved": [
-          "finetuning_vs_rag.txt",
-          "query_rewriting.txt",
           "rag_security.txt",
-          "agentic_rag.txt",
-          "observability_tracing.txt"
+          "query_rewriting.txt",
+          "observability_tracing.txt",
+          "finetuning_vs_rag.txt",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
         ],
-        "hit@1": 1.0,
-        "hit@3": 1.0,
+        "hit@1": 0.0,
+        "hit@3": 0.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.25,
+        "ndcg@5": 0.43067655807339306
       },
       {
         "id": "q51",
@@ -3161,9 +4163,510 @@
         "retrieved": [
           "finetuning_vs_rag.txt",
           "finetuning_vs_rag.txt",
-          "deployment_scaling.txt",
+          "rag_basics.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "rag_security.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q52",
+        "question": "What is the jump consistent hash algorithm and why does it use minimal memory?",
+        "query_type": "lexical",
+        "expected": [
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
+        ],
+        "retrieved": [
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q53",
+        "question": "How does ShockHash achieve near optimal-space minimal perfect hashing beyond brute force?",
+        "query_type": "lexical",
+        "expected": [
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
+        ],
+        "retrieved": [
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q54",
+        "question": "How can SAT solver technology be used to construct minimal perfect hash functions?",
+        "query_type": "mixed",
+        "expected": [
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf"
+        ],
+        "retrieved": [
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q55",
+        "question": "What is the hash, displace, and compress (CHD) technique for building minimal perfect hash functions?",
+        "query_type": "lexical",
+        "expected": [
+          "2009 - Hash, Displace, and Compress (esa09).pdf"
+        ],
+        "retrieved": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2009 - Hash, Displace, and Compress (esa09).pdf",
+          "2009 - Hash, Displace, and Compress (esa09).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 1.0,
+        "mrr": 0.25,
+        "ndcg@5": 0.43067655807339306
+      },
+      {
+        "id": "q56",
+        "question": "How does the original hash-and-displace method efficiently evaluate minimum perfect hash functions?",
+        "query_type": "mixed",
+        "expected": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf"
+        ],
+        "retrieved": [
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2009 - Hash, Displace, and Compress (esa09).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5
+      },
+      {
+        "id": "q57",
+        "question": "What is monotone minimal perfect hashing and how does it search a sorted table in O(1) accesses?",
+        "query_type": "lexical",
+        "expected": [
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf"
+        ],
+        "retrieved": [
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q58",
+        "question": "How does the CHM algorithm generate minimal perfect hash functions using random graphs?",
+        "query_type": "mixed",
+        "expected": [
+          "1992 - An Optimal Algorithm for Generating Minimal Perfect Hash Functions (CHM92) (10.1.1.51.5566).pdf"
+        ],
+        "retrieved": [
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q59",
+        "question": "What is Cichelli's method for constructing minimal perfect hash functions?",
+        "query_type": "mixed",
+        "expected": [
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf"
+        ],
+        "retrieved": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q60",
+        "question": "How can minimal perfect hash functions be constructed for very large databases that exceed internal memory?",
+        "query_type": "semantic",
+        "expected": [
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf"
+        ],
+        "retrieved": [
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q61",
+        "question": "What are balanced families of perfect hash functions and what are they applied to?",
+        "query_type": "lexical",
+        "expected": [
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf"
+        ],
+        "retrieved": [
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q62",
+        "question": "How can perfect hash families be constructed in polynomial time?",
+        "query_type": "mixed",
+        "expected": [
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf"
+        ],
+        "retrieved": [
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q63",
+        "question": "How does the fast scalable construction approach build minimal perfect hash functions?",
+        "query_type": "semantic",
+        "expected": [
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf"
+        ],
+        "retrieved": [
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q64",
+        "question": "What makes the 2005 practical minimal perfect hashing method scalable to large key sets?",
+        "query_type": "mixed",
+        "expected": [
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "retrieved": [
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q65",
+        "question": "What graph-theoretic obstacles arise when trying to build perfect hash functions?",
+        "query_type": "lexical",
+        "expected": [
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf"
+        ],
+        "retrieved": [
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q66",
+        "question": "What common family unifies several perfect hashing methods based on random graphs and hypergraphs?",
+        "query_type": "semantic",
+        "expected": [
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"
+        ],
+        "retrieved": [
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q67",
+        "question": "What is an extended hash indicator table and how does it define a dynamic perfect hash function?",
+        "query_type": "lexical",
+        "expected": [
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF"
+        ],
+        "retrieved": [
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q68",
+        "question": "What does an informal analysis conclude about the cost of searching for perfect hash functions?",
+        "query_type": "semantic",
+        "expected": [
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf"
+        ],
+        "retrieved": [
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q69",
+        "question": "What versatile graph data structure is designed for edge-oriented graph algorithms?",
+        "query_type": "mixed",
+        "expected": [
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf"
+        ],
+        "retrieved": [
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q70",
+        "question": "What is 5-level paging and 5-level EPT, and how much address space do they enable on Intel processors?",
+        "query_type": "lexical",
+        "expected": [
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf"
+        ],
+        "retrieved": [
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q71",
+        "question": "What are the main architectural components and security vulnerabilities of Microsoft Hyper-V?",
+        "query_type": "mixed",
+        "expected": [
+          "A Dive in to Hyper-V Architecture and Vulnerabilities.pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities - Slides (BlackHat 2018).pdf"
+        ],
+        "retrieved": [
+          "A Dive in to Hyper-V Architecture and Vulnerabilities.pdf",
           "rag_security.txt",
-          "llm_inference_optimization.txt"
+          "A Dive in to Hyper-V Architecture and Vulnerabilities - Slides (BlackHat 2018).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 0.9197207891481876
+      },
+      {
+        "id": "q72",
+        "question": "What technologies underpin 100G networking?",
+        "query_type": "semantic",
+        "expected": [
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf"
+        ],
+        "retrieved": [
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q73",
+        "question": "How do different programming languages compare in performance for economic computation?",
+        "query_type": "mixed",
+        "expected": [
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf"
+        ],
+        "retrieved": [
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q74",
+        "question": "How does main-memory partitioning speed up large-scale comparison and radix sort?",
+        "query_type": "mixed",
+        "expected": [
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
+        ],
+        "retrieved": [
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q75",
+        "question": "How can hardware transactional memory optimize Patricia trie data structures?",
+        "query_type": "lexical",
+        "expected": [
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"
+        ],
+        "retrieved": [
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q76",
+        "question": "What foundational machine learning topics does Hal Daume's course cover?",
+        "query_type": "semantic",
+        "expected": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
+        ],
+        "retrieved": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3175,36 +4678,36 @@
   },
   "hybrid+rerank": {
     "overall": {
-      "hit@1": 0.9412,
-      "hit@3": 1.0,
-      "hit@5": 1.0,
-      "mrr": 0.9706,
-      "ndcg@5": 0.9707
+      "hit@1": 0.8947,
+      "hit@3": 0.9737,
+      "hit@5": 0.9737,
+      "mrr": 0.9342,
+      "ndcg@5": 0.9395
     },
     "by_query_type": {
       "lexical": {
-        "hit@1": 1.0,
+        "hit@1": 0.9583,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.9792,
+        "ndcg@5": 0.9846
       },
       "mixed": {
-        "hit@1": 1.0,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "hit@1": 0.913,
+        "hit@3": 0.913,
+        "hit@5": 0.913,
+        "mrr": 0.913,
+        "ndcg@5": 0.913
       },
       "semantic": {
-        "hit@1": 0.8696,
+        "hit@1": 0.8276,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 0.9348,
-        "ndcg@5": 0.935
+        "mrr": 0.9138,
+        "ndcg@5": 0.923
       }
     },
-    "latency_ms_avg": 66.9,
+    "latency_ms_avg": 84.0,
     "per_question": [
       {
         "id": "q01",
@@ -3218,7 +4721,7 @@
           "vllm_overview.txt",
           "llm_inference_optimization.txt",
           "caching_and_memory.txt",
-          "caching_and_memory.txt"
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3237,9 +4740,9 @@
         "retrieved": [
           "llm_inference_optimization.txt",
           "vllm_overview.txt",
-          "llm_inference_optimization.txt",
-          "deployment_scaling.txt",
-          "llm_inference_optimization.txt"
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3257,9 +4760,9 @@
         "retrieved": [
           "llm_inference_optimization.txt",
           "llm_inference_optimization.txt",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
           "query_rewriting.txt",
-          "llm_inference_optimization.txt",
-          "vector_databases.txt"
+          "llm_inference_optimization.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3276,10 +4779,10 @@
         ],
         "retrieved": [
           "llm_inference_optimization.txt",
-          "llm_inference_optimization.txt",
-          "rag_security.txt",
-          "llm_inference_optimization.txt",
-          "embedding_models.txt"
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "llm_inference_optimization.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3296,10 +4799,10 @@
         ],
         "retrieved": [
           "llm_inference_optimization.txt",
-          "llm_inference_optimization.txt",
           "observability_tracing.txt",
           "llm_inference_optimization.txt",
-          "reranking_cross_encoders.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3357,9 +4860,9 @@
         "retrieved": [
           "chunking_strategies.txt",
           "chunking_strategies.txt",
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf",
           "chunking_strategies.txt",
-          "chunking_strategies.txt",
-          "reranking_cross_encoders.txt"
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3397,9 +4900,9 @@
         "retrieved": [
           "embedding_models.txt",
           "embedding_models.txt",
-          "embedding_models.txt",
-          "reranking_cross_encoders.txt",
-          "llm_inference_optimization.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3419,7 +4922,7 @@
           "bm25_keyword_search.txt",
           "vector_databases.txt",
           "embedding_models.txt",
-          "graph_rag.txt"
+          "deployment_scaling.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3436,10 +4939,10 @@
         ],
         "retrieved": [
           "embedding_models.txt",
-          "chunking_strategies.txt",
           "embedding_models.txt",
-          "llm_inference_optimization.txt",
-          "caching_and_memory.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3456,10 +4959,10 @@
         ],
         "retrieved": [
           "vector_databases.txt",
-          "vector_databases.txt",
           "deployment_scaling.txt",
           "graph_rag.txt",
-          "rag_evaluation_metrics.txt"
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "vector_databases.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3478,8 +4981,8 @@
           "vector_databases.txt",
           "vector_databases.txt",
           "vector_databases.txt",
-          "hybrid_search_fusion.txt",
-          "vector_databases.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3499,8 +5002,8 @@
           "rag_security.txt",
           "vector_databases.txt",
           "document_ingestion.txt",
-          "bm25_keyword_search.txt",
-          "observability_tracing.txt"
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3520,7 +5023,7 @@
           "bm25_keyword_search.txt",
           "bm25_keyword_search.txt",
           "reranking_cross_encoders.txt",
-          "hybrid_search_fusion.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3537,10 +5040,10 @@
         ],
         "retrieved": [
           "bm25_keyword_search.txt",
-          "document_ingestion.txt",
-          "chunking_strategies.txt",
-          "bm25_keyword_search.txt",
-          "bm25_keyword_search.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3560,7 +5063,7 @@
           "rag_basics.txt",
           "caching_and_memory.txt",
           "bm25_keyword_search.txt",
-          "embedding_models.txt"
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3600,7 +5103,7 @@
           "hybrid_search_fusion.txt",
           "hybrid_search_fusion.txt",
           "hybrid_search_fusion.txt",
-          "query_rewriting.txt"
+          "rag_basics.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3620,7 +5123,7 @@
           "reranking_cross_encoders.txt",
           "reranking_cross_encoders.txt",
           "reranking_cross_encoders.txt",
-          "embedding_models.txt"
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3637,10 +5140,10 @@
         ],
         "retrieved": [
           "reranking_cross_encoders.txt",
-          "reranking_cross_encoders.txt",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
           "observability_tracing.txt",
-          "llm_inference_optimization.txt",
-          "reranking_cross_encoders.txt"
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "llm_inference_optimization.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3660,7 +5163,7 @@
           "hybrid_search_fusion.txt",
           "hybrid_search_fusion.txt",
           "hybrid_search_fusion.txt",
-          "query_rewriting.txt"
+          "graph_rag.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3677,10 +5180,10 @@
         ],
         "retrieved": [
           "rag_evaluation_metrics.txt",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
           "rag_evaluation_metrics.txt",
-          "observability_tracing.txt",
-          "prompt_grounding_citations.txt",
-          "hybrid_search_fusion.txt"
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3699,7 +5202,7 @@
         "retrieved": [
           "observability_tracing.txt",
           "rag_security.txt",
-          "query_rewriting.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "query_rewriting.txt",
           "prompt_grounding_citations.txt"
         ],
@@ -3717,17 +5220,17 @@
           "rag_evaluation_metrics.txt"
         ],
         "retrieved": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "rag_evaluation_metrics.txt",
-          "agentic_rag.txt",
-          "graph_rag.txt",
-          "bm25_keyword_search.txt",
-          "rag_evaluation_metrics.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
-        "hit@1": 1.0,
+        "hit@1": 0.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
-        "mrr": 1.0,
-        "ndcg@5": 1.0
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
       },
       {
         "id": "q27",
@@ -3759,9 +5262,9 @@
         "retrieved": [
           "prompt_grounding_citations.txt",
           "prompt_grounding_citations.txt",
-          "prompt_grounding_citations.txt",
           "rag_evaluation_metrics.txt",
-          "caching_and_memory.txt"
+          "prompt_grounding_citations.txt",
+          "rag_evaluation_metrics.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3778,10 +5281,10 @@
         ],
         "retrieved": [
           "query_rewriting.txt",
-          "finetuning_vs_rag.txt",
-          "prompt_grounding_citations.txt",
-          "deployment_scaling.txt",
-          "rag_security.txt"
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "document_ingestion.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "2009 - Hash, Displace, and Compress (esa09).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3861,7 +5364,7 @@
           "vector_databases.txt",
           "graph_rag.txt",
           "document_ingestion.txt",
-          "document_ingestion.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3879,9 +5382,9 @@
         "retrieved": [
           "caching_and_memory.txt",
           "caching_and_memory.txt",
-          "rag_basics.txt",
-          "bm25_keyword_search.txt",
-          "chunking_strategies.txt"
+          "chunking_strategies.txt",
+          "caching_and_memory.txt",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3899,9 +5402,9 @@
         "retrieved": [
           "prompt_grounding_citations.txt",
           "caching_and_memory.txt",
-          "caching_and_memory.txt",
           "rag_security.txt",
-          "finetuning_vs_rag.txt"
+          "finetuning_vs_rag.txt",
+          "observability_tracing.txt"
         ],
         "hit@1": 0.0,
         "hit@3": 1.0,
@@ -3919,9 +5422,9 @@
         "retrieved": [
           "caching_and_memory.txt",
           "caching_and_memory.txt",
-          "document_ingestion.txt",
-          "agentic_rag.txt",
-          "observability_tracing.txt"
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "agentic_rag.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3938,10 +5441,10 @@
         ],
         "retrieved": [
           "agentic_rag.txt",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
           "reranking_cross_encoders.txt",
-          "query_rewriting.txt",
-          "finetuning_vs_rag.txt",
-          "caching_and_memory.txt"
+          "query_rewriting.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -3960,7 +5463,7 @@
           "agentic_rag.txt",
           "agentic_rag.txt",
           "observability_tracing.txt",
-          "hybrid_search_fusion.txt",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
           "hybrid_search_fusion.txt"
         ],
         "hit@1": 1.0,
@@ -3999,9 +5502,9 @@
         "retrieved": [
           "graph_rag.txt",
           "graph_rag.txt",
-          "finetuning_vs_rag.txt",
-          "hybrid_search_fusion.txt",
-          "graph_rag.txt"
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -4018,10 +5521,10 @@
         ],
         "retrieved": [
           "graph_rag.txt",
-          "graph_rag.txt",
           "document_ingestion.txt",
           "vector_databases.txt",
-          "agentic_rag.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -4039,7 +5542,7 @@
         "retrieved": [
           "document_ingestion.txt",
           "chunking_strategies.txt",
-          "finetuning_vs_rag.txt",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
           "chunking_strategies.txt",
           "document_ingestion.txt"
         ],
@@ -4059,9 +5562,9 @@
         "retrieved": [
           "document_ingestion.txt",
           "deployment_scaling.txt",
-          "rag_basics.txt",
-          "document_ingestion.txt",
-          "deployment_scaling.txt"
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "2009 - Hash, Displace, and Compress (esa09).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -4078,10 +5581,10 @@
         ],
         "retrieved": [
           "document_ingestion.txt",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
           "query_rewriting.txt",
-          "hybrid_search_fusion.txt",
-          "embedding_models.txt",
-          "deployment_scaling.txt"
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -4100,8 +5603,8 @@
           "observability_tracing.txt",
           "reranking_cross_encoders.txt",
           "agentic_rag.txt",
-          "llm_inference_optimization.txt",
-          "observability_tracing.txt"
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "llm_inference_optimization.txt"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -4119,9 +5622,9 @@
         "retrieved": [
           "rag_security.txt",
           "observability_tracing.txt",
-          "document_ingestion.txt",
-          "rag_evaluation_metrics.txt",
-          "caching_and_memory.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "rag_evaluation_metrics.txt"
         ],
         "hit@1": 0.0,
         "hit@3": 1.0,
@@ -4158,10 +5661,10 @@
         ],
         "retrieved": [
           "deployment_scaling.txt",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
           "document_ingestion.txt",
-          "rag_evaluation_metrics.txt",
-          "prompt_grounding_citations.txt",
-          "llm_inference_optimization.txt"
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
@@ -4179,9 +5682,9 @@
         "retrieved": [
           "reranking_cross_encoders.txt",
           "deployment_scaling.txt",
-          "observability_tracing.txt",
           "reranking_cross_encoders.txt",
-          "prompt_grounding_citations.txt"
+          "reranking_cross_encoders.txt",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf"
         ],
         "hit@1": 0.0,
         "hit@3": 1.0,
@@ -4222,6 +5725,507 @@
           "deployment_scaling.txt",
           "rag_security.txt",
           "finetuning_vs_rag.txt"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q52",
+        "question": "What is the jump consistent hash algorithm and why does it use minimal memory?",
+        "query_type": "lexical",
+        "expected": [
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
+        ],
+        "retrieved": [
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf",
+          "A Fast, Minimal Memory, Consistent Hash Algorithm (1406.2294).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q53",
+        "question": "How does ShockHash achieve near optimal-space minimal perfect hashing beyond brute force?",
+        "query_type": "lexical",
+        "expected": [
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
+        ],
+        "retrieved": [
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q54",
+        "question": "How can SAT solver technology be used to construct minimal perfect hash functions?",
+        "query_type": "mixed",
+        "expected": [
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf"
+        ],
+        "retrieved": [
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q55",
+        "question": "What is the hash, displace, and compress (CHD) technique for building minimal perfect hash functions?",
+        "query_type": "lexical",
+        "expected": [
+          "2009 - Hash, Displace, and Compress (esa09).pdf"
+        ],
+        "retrieved": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "2009 - Hash, Displace, and Compress (esa09).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q56",
+        "question": "How does the original hash-and-displace method efficiently evaluate minimum perfect hash functions?",
+        "query_type": "mixed",
+        "expected": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf"
+        ],
+        "retrieved": [
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q57",
+        "question": "What is monotone minimal perfect hashing and how does it search a sorted table in O(1) accesses?",
+        "query_type": "lexical",
+        "expected": [
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf"
+        ],
+        "retrieved": [
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q58",
+        "question": "How does the CHM algorithm generate minimal perfect hash functions using random graphs?",
+        "query_type": "mixed",
+        "expected": [
+          "1992 - An Optimal Algorithm for Generating Minimal Perfect Hash Functions (CHM92) (10.1.1.51.5566).pdf"
+        ],
+        "retrieved": [
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q59",
+        "question": "What is Cichelli's method for constructing minimal perfect hash functions?",
+        "query_type": "mixed",
+        "expected": [
+          "1980 - Minimal Perfect Hash Functions Made Simple (p17-cichelli).pdf"
+        ],
+        "retrieved": [
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 0.0,
+        "hit@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      {
+        "id": "q60",
+        "question": "How can minimal perfect hash functions be constructed for very large databases that exceed internal memory?",
+        "query_type": "semantic",
+        "expected": [
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf"
+        ],
+        "retrieved": [
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q61",
+        "question": "What are balanced families of perfect hash functions and what are they applied to?",
+        "query_type": "lexical",
+        "expected": [
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf"
+        ],
+        "retrieved": [
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q62",
+        "question": "How can perfect hash families be constructed in polynomial time?",
+        "query_type": "mixed",
+        "expected": [
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf"
+        ],
+        "retrieved": [
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf",
+          "2010 - Perfect Hash Families in Polynomial Time - Slides (552phf).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q63",
+        "question": "How does the fast scalable construction approach build minimal perfect hash functions?",
+        "query_type": "semantic",
+        "expected": [
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf"
+        ],
+        "retrieved": [
+          "2016 - Fast Scalable Construction of (Minimal Perfect Hash) Functions - 22 Mar 2016, v2 (1603.04330).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2014 - Monotone Minimal Perfect Hashing - Searching a Sorted Table with O(1) Accesses.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q64",
+        "question": "What makes the 2005 practical minimal perfect hashing method scalable to large key sets?",
+        "query_type": "mixed",
+        "expected": [
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "retrieved": [
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf",
+          "2006 - An Approach for Minimal Perfect Hash Functions for Very Large Databases (tr06).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q65",
+        "question": "What graph-theoretic obstacles arise when trying to build perfect hash functions?",
+        "query_type": "lexical",
+        "expected": [
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf"
+        ],
+        "retrieved": [
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "1999 - Hash and Displace - Efficient Evaluation of Minimum Perfect Hash Functions (10.1.1.148.7694).pdf",
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "2007 - Balanced Families of Perfect Hash Functions and Their Applications.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q66",
+        "question": "What common family unifies several perfect hashing methods based on random graphs and hypergraphs?",
+        "query_type": "semantic",
+        "expected": [
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf"
+        ],
+        "retrieved": [
+          "1994 - Graph Theoretic Obstacles to Perfect Hashing (TR0257).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf",
+          "2019 - Constructing Minimal Perfect Hash Functions Using SAT Technology (1911.10099).pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "hit@1": 0.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      },
+      {
+        "id": "q67",
+        "question": "What is an extended hash indicator table and how does it define a dynamic perfect hash function?",
+        "query_type": "lexical",
+        "expected": [
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF"
+        ],
+        "retrieved": [
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "A Dynamic Perfect Hash Function Defined by an Extended Hash Indicator Table - 1984 (P245).PDF",
+          "2024 - ShockHash - Near Optimal-Space Minimal Perfect Hashing Beyond Brute Force (2310.14959v2).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q68",
+        "question": "What does an informal analysis conclude about the cost of searching for perfect hash functions?",
+        "query_type": "semantic",
+        "expected": [
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf"
+        ],
+        "retrieved": [
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "1989 - An Informal Analysis of Perfect Hash Function Search.pdf",
+          "2005 - A Practical Minimal Perfect Hashing Method.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q69",
+        "question": "What versatile graph data structure is designed for edge-oriented graph algorithms?",
+        "query_type": "mixed",
+        "expected": [
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf"
+        ],
+        "retrieved": [
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "A Family of Perfect Hashing Methods - 1996 (TR0242).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf",
+          "1987 - A Versatile Graph Structure for Edge-Oriented Graph Algorithms (Ebert1987AVD).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q70",
+        "question": "What is 5-level paging and 5-level EPT, and how much address space do they enable on Intel processors?",
+        "query_type": "lexical",
+        "expected": [
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf"
+        ],
+        "retrieved": [
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf",
+          "5-Level Paging and 5-Level EPT - Intel - Revision 1.1 (May, 2017).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q71",
+        "question": "What are the main architectural components and security vulnerabilities of Microsoft Hyper-V?",
+        "query_type": "mixed",
+        "expected": [
+          "A Dive in to Hyper-V Architecture and Vulnerabilities.pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities - Slides (BlackHat 2018).pdf"
+        ],
+        "retrieved": [
+          "A Dive in to Hyper-V Architecture and Vulnerabilities.pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities - Slides (BlackHat 2018).pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities.pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities - Slides (BlackHat 2018).pdf",
+          "A Dive in to Hyper-V Architecture and Vulnerabilities.pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q72",
+        "question": "What technologies underpin 100G networking?",
+        "query_type": "semantic",
+        "expected": [
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf"
+        ],
+        "retrieved": [
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf",
+          "100G Networking Technology Overview - Slides - Toronto (August 2016).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q73",
+        "question": "How do different programming languages compare in performance for economic computation?",
+        "query_type": "mixed",
+        "expected": [
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf"
+        ],
+        "retrieved": [
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf",
+          "A Comparison of Programming Languages in Economics (16-Jun-2014).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q74",
+        "question": "How does main-memory partitioning speed up large-scale comparison and radix sort?",
+        "query_type": "mixed",
+        "expected": [
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
+        ],
+        "retrieved": [
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf",
+          "A Comprehensive Study of Main-Memory Partitioning and its Application to Large-Scale Comparison- and Radix-Sort (sigmod14I).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q75",
+        "question": "How can hardware transactional memory optimize Patricia trie data structures?",
+        "query_type": "lexical",
+        "expected": [
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"
+        ],
+        "retrieved": [
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf",
+          "A Case Study in Optimizing HTM-Enabled Dynamic Data Structures - Patricia Tries (2015).pdf"
+        ],
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      {
+        "id": "q76",
+        "question": "What foundational machine learning topics does Hal Daume's course cover?",
+        "query_type": "semantic",
+        "expected": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
+        ],
+        "retrieved": [
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf",
+          "A Course in Machine Learning (ciml-v0_9-all).pdf"
         ],
         "hit@1": 1.0,
         "hit@3": 1.0,
