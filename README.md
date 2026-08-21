@@ -186,18 +186,22 @@ hurts retrieval quality shows up as a failing build.
 
 ---
 
-## Limitations
+## Next steps
 
-- **In-process indexes** — with multiple workers, each holds its own copy in
-  memory. This is what motivates moving to an external vector store (Qdrant is
-  the intended next step).
-- **BM25 rebuilds fully on every ingest** — fine for batch loading, wrong for a
-  high-write workload.
-- **PDF extraction is text-layer only** — scanned or image-only PDFs yield no
-  text and are skipped; there is no OCR and no table/layout awareness.
-- **No generation-quality evaluation** — judging answer quality needs an LLM
-  judge (costs money, breaks the no-key guarantee). Retrieval quality caps
-  everything downstream, so it came first.
+Where the project is today, and what we're planning to work on next:
+
+- **External vector store (Qdrant).** Indexes are currently held in memory, so
+  under multiple workers each keeps its own copy. Moving to a shared external
+  store lets the pipeline scale horizontally — this is the next priority.
+- **Incremental keyword indexing.** BM25 currently rebuilds fully on every
+  ingest, which is fine for batch loading but wrong for a high-write workload;
+  we plan to move to an engine that indexes incrementally (e.g. OpenSearch).
+- **OCR and layout-aware PDF parsing.** Extraction is text-layer only today, so
+  scanned/image PDFs and tables aren't handled. Adding OCR and layout awareness
+  would open up a much wider range of real-world documents.
+- **Generation-quality evaluation.** The harness measures retrieval only. Adding
+  an opt-in LLM-judge for faithfulness and answer relevance would evaluate the
+  generated answers too, while keeping the default no-key path free.
 
 ---
 
