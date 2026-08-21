@@ -100,15 +100,16 @@ cost. Latest run — four retrieval strategies over **76 labelled questions**
 (3,052 chunks). Reproduce with `make eval` (no API key needed, fully
 deterministic).
 
-| Configuration | Hit@1 | Hit@3 | MRR | Avg latency |
-|---|---|---|---|---|
-| BM25 only (keyword) | 0.684 | 0.789 | 0.742 | 4 ms |
-| Vector only (semantic) | 0.816 | 0.934 | 0.882 | 10 ms |
-| Hybrid (keyword + vector) | 0.789 | 0.921 | 0.860 | 12 ms |
-| **Hybrid + rerank** | **0.895** | **0.974** | **0.934** | 84 ms |
+| Configuration | Hit@1 | Hit@3 | MRR | nDCG@5 | Avg latency |
+|---|---|---|---|---|---|
+| BM25 only (keyword) | 0.684 | 0.789 | 0.742 | 0.763 | 4 ms |
+| Vector only (semantic) | 0.816 | 0.934 | 0.882 | 0.900 | 10 ms |
+| Hybrid (keyword + vector) | 0.789 | 0.921 | 0.860 | 0.881 | 12 ms |
+| **Hybrid + rerank** | **0.895** | **0.974** | **0.934** | **0.940** | 84 ms |
 
 - **Hit@1** = how often the single best result is a correct document.
 - **MRR** = rewards ranking the right document higher.
+- **nDCG@5** = rewards packing the relevant documents higher within the top 5.
 
 **Reranking is the biggest win** (+13.3% Hit@1 over hybrid alone). The raw
 tables are auto-generated in [`data/eval/RESULTS.md`](data/eval/RESULTS.md); the
