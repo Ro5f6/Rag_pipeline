@@ -1,0 +1,15 @@
+Deploying and Scaling a RAG Service
+
+The ingestion path and the query path have opposite operational profiles, and treating them as one deployable unit is the most common structural mistake in RAG systems.
+
+Ingestion is throughput-oriented, tolerant of latency, and bursty. It should run as a background worker consuming from a queue, so that uploading ten thousand documents does not block or time out an HTTP request. Query serving is latency-critical and steady, and belongs behind an autoscaled API. Separating them allows each to scale on its own signal: queue depth for ingestion, request rate for serving.
+
+In-process indexes constrain this directly. When the index lives inside the application process, running four workers produces four independent copies, and a document ingested through one worker is invisible to the other three. This is the specific pressure that pushes teams toward an external index service, where every worker queries shared state and ingestion is decoupled from serving entirely.
+
+Model loading dominates cold start. Embedding and reranking models take seconds to load and hundreds of megabytes to hold. Loading them at process startup rather than per request is mandatory, and baking model weights into the container image avoids a download on every pod start, which otherwise turns an autoscaling event into a multi-minute outage.
+
+Health checks need to distinguish liveness from readiness. A process that has started but has not finished loading its models is alive but not ready, and routing traffic to it produces timeouts that look like application failures.
+
+Horizontal scaling of the query path is straightforward once retrieval state is external, because query serving is stateless. The bottleneck usually turns out to be the reranker, which is the only component performing meaningful computation per request, and it is the natural first candidate for a GPU or for its own separately scaled service.
+
+Graceful degradation is worth designing deliberately. If the reranker becomes unavailable, returning fused results without reranking is far better than returning an error, because slightly worse ordering is a much smaller failure than no answer at all.

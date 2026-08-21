@@ -1,0 +1,17 @@
+Evaluating Retrieval Augmented Generation
+
+A RAG system cannot be improved by intuition, because its failures are ambiguous. When an answer is wrong, the cause may be that retrieval never surfaced the right passage, or that the right passage was retrieved and the model ignored it. These require opposite fixes, so evaluation must measure the stages separately.
+
+Retrieval metrics come first, because retrieval sets a hard ceiling on everything downstream. If the passage containing the answer is not in the context, no model can produce a correct grounded response.
+
+Hit rate at k, also called recall at k, is the fraction of questions for which at least one relevant passage appears in the top k results. It answers the blunt question of whether the necessary information reached the model at all.
+
+Mean reciprocal rank averages one divided by the rank of the first relevant result across all questions. It rewards placing the right passage first rather than fifth, which matters because language models attend unevenly across a long context and weight early passages more heavily.
+
+Normalized discounted cumulative gain accounts for every relevant result and applies a logarithmic discount by position, making it the most informative metric when a question has several relevant passages rather than exactly one.
+
+Generation metrics come second. Faithfulness measures whether every claim in the answer is supported by the retrieved context, which is the direct measure of hallucination. Answer relevance measures whether the response actually addresses the question. Context precision measures how much of the retrieved context was actually useful, exposing the wasted tokens that inflate cost and dilute attention.
+
+The practical foundation of all of this is a golden set: a fixed list of representative questions, each labeled with the document or passage that answers it. Fifty carefully chosen questions are worth more than a thousand generated carelessly, because the value lies in coverage of real user intent.
+
+The purpose of a golden set is regression detection. Every change to chunk size, embedding model, fusion strategy, or candidate count should be measured against it before deployment, so that improvements are demonstrated rather than assumed and regressions are caught before users encounter them.

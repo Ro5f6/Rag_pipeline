@@ -26,9 +26,11 @@ htmlcov/
 # Persisted indexes (rebuilt by `make ingest`)
 data/index/
 
-# Corpus documents -- kept out of git (large / third-party); shared out of band.
-# The golden set in data/eval/ still documents which files the eval expects.
-data/sample_docs/
+# Corpus PDFs -- large / third-party, kept out of git and shared out of band
+# (see the Drive link in the README). The small .txt demo corpus stays tracked
+# so the pipeline, tests, and CI still run on a fresh clone.
+data/sample_docs/*.pdf
+data/sample_docs/*.PDF
 
 # Model caches
 .cache/

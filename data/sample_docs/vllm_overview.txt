@@ -1,0 +1,11 @@
+vLLM is a high-throughput and memory-efficient inference and serving engine for large language models.
+Its core innovation is PagedAttention, which manages the key-value cache in fixed-size blocks similar to how
+an operating system manages virtual memory pages. This reduces memory fragmentation and allows near-zero
+waste of GPU memory when serving many concurrent requests.
+
+vLLM also implements continuous batching, where new requests are added to a running batch as soon as a slot
+frees up, rather than waiting for the entire batch to finish. This dramatically improves throughput compared
+to static batching used in naive serving setups.
+
+The scheduler in vLLM decides which sequences to run at each step, balancing prefill and decode phases to
+maximize GPU utilization while respecting memory constraints imposed by the KV cache blocks.

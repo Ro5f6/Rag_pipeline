@@ -1,0 +1,13 @@
+Vector Databases and Approximate Nearest Neighbor Search
+
+A vector database stores embeddings and answers nearest-neighbor queries: given a query vector, return the k stored vectors closest to it under a distance metric such as cosine similarity or Euclidean distance.
+
+The naive approach is a flat index, which compares the query against every stored vector. This is exact, returns perfect results, and requires no tuning, but its cost grows linearly with corpus size. FAISS calls this IndexFlatIP for inner product search. On a corpus of a few thousand chunks a flat scan completes in single-digit milliseconds, which is why it is the correct default for small and mid-sized deployments.
+
+Approximate nearest neighbor indexes trade a small amount of recall for a large speedup. IVF, or inverted file index, partitions the vector space into clusters using k-means and searches only the clusters nearest the query. HNSW, or hierarchical navigable small world, builds a multi-layer proximity graph and greedily walks it toward the query, offering excellent recall-latency tradeoffs at the cost of higher memory use and slower index construction.
+
+Recall is the metric that matters when evaluating an approximate index: the fraction of the true top-k neighbors the index actually returns. An HNSW index tuned for speed might return 95 percent of the true neighbors, meaning one relevant passage in twenty silently disappears before reranking ever sees it.
+
+Production systems usually need more than raw vector search. Metadata filtering restricts results by attributes such as tenant, document type, or publication date, and must be applied during the search rather than after it to avoid returning fewer results than requested. Persistence keeps the index on disk so a restart does not force re-embedding. Multi-tenancy isolates each customer's documents so one tenant's query can never retrieve another tenant's data.
+
+Managed options such as Qdrant, Weaviate, Pinecone, and pgvector provide these capabilities as a service. The migration path from an embedded FAISS index is straightforward when the application code depends only on an add and search interface rather than on FAISS itself.

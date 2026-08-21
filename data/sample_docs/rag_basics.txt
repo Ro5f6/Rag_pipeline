@@ -1,0 +1,15 @@
+Retrieval Augmented Generation, or RAG, combines a retrieval system with a generative language model.
+Instead of relying purely on the parametric knowledge baked into model weights during training, RAG fetches
+relevant documents from an external knowledge base at query time and feeds them into the model's context
+window before generation.
+
+A typical RAG pipeline has an ingestion path and a query path. The ingestion path parses raw documents,
+splits them into chunks, embeds those chunks into vectors, and stores them in a vector database alongside
+a keyword index for lexical search. The query path takes a user question, optionally rewrites it for
+clarity or expansion, retrieves candidate chunks using both semantic and keyword search (hybrid search),
+reranks those candidates with a more precise but slower model, formats the top chunks into a context block,
+and finally asks the LLM to generate an answer grounded in that context, citing which chunks were used.
+
+Hybrid search is popular because vector search alone can miss exact keyword matches like product codes or
+rare proper nouns, while keyword search alone misses semantic paraphrases. Combining both, often through
+reciprocal rank fusion, tends to outperform either method alone.

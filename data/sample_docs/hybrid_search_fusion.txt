@@ -1,0 +1,13 @@
+Hybrid Search and Reciprocal Rank Fusion
+
+Hybrid search runs a dense vector retriever and a lexical retriever over the same corpus and merges their results into a single ranking. The motivation is that the two approaches fail on different queries, so their union covers more relevant passages than either alone.
+
+Merging them is harder than it appears because their scores are not comparable. Cosine similarity is bounded between negative one and one, and in practice clusters tightly between 0.3 and 0.7 for real text. BM25 scores are unbounded, depend on corpus statistics, and can be 14.2 for one query and 0.8 for the next. Averaging these numbers directly is meaningless, and normalizing them with min-max or z-score scaling is fragile because the normalization constants shift with every query and every corpus update.
+
+Reciprocal Rank Fusion avoids the problem by discarding the raw scores entirely and using only rank positions. For each retriever that returned a given document, it adds one divided by the quantity k plus that document's rank in that retriever's list. The document's fused score is the sum of these contributions across retrievers.
+
+The constant k, conventionally set to 60, dampens the advantage held by the very top ranks. Without it, a document ranked first by one retriever would receive an overwhelming score that no amount of agreement from the other retriever could match. With it, a document that both retrievers rank reasonably well outscores a document that only one retriever ranks first, which is exactly the agreement signal hybrid search exists to capture.
+
+Reciprocal Rank Fusion has two properties that matter more in production than raw accuracy. It is parameter-light, requiring only k, and it is corpus-independent, so it does not need retuning when the knowledge base grows or shifts. A carefully tuned weighted score combination may edge it out on a fixed benchmark, but those weights decay as the data changes, and nobody notices until retrieval quality has already degraded.
+
+The same technique extends naturally to more than two retrievers, including multiple query rewrites of the same question fused together.
