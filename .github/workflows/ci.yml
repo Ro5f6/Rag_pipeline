@@ -34,6 +34,23 @@ jobs:
       - name: Run tests
         run: pytest
 
+      # The corpus (data/sample_docs) is gitignored, so fetch it from the shared
+      # Drive folder before evaluating. The folder must be shared "Anyone with
+      # the link". gdown nests the download under a directory named after the
+      # Drive folder, so flatten it into data/sample_docs regardless of that
+      # name. Caveats: gdown folder downloads are capped at ~50 files and can be
+      # rate-limited by Google, which would fail this step unrelated to the code.
+      - name: Fetch evaluation corpus
+        run: |
+          pip install gdown
+          tmp=$(mktemp -d)
+          gdown --folder "https://drive.google.com/drive/folders/19ctQULoc0GW9M9MpEqVjeMwQiZ_hiHjs" -O "$tmp"
+          mkdir -p data/sample_docs
+          find "$tmp" -type f -exec mv -f {} data/sample_docs/ \;
+          count=$(find data/sample_docs -type f | wc -l)
+          echo "Fetched $count corpus files."
+          test "$count" -gt 0 || { echo "::error::Corpus download produced no files"; exit 1; }
+
       # The evaluation harness needs no API key and is deterministic, so it
       # runs as a normal CI step. This is what makes retrieval quality a
       # regression gate rather than something measured once and forgotten.
