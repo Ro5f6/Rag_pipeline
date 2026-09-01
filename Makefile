@@ -1,9 +1,10 @@
-.PHONY: help install test eval serve ingest ask docker-build docker-run clean
+.PHONY: help install test eval eval-gen serve ingest ask docker-build docker-run clean
 
 help:
 	@echo "make install       Install dependencies into the active environment"
 	@echo "make test          Run the unit test suite"
 	@echo "make eval          Run the retrieval evaluation harness"
+	@echo "make eval-gen      Run the RAGAS generation evaluation (needs a judge key)"
 	@echo "make serve         Start the API + web UI on http://localhost:8000"
 	@echo "make ingest        Build and persist the indexes from data/sample_docs"
 	@echo "make ask Q='...'   Ask a single question from the command line"
@@ -19,6 +20,9 @@ test:
 
 eval:
 	python -m evaluation.run_eval
+
+eval-gen:
+	python -m evaluation.eval_generation
 
 serve:
 	uvicorn main:app --host 0.0.0.0 --port 8000

@@ -1,0 +1,28 @@
+{
+  "generator": "qwen/qwen3.6-27b (groq)",
+  "judge": "google/gemma-4-e4b (openai)",
+  "n": 1,
+  "date": "2026-09-01",
+  "overall": {
+    "faithfulness": 1.0,
+    "answer_relevancy": 0.718,
+    "context_precision_without_reference": 1.0,
+    "cited_fraction": 1.0
+  },
+  "by_query_type": {
+    "lexical": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.718,
+      "context_precision_without_reference": 1.0
+    }
+  },
+  "per_question": [
+    {
+      "id": "q01",
+      "query_type": "lexical",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7180583947932787,
+      "context_precision_without_reference": 0.9999999999
+    }
+  ]
+}
