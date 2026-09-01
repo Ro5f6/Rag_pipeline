@@ -26,8 +26,8 @@ class _StubVectorDB:
 
 
 class _StubGenerator:
-    name = "extractive"
-    model = "none (extractive)"
+    name = "groq"
+    model = "llama-3.3-70b-versatile"
 
 
 class _StubPipeline:
@@ -51,8 +51,8 @@ class _StubPipeline:
         return RAGResponse(
             answer="An answer grounded in the context [1].",
             citations=[Citation(marker="[1]", filename="a.txt", chunk_id="c1", text_preview="preview")],
-            backend="extractive",
-            model="none (extractive)",
+            backend="groq",
+            model="llama-3.3-70b-versatile",
             retrieval_mode=mode,
             rewritten_query=user_query.lower(),
             candidates_retrieved=20,
@@ -78,7 +78,7 @@ def test_health_reports_index_size_and_active_backend(client):
 
     assert body["status"] == "ok"
     assert body["chunks_indexed"] == 3
-    assert body["generation_backend"] == "extractive"
+    assert body["generation_backend"] == "groq"
 
 
 def test_config_endpoint_describes_the_running_instance(client):
@@ -94,7 +94,7 @@ def test_query_returns_answer_citations_and_per_stage_timings(client):
 
     assert body["answer"]
     assert body["citations"][0]["marker"] == "[1]"
-    assert body["backend"] == "extractive"
+    assert body["backend"] == "groq"
     assert "total" in body["timings_ms"]
     assert body["candidates_retrieved"] == 20
 

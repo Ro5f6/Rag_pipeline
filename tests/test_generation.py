@@ -1,162 +1,116 @@
 """
 tests/test_generation.py
 =========================
-Tests for backend selection and the offline extractive generator.
+Tests for the LangChain-backed generation layer.
 
-The selection logic matters more than it looks: getting it wrong either makes
-a fresh clone crash on startup (the failure this design exists to prevent) or
-silently sends requests to a paid API when the user did not ask for that.
+Two things matter here: that ChatModelGenerator faithfully turns a chat model's
+response into answer text, and that build_generator maps configuration onto the
+right provider (and fails clearly when it can't). No test makes a network call
+-- the wrapper is exercised with a fake chat model, and provider construction
+is checked without ever invoking the model.
 """
 
 import pytest
+from langchain_core.language_models.fake_chat_models import GenericFakeChatModel
+from langchain_core.messages import AIMessage
 
 from pipeline.llm_generate import (
-    ExtractiveGenerator,
+    ChatModelGenerator,
+    _resolve_provider,
     build_generator,
-    detect_provider,
 )
-from pipeline.parse_chunk import Chunk
-from pipeline.rerank import RerankedChunk
 
 
 @pytest.fixture(autouse=True)
 def clear_provider_env(monkeypatch):
     """Never let a developer's real key change what these tests assert."""
-    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
-    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
-    monkeypatch.delenv("OPENAI_BASE_URL", raising=False)
+    for var in ("GROQ_API_KEY", "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "GOOGLE_API_KEY", "GEMINI_API_KEY"):
+        monkeypatch.delenv(var, raising=False)
 
 
-def _reranked(text: str) -> RerankedChunk:
-    return RerankedChunk(
-        chunk=Chunk(id="1", doc_id="d", text=text, source="a.txt", metadata={"filename": "a.txt"}),
-        rerank_score=1.0,
-    )
+def _generator(reply: str) -> ChatModelGenerator:
+    fake = GenericFakeChatModel(messages=iter([reply]))
+    return ChatModelGenerator(fake, provider="fake", model="fake-1")
 
 
 # --------------------------------------------------------------------- #
-# Provider detection
+# ChatModelGenerator: response -> answer text
 # --------------------------------------------------------------------- #
-def test_no_credentials_falls_back_to_extractive():
-    assert detect_provider() == "extractive"
+def test_generator_returns_the_models_text():
+    gen = _generator("PagedAttention pages the KV cache. [1]")
+    assert gen.generate("prompt", query="q", chunks=[]) == "PagedAttention pages the KV cache. [1]"
 
 
-def test_anthropic_key_selects_anthropic(monkeypatch):
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test")
-    assert detect_provider() == "anthropic"
+def test_generator_preserves_citation_markers():
+    answer = _generator("Grounded claim. [1] Another. [2]").generate("p", query="q", chunks=[])
+    assert "[1]" in answer and "[2]" in answer
 
 
-def test_openai_key_selects_openai(monkeypatch):
-    monkeypatch.setenv("OPENAI_API_KEY", "sk-test")
-    assert detect_provider() == "openai"
+def test_generator_strips_surrounding_whitespace():
+    assert _generator("  spaced answer  \n").generate("p", query="q", chunks=[]) == "spaced answer"
 
 
-def test_explicit_base_url_wins_over_key_detection(monkeypatch):
-    """Pointing at a local vLLM or Ollama server must not be overridden."""
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test")
-    assert detect_provider(base_url="http://localhost:11434/v1") == "openai"
+def test_generator_strips_reasoning_think_blocks():
+    """Reasoning models leak <think>...</think>; only the answer should survive."""
+    gen = _generator("<think>Let me work through this step by step.</think>\n\nPagedAttention pages the KV cache. [1]")
+    assert gen.generate("p", query="q", chunks=[]) == "PagedAttention pages the KV cache. [1]"
 
 
-def test_auto_build_without_credentials_returns_the_offline_backend():
-    generator = build_generator(provider="auto")
-    assert isinstance(generator, ExtractiveGenerator)
-    assert generator.name == "extractive"
+def test_generator_handles_unpaired_think_close():
+    gen = _generator("reasoning that lost its opening tag</think>The real answer.")
+    assert gen.generate("p", query="q", chunks=[]) == "The real answer."
 
 
-def test_extractive_can_be_forced_even_when_a_key_exists(monkeypatch):
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test")
-    assert isinstance(build_generator(provider="extractive"), ExtractiveGenerator)
+def test_generator_flattens_block_style_content():
+    """Some providers return content as a list of blocks rather than a string."""
+
+    class _BlockModel:
+        def invoke(self, _prompt):
+            return AIMessage(content=[{"type": "text", "text": "part one "}, {"type": "text", "text": "part two"}])
+
+    gen = ChatModelGenerator(_BlockModel(), provider="fake", model="fake-1")
+    assert gen.generate("p", query="q", chunks=[]) == "part one part two"
 
 
-def test_anthropic_backend_actually_constructs(monkeypatch):
+def test_generator_reports_its_provider_and_model():
+    gen = _generator("x")
+    assert gen.name == "fake"
+    assert gen.model == "fake-1"
+
+
+# --------------------------------------------------------------------- #
+# Provider resolution
+# --------------------------------------------------------------------- #
+def test_provider_ids_pass_through_normalized():
+    assert _resolve_provider("groq") == "groq"
+    assert _resolve_provider("google_genai") == "google_genai"
+    assert _resolve_provider("  OpenAI ") == "openai"
+
+
+def test_auto_provider_defers_inference_to_the_model_name():
+    assert _resolve_provider("auto") is None
+    assert _resolve_provider("") is None
+
+
+# --------------------------------------------------------------------- #
+# build_generator
+# --------------------------------------------------------------------- #
+def test_missing_model_fails_loudly():
+    with pytest.raises(ValueError, match="RAG_LLM_MODEL"):
+        build_generator(provider="groq", model="")
+
+
+def test_groq_backend_actually_constructs():
     """
-    Guards SDK/dependency incompatibilities.
-
-    The offline path never builds this client, so a constructor that raises --
-    as it did when a pinned anthropic release passed `proxies=` to an httpx
-    version that had removed it -- stays completely invisible until someone
-    sets a key, and then fails at startup. Construction only; no network.
+    Guards SDK/dependency incompatibilities: init_chat_model must be able to
+    build the provider client. Construction only -- the model is never invoked,
+    so no network and no key are required.
     """
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test")
-
-    generator = build_generator(provider="auto")
-
-    assert generator.name == "anthropic"
-    assert generator.model, "a default model id must be resolved when none is configured"
-
-
-def test_requesting_a_provider_without_credentials_fails_loudly():
-    """Better a clear error than a request guaranteed to return 401."""
-    with pytest.raises(ValueError, match="ANTHROPIC_API_KEY"):
-        build_generator(provider="anthropic")
+    gen = build_generator(provider="groq", model="llama-3.3-70b-versatile", api_key="dummy-key")
+    assert gen.name == "groq"
+    assert gen.model == "llama-3.3-70b-versatile"
 
 
 def test_unknown_provider_is_rejected():
-    with pytest.raises(ValueError, match="Unknown provider"):
-        build_generator(provider="not-a-provider")
-
-
-# --------------------------------------------------------------------- #
-# Extractive generation
-# --------------------------------------------------------------------- #
-def test_extractive_answer_quotes_only_retrieved_text():
-    """The grounding guarantee: every emitted sentence exists in a chunk."""
-    source = (
-        "PagedAttention manages the KV cache in fixed-size blocks. "
-        "This removes the fragmentation that wastes GPU memory."
-    )
-    answer = ExtractiveGenerator().generate("", query="How does PagedAttention save memory?",
-                                            chunks=[_reranked(source)])
-
-    quoted = answer.replace("[1]", "").strip()
-    for sentence in quoted.split(". "):
-        assert sentence.strip(". ") in source
-
-
-def test_extractive_answer_carries_citation_markers():
-    answer = ExtractiveGenerator().generate(
-        "", query="what is chunking?",
-        chunks=[_reranked("Chunking splits documents into smaller passages before embedding them.")],
-    )
-    assert "[1]" in answer
-
-
-def test_extractive_skips_chunks_that_share_nothing_with_the_query():
-    """A chunk can survive retrieval and still be irrelevant; quoting it pads
-    the answer with confident-looking noise."""
-    relevant = _reranked("PagedAttention manages the KV cache in fixed-size memory blocks.")
-    irrelevant = _reranked("Sourdough starters need regular feeding to remain active and healthy.")
-
-    answer = ExtractiveGenerator().generate("", query="How does PagedAttention manage memory?",
-                                            chunks=[relevant, irrelevant])
-
-    assert "PagedAttention" in answer
-    assert "Sourdough" not in answer
-
-
-def test_extractive_still_answers_when_nothing_matches_lexically():
-    answer = ExtractiveGenerator().generate("", query="zzz qqq",
-                                            chunks=[_reranked("Some unrelated but real content here.")])
-    assert answer.strip()
-
-
-def test_extractive_normalises_source_line_wrapping():
-    """Chunks inherit the source file's wrapping; answers should read as prose."""
-    answer = ExtractiveGenerator().generate(
-        "", query="what does it do?",
-        chunks=[_reranked("This sentence does\nsomething useful across\nthree wrapped lines.")],
-    )
-    assert "\n" not in answer.replace("[1]", "").strip()
-
-
-def test_extractive_handles_no_retrieved_chunks():
-    answer = ExtractiveGenerator().generate("", query="anything", chunks=[])
-    assert "no relevant passages" in answer.lower()
-
-
-def test_extractive_respects_its_chunk_budget():
-    chunks = [_reranked(f"Memory management technique number {i} is useful.") for i in range(10)]
-    answer = ExtractiveGenerator(max_chunks=2).generate("", query="memory management", chunks=chunks)
-
-    assert "[2]" in answer
-    assert "[3]" not in answer
+    with pytest.raises(ValueError, match="Could not initialise"):
+        build_generator(provider="not-a-provider", model="whatever")

@@ -80,10 +80,13 @@ class RAGResponse:
     candidates_retrieved: int                 # before reranking
     chunks_used: int                          # after reranking
     timings_ms: Dict[str, float] = field(default_factory=dict)
+    # The reranked chunks that actually fed generation. Needed by the generation
+    # evaluation harness (RAGAS `retrieved_contexts`); ignored by the API/CLI.
+    context_chunks: List[RerankedChunk] = field(default_factory=list)
 
 
 class RAGPipeline:
-    def __init__(self, config: Optional[Settings] = None):
+    def __init__(self, config: Optional[Settings] = None, generator: Optional[Generator] = None):
         self.config = config or default_settings
         configure_logging(self.config.log_level)
 
@@ -92,7 +95,9 @@ class RAGPipeline:
         self._vector_db: Optional[VectorDB] = None
         self._keyword_index: Optional[KeywordIndex] = None
         self._reranker: Optional[Reranker] = None
-        self._generator: Optional[Generator] = None
+        # An injected generator (e.g. a fake chat model in tests) skips the
+        # init_chat_model build entirely, keeping the suite hostless.
+        self._generator: Optional[Generator] = generator
 
     # ---------------------------------------------------------------- #
     # Lazily built, then cached for the process lifetime
@@ -100,8 +105,15 @@ class RAGPipeline:
     @property
     def embedder(self) -> Embedder:
         if self._embedder is None:
-            logger.info("Loading embedding model: %s", self.config.embedding_model)
-            self._embedder = Embedder(self.config.embedding_model)
+            self._embedder = Embedder(
+                self.config.embedding_model,
+                batch_size=self.config.embedding_batch_size,
+                device=self.config.embedding_device,
+            )
+            logger.info(
+                "Loaded embedding model %s on %s",
+                self.config.embedding_model, self._embedder.device,
+            )
         return self._embedder
 
     @property
@@ -135,7 +147,7 @@ class RAGPipeline:
                 max_tokens=self.config.llm_max_tokens,
                 api_key=self.config.llm_api_key,
                 base_url=self.config.llm_base_url,
-                timeout=self.config.llm_timeout_seconds,
+                temperature=self.config.llm_temperature,
             )
         return self._generator
 
@@ -203,7 +215,7 @@ class RAGPipeline:
         self.vector_db.save(str(index_dir))
         self.keyword_index.save(str(index_dir))
 
-        # The manifest records which corpus this index was built from, and with
+      # The manifest records which corpus this index was built from, and with
         # which embedding model. Both matter: vectors from a different model are
         # not comparable, so reusing an index across a model change silently
         # corrupts every search result.
@@ -369,6 +381,7 @@ class RAGPipeline:
             candidates_retrieved=len(candidates),
             chunks_used=len(top_chunks),
             timings_ms=watch.as_dict(),
+            context_chunks=top_chunks,
         )
 
 
@@ -410,12 +423,6 @@ def _cli() -> None:
 
     print(f"\nBackend: {result.backend} ({result.model})")
     print("Timings (ms): " + ", ".join(f"{k}={v}" for k, v in result.timings_ms.items()))
-
-    if result.backend == "extractive":
-        print(
-            "\nNote: answers are being composed extractively from retrieved chunks. "
-            "Set an API key (see .env.example) for LLM-written answers."
-        )
 
 
 if __name__ == "__main__":

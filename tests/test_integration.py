@@ -12,8 +12,10 @@ and the wiring is what the user actually experiences.
 """
 
 import pytest
+from langchain_core.messages import AIMessage
 
 from config import Settings
+from pipeline.llm_generate import ChatModelGenerator
 from pipeline.orchestrator import RAGPipeline
 
 pytestmark = pytest.mark.slow
@@ -22,15 +24,31 @@ pytestmark = pytest.mark.slow
 CORPUS = "./data/sample_docs"
 
 
+class _FixedChatModel:
+    """A chat model that always returns the same grounded, cited answer.
+
+    Keeps the suite hostless while still exercising the real generation wiring:
+    the pipeline drives ChatModelGenerator exactly as it would a live model. The
+    single ``[1]`` marker resolves to the top reranked chunk, so citations are
+    produced from whatever retrieval actually surfaced.
+    """
+
+    def invoke(self, _prompt):
+        return AIMessage(content="The answer is grounded in the retrieved context. [1]")
+
+
+def fake_generator() -> ChatModelGenerator:
+    return ChatModelGenerator(_FixedChatModel(), provider="fake", model="fake-1")
+
+
 @pytest.fixture(scope="module")
 def pipeline(tmp_path_factory):
     """One pipeline for the module: loading these models twice is wasteful."""
     config = Settings(
         index_dir=str(tmp_path_factory.mktemp("index")),
         persist_indexes=False,
-        llm_provider="extractive",   # never call a paid API from the test suite
     )
-    rag = RAGPipeline(config)
+    rag = RAGPipeline(config, generator=fake_generator())
     rag.ingest(CORPUS, persist=False)
     return rag
 
@@ -45,7 +63,7 @@ def test_end_to_end_query_is_grounded_and_cited(pipeline):
 
     assert result.answer.strip()
     assert result.citations, "a grounded answer must cite at least one source"
-    assert result.backend == "extractive"
+    assert result.backend == "fake"
     # The vLLM document is the one that actually answers this.
     assert any("vllm" in c.filename for c in result.citations)
 
@@ -94,8 +112,8 @@ def test_deleting_a_document_removes_it_from_the_index(tmp_path):
     (corpus / "keep.txt").write_text("Reciprocal rank fusion merges ranked lists.", encoding="utf-8")
     (corpus / "remove.txt").write_text("Sourdough starters need regular feeding.", encoding="utf-8")
 
-    rag = RAGPipeline(Settings(index_dir=str(tmp_path / "idx"), persist_indexes=False,
-                               llm_provider="extractive"))
+    rag = RAGPipeline(Settings(index_dir=str(tmp_path / "idx"), persist_indexes=False),
+                      generator=fake_generator())
     rag.ingest(str(corpus), persist=False)
     assert len(rag.vector_db) == 2
 
@@ -116,8 +134,8 @@ def test_deletion_is_scoped_to_the_ingested_directory(tmp_path):
     (first / "one.txt").write_text("Cross-encoders rerank candidate passages.", encoding="utf-8")
     (second / "two.txt").write_text("BM25 rewards rare exact terms.", encoding="utf-8")
 
-    rag = RAGPipeline(Settings(index_dir=str(tmp_path / "idx"), persist_indexes=False,
-                               llm_provider="extractive"))
+    rag = RAGPipeline(Settings(index_dir=str(tmp_path / "idx"), persist_indexes=False),
+                      generator=fake_generator())
     rag.ingest(str(first), persist=False)
     rag.ingest(str(second), persist=False)
     assert len(rag.vector_db) == 2
@@ -130,12 +148,12 @@ def test_deletion_is_scoped_to_the_ingested_directory(tmp_path):
 
 
 def test_persisted_index_round_trips(tmp_path):
-    config = Settings(index_dir=str(tmp_path / "idx"), persist_indexes=True, llm_provider="extractive")
+    config = Settings(index_dir=str(tmp_path / "idx"), persist_indexes=True)
 
-    built = RAGPipeline(config)
+    built = RAGPipeline(config, generator=fake_generator())
     chunk_count = built.ingest(CORPUS)
 
-    reloaded = RAGPipeline(config)
+    reloaded = RAGPipeline(config, generator=fake_generator())
     assert reloaded.load_or_ingest(CORPUS) == chunk_count
     assert reloaded.query("What is RAG?").citations
 
@@ -146,12 +164,12 @@ def test_a_changed_corpus_invalidates_the_persisted_index(tmp_path):
     corpus.mkdir()
     (corpus / "one.txt").write_text("Reciprocal rank fusion merges ranked lists.", encoding="utf-8")
 
-    config = Settings(index_dir=str(tmp_path / "idx"), persist_indexes=True, llm_provider="extractive")
-    RAGPipeline(config).ingest(str(corpus))
+    config = Settings(index_dir=str(tmp_path / "idx"), persist_indexes=True)
+    RAGPipeline(config, generator=fake_generator()).ingest(str(corpus))
 
     (corpus / "two.txt").write_text("Cross-encoders rerank candidate passages.", encoding="utf-8")
 
-    refreshed = RAGPipeline(config)
+    refreshed = RAGPipeline(config, generator=fake_generator())
     refreshed.load_or_ingest(str(corpus))
 
     assert any(

@@ -30,6 +30,14 @@ class Settings(BaseSettings):
 
     # ---- Embed ----
     embedding_model: str = Field(default="sentence-transformers/all-MiniLM-L6-v2")
+    embedding_device: str = Field(
+        default="auto",
+        description="Torch device for the encoder: auto | cpu | cuda | mps (Apple Silicon GPU)",
+    )
+    embedding_batch_size: int = Field(
+        default=32,
+        description="Chunks per encode batch; larger batches use the GPU more fully",
+    )
 
     # ---- Vector DB ----
     # vector_dim is deliberately NOT hardcoded into the pipeline: the index is
@@ -56,29 +64,48 @@ class Settings(BaseSettings):
     rerank_top_k: int = Field(default=5, description="Final number of chunks passed to the LLM")
 
     # ---- LLM generate ----
-    # The generation provider is a swappable detail. The pipeline runs fully
-    # without any credentials: generation falls back to an extractive answer
-    # composed from the retrieved chunks. Drop in a key (or point llm_base_url
-    # at a self-hosted server) to switch on real model generation -- no code
-    # change required. See pipeline/llm_generate.py for the backend registry.
+    # Generation goes through LangChain's init_chat_model, so any provider is a
+    # config change, not a code change. There is no offline fallback: a model
+    # must be configured for the /query path (retrieval and eval run without one).
+    # See pipeline/llm_generate.py.
     llm_provider: str = Field(
-        default="auto",
-        description="'auto', 'anthropic', 'openai' (any OpenAI-compatible server), or 'extractive'",
+        default="groq",
+        description="LangChain provider id: groq | ollama | openai | google_genai | anthropic. "
+                    "OpenAI-compatible servers (vLLM, Together, Fireworks, OpenRouter) use 'openai' + a base_url. "
+                    "'auto' infers from the model name.",
     )
     llm_model: str = Field(
-        default="",
-        description="Model id. Blank uses the provider's default (e.g. claude-sonnet-5, gpt-4o-mini).",
+        default="llama-3.3-70b-versatile",
+        description="Model id, e.g. 'llama-3.3-70b-versatile' (groq), 'llama3.1' (ollama), 'gemini-3.6-flash' (google).",
     )
     llm_base_url: str = Field(
         default="",
-        description="Custom endpoint, e.g. http://localhost:8000/v1 for vLLM or :11434/v1 for Ollama",
+        description="Custom endpoint for OpenAI-compatible servers, e.g. http://localhost:8000/v1 (vLLM) or :11434/v1 (Ollama).",
     )
     llm_api_key: str = Field(
         default="",
-        description="Optional. Falls back to ANTHROPIC_API_KEY / OPENAI_API_KEY in the environment.",
+        description="Optional. Falls back to the provider's standard env var (GROQ_API_KEY, OPENAI_API_KEY, ...).",
     )
+    llm_temperature: float = Field(default=0.0, description="Sampling temperature; 0.0 for the most grounded answers.")
     llm_max_tokens: int = Field(default=1024)
-    llm_timeout_seconds: float = Field(default=60.0)
+
+    # ---- Generation evaluation (RAGAS) ----
+    # The judge that SCORES answers -- deliberately a different model/family from
+    # the generator under test, to avoid self-preference bias. Used only by
+    # evaluation/eval_generation.py, never on the serving path.
+    judge_provider: str = Field(default="groq", description="LangChain provider id for the RAGAS judge model.")
+    judge_model: str = Field(default="openai/gpt-oss-120b", description="Judge model id.")
+    judge_api_key: str = Field(default="", description="Judge key; falls back to the provider's env var (e.g. GOOGLE_API_KEY).")
+    judge_base_url: str = Field(default="", description="Custom judge endpoint, if any.")
+    judge_temperature: float = Field(default=0.0, description="Judge temperature; 0.0 to keep scoring stable across runs.")
+    judge_max_tokens: int = Field(default=4096, description="Max tokens for the judge; reasoning-model judges need headroom to finish the JSON verdict.")
+    judge_structured_mode: str = Field(
+        default="md_json",
+        description="How the judge is asked for structured output: md_json (universal, works with LM Studio/local) | "
+                    "json | json_schema | tools (native modes some hosted providers support).",
+    )
+    eval_sample_size: int = Field(default=0, description="Questions to evaluate: 0 = all, else the first N (rate-limit control).")
+    eval_max_workers: int = Field(default=4, description="RAGAS concurrency; keep low for rate-limited judge endpoints.")
 
     # ---- Service ----
     log_level: str = Field(default="INFO")

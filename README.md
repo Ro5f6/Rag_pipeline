@@ -9,10 +9,11 @@ Under the hood it combines **keyword search** (BM25) and **semantic search**
 **cross-encoder reranker**, and ships an **evaluation harness** that measures how
 good the retrieval actually is — not just claims that it works.
 
-**It runs with no API key.** Out of the box, answers are composed directly from
-the retrieved passages (an "extractive" backend) — no credentials, no cost, no
-network. Add an API key for Anthropic, OpenAI, or Google to switch on
-LLM-written answers, with no code change.
+**Generation is model-agnostic.** Answers are written by an LLM chosen through
+LangChain's `init_chat_model`, so switching between open-source models (Groq,
+Ollama, any OpenAI-compatible server) and hosted ones (Gemini, Claude) is a
+config change, not a code change. Retrieval and the evaluation harness run with
+no key at all.
 
 ---
 
@@ -62,7 +63,7 @@ QUERY   (answer a question, run on every request)
 | Hybrid search | [`hybrid_search.py`](pipeline/hybrid_search.py) | Fuse keyword + vector results (RRF) |
 | Rerank | [`rerank.py`](pipeline/rerank.py) | Cross-encoder re-scoring of top candidates |
 | Context format | [`context_format.py`](pipeline/context_format.py) | Build the numbered, source-tagged prompt |
-| LLM generate | [`llm_generate.py`](pipeline/llm_generate.py) | Pluggable backends (extractive / Anthropic / OpenAI / Google) |
+| LLM generate | [`llm_generate.py`](pipeline/llm_generate.py) | Any model via LangChain `init_chat_model` (Groq / Ollama / OpenAI-compatible / Gemini / Claude) |
 | Cite sources | [`cite_sources.py`](pipeline/cite_sources.py) | Map `[n]` markers back to real chunks |
 | Orchestrator | [`orchestrator.py`](pipeline/orchestrator.py) | Wires it all together |
 
@@ -118,34 +119,35 @@ written analysis of each run is kept in
 
 ---
 
-## Enabling a real LLM
+## Choosing a model
 
-By default, answers are extractive (offline, free). To use a hosted or local
-model instead, copy the example env file and fill in **one** provider block:
+Generation goes through LangChain's `init_chat_model`, so any provider is just
+two variables. Copy the example env file and set **one** provider block:
 
 ```bash
 cp .env.example .env
 ```
 
 ```bash
-# in .env — pick ONE provider and paste your key
-RAG_LLM_PROVIDER=anthropic
-RAG_LLM_API_KEY=sk-ant-...
-RAG_LLM_MODEL=claude-sonnet-5
+# in .env — open-source model on Groq's hosted endpoint
+RAG_LLM_PROVIDER=groq
+RAG_LLM_API_KEY=gsk_...
+RAG_LLM_MODEL=llama-3.3-70b-versatile
 ```
 
-Other providers use the same three variables:
+Every provider uses the same variables:
 
 | Provider | `RAG_LLM_PROVIDER` | Extra | Example model |
 |---|---|---|---|
+| Groq (hosted OSS) | `groq` | — | `llama-3.3-70b-versatile` |
+| Ollama (local OSS) | `ollama` | — | `llama3.1` |
+| OpenAI-compatible (vLLM, Together, Fireworks, OpenRouter) | `openai` | `RAG_LLM_BASE_URL=…` | `meta-llama/Llama-3.1-8B-Instruct` |
+| Google Gemini | `google_genai` | — | `gemini-2.5-flash` |
 | Anthropic | `anthropic` | — | `claude-sonnet-5` |
-| OpenAI | `openai` | — | `gpt-4o-mini` |
-| Google Gemini | `google` | — | `gemini-2.5-flash` |
-| Local (vLLM, Ollama, …) | `openai` | `RAG_LLM_BASE_URL=http://localhost:11434/v1` | `llama3.1` |
 
-The active backend is reported on every response, so an extractive answer is
-never mistaken for a generated one. Any setting in [`config.py`](config.py) can
-be overridden with a `RAG_` prefix.
+A model must be configured for `/query`; retrieval and `make eval` need no key.
+The active provider and model are reported on every response, and any setting in
+[`config.py`](config.py) can be overridden with a `RAG_` prefix.
 
 ---
 

@@ -5,17 +5,24 @@ pydantic-settings==2.5.2
 sentence-transformers==3.1.1
 faiss-cpu==1.9.0.post1
 rank_bm25==0.2.2
-langchain-text-splitters==0.3.8
+langchain-text-splitters==1.1.2
 pypdf==5.1.0
 numpy<2.0
 
-# Generation providers -- both optional. With neither installed or configured,
-# the pipeline uses the offline extractive backend (see pipeline/llm_generate.py).
-# anthropic must stay >=0.40: older releases pass `proxies=` to httpx, which
-# httpx 0.28 removed, so the client raises TypeError the moment a key is set.
-anthropic==0.122.0
-# openai==1.51.0   # uncomment for OpenAI / vLLM / Ollama / Groq / Together
-google-genai==1.15.0   # Google Gemini backend
+# Generation goes through LangChain's init_chat_model (pipeline/llm_generate.py).
+# `langchain` provides init_chat_model; each provider ships its own integration
+# package, which init_chat_model imports lazily for the configured provider.
+langchain==1.3.17
+langchain-groq==1.1.3            # Groq: fast hosted open-source models (default)
+langchain-ollama==1.1.0         # Ollama: local open-source models
+langchain-openai==1.6.0         # OpenAI + any OpenAI-compatible server (vLLM, Together, Fireworks, OpenRouter) via base_url
+langchain-google-genai==4.3.5   # Google Gemini
+
+# Generation evaluation (RAGAS). Only needed to run `make eval-gen`, not to serve.
+# langchain-community is required because ragas 0.4.x still imports a Vertex model
+# from it at load time (patched by evaluation/_ragas_compat.py).
+ragas==0.4.3
+langchain-community==0.4.2
 
 # Test / dev
 pytest==8.3.3
