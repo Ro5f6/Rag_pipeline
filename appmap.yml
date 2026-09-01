@@ -1,0 +1,9 @@
+name: rag_pipeline
+language: python
+appmap_dir: tmp/appmap
+packages:
+- path: pipeline
+- path: evaluation
+- path: config
+- path: main
+record_test_cases: false

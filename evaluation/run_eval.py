@@ -185,9 +185,11 @@ def main() -> None:
     questions = golden["questions"]
 
     pipeline = RAGPipeline()
-    # Always rebuild from source so results reflect the current corpus and
-    # chunking settings rather than a stale persisted index.
-    corpus_size = pipeline.ingest(args.corpus or golden.get("corpus", settings.auto_ingest_dir), persist=False)
+    # Build and persist the index once, then reuse it on later runs. The manifest
+    # guards correctness: load_or_ingest() rebuilds automatically whenever the
+    # corpus fingerprint, embedding model, or chunk settings change, so a stale
+    # index can never silently back an eval.
+    corpus_size = pipeline.load_or_ingest(args.corpus or golden.get("corpus", settings.auto_ingest_dir))
 
     print(f"\nCorpus: {corpus_size} chunks | Questions: {len(questions)} | k={args.k}\n")
 

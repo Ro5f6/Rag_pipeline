@@ -18,11 +18,43 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 
 
+def resolve_device(preference: str = "auto") -> str:
+    """
+    Pick the torch device to run the encoder on.
+
+    "auto" prefers a GPU when one is present -- CUDA on Linux/Windows boxes,
+    Apple's Metal (MPS) on Apple Silicon -- and falls back to CPU. An explicit
+    "cuda" / "mps" / "cpu" is honored as-is, but only after checking it is
+    actually available so a misconfigured value degrades to CPU instead of
+    crashing mid-ingest.
+    """
+    import torch
+
+    if preference and preference != "auto":
+        if preference == "cuda" and not torch.cuda.is_available():
+            return "cpu"
+        if preference == "mps" and not torch.backends.mps.is_available():
+            return "cpu"
+        return preference
+
+    if torch.cuda.is_available():
+        return "cuda"
+    if torch.backends.mps.is_available():
+        return "mps"
+    return "cpu"
+
+
 class Embedder:
-    def __init__(self, model_name: str = "sentence-transformers/all-MiniLM-L6-v2", batch_size: int = 32):
+    def __init__(
+        self,
+        model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
+        batch_size: int = 32,
+        device: str = "auto",
+    ):
         self.model_name = model_name
         self.batch_size = batch_size
-        self.model = SentenceTransformer(model_name)
+        self.device = resolve_device(device)
+        self.model = SentenceTransformer(model_name, device=self.device)
 
     @property
     def dim(self) -> int:

@@ -457,6 +457,360 @@
       "question": "What foundational machine learning topics does Hal Daume's course cover?",
       "relevant_docs": ["A Course in Machine Learning (ciml-v0_9-all).pdf"],
       "query_type": "semantic"
+    },
+    {
+      "id": "q77",
+      "question": "What did Claude Shannon's 1948 paper establish about entropy and the capacity of a communication channel?",
+      "relevant_docs": ["A Mathematical Theory of Communication (1948).pdf"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q78",
+      "question": "How does Huffman coding build a minimum-redundancy prefix code from symbol frequencies?",
+      "relevant_docs": ["A Method for the Construction of Minimum-Redundancy Codes - Huffman (1952).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q79",
+      "question": "What is the Adam optimizer and how does it adapt learning rates using first and second moment estimates?",
+      "relevant_docs": ["Adam - A Method for Stochastic Optimization (1412.6980v9).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q80",
+      "question": "How does BERT use masked language modelling to pre-train deep bidirectional transformers?",
+      "relevant_docs": ["BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q81",
+      "question": "What problem do residual connections solve when training very deep neural networks?",
+      "relevant_docs": ["Deep Residual Learning for Image Recognition (1512.03385v1).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q82",
+      "question": "What architecture and training techniques does the DeepSeek V3 technical report describe?",
+      "relevant_docs": ["DeepSeek V3 - Technical Report (2024).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q83",
+      "question": "How does jemalloc reduce lock contention in a concurrent memory allocator for FreeBSD?",
+      "relevant_docs": ["A Scalable Concurrent malloc Implementation for FreeBSD (jemalloc).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q84",
+      "question": "How does the ARIES method use write-ahead logging to support fine-granularity locking and partial rollbacks?",
+      "relevant_docs": ["ARIES - A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging (1992).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q85",
+      "question": "How does Google's Dapper provide low-overhead distributed tracing across services?",
+      "relevant_docs": ["Dapper - A Large-Scale Distributed Systems Tracing Infrastructure (36356).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q86",
+      "question": "How do Roaring Bitmaps achieve better performance than traditional compressed bitmap formats?",
+      "relevant_docs": ["Better Bitmap Performance with Roaring Bitmaps (2014).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q87",
+      "question": "How does a cuckoo filter support deletions while beating Bloom filters in space efficiency?",
+      "relevant_docs": ["Cuckoo Filter - Practically Better Than Bloom.pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q88",
+      "question": "How can a Bloom filter be compressed to reduce the number of bits transmitted?",
+      "relevant_docs": ["Compressed Bloom Filters.pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q89",
+      "question": "What makes CityHash fast at hashing strings?",
+      "relevant_docs": ["CityHash - Fast Hash Functions for Strings - Slides (121017-slides).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q90",
+      "question": "How is the peeling process on random hypergraphs used when constructing perfect hash functions?",
+      "relevant_docs": ["Cache-Oblivious Peeling of Random Hypergraphs - 2nd Dec 2013 (1312.0526).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q91",
+      "question": "How does Bipartite ShockHash prune the search to build minimal perfect hash functions more efficiently?",
+      "relevant_docs": ["Bipartite ShockHash - Pruning ShockHash Search for Efficient Perfect Hashing - 2023 (2310.14959).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q92",
+      "question": "What dimensions does the seven-dimensional analysis of hashing methods evaluate for query processing?",
+      "relevant_docs": ["A Seven-Dimensional Analysis of Hashing Methods and its Implications on Query Processing - 2015 (p249-richter).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q93",
+      "question": "How does Goto's high-performance matrix multiplication optimize for the cache hierarchy?",
+      "relevant_docs": ["Anatomy of High-Performance Matrix Multiplication - 2008 (gotoPaper).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q94",
+      "question": "How is quicksort vectorized using AVX-512 SIMD instructions on Intel Skylake?",
+      "relevant_docs": ["A Novel Hybrid Quicksort Algorithm Vectorized using AVX-512 on Intel Skylake (1704.08579).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q95",
+      "question": "How does the randomized algorithm solve the closest-pair problem in linear expected time?",
+      "relevant_docs": ["A Reliable Randomized Algorithm for the Closest-Pair Problem - 1997 (CP-11.4.1997).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q96",
+      "question": "How does COZ use causal profiling to find code where optimization actually matters?",
+      "relevant_docs": ["COZ - Finding Code that Counts with Causal Profiling - 2015 (090-curtsinger).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q97",
+      "question": "What are the silent data corruptions from mercurial cores described in 'Cores That Don't Count'?",
+      "relevant_docs": ["Cores That Don't Count - 2021 (hotos21-s01-hochschild).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q98",
+      "question": "How does the fast and general concurrent hash table design achieve scalability?",
+      "relevant_docs": ["Concurrent Hash Tables - Fast and General - 2016 (1601.04017v2).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q99",
+      "question": "How does biased reference counting reduce atomic operations in garbage collection?",
+      "relevant_docs": ["Biased Reference Counting - Minimizing Atomic Operations in Garbage Collection - 2018 (3243176.3243195).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q100",
+      "question": "How do shadowing and clones work with B-trees to support copy-on-write snapshots?",
+      "relevant_docs": ["B-trees, Shadowing, and Clones (2007).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q101",
+      "question": "How does the FM-index support backward search for full-text indexing in compressed space?",
+      "relevant_docs": ["Backward Search FM-Index (Full-text Index in a Minute Space) - Slides.pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q102",
+      "question": "What did the basic performance measurements of Intel Optane DC persistent memory reveal about latency and bandwidth?",
+      "relevant_docs": ["Basic Performance Measurements of the Intel Optane DC Persistent Memory Module - 2019 (1903.05714v3).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q103",
+      "question": "What does the study debunking the '100x GPU vs CPU' myth conclude about throughput computing?",
+      "relevant_docs": ["Debunking the 100x GPU vs CPU Myth - An Evaluation of Throughput Computing on CPU and GPU.pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q104",
+      "question": "How do array layouts such as Eytzinger order affect comparison-based binary search performance?",
+      "relevant_docs": ["Array Layouts for Comparison-based Searching (September, 2015).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q105",
+      "question": "How does the parameter server architecture make distributed machine learning communication-efficient?",
+      "relevant_docs": ["Communication Efficient Distributed Machine Learning with the Parameter Server.pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q106",
+      "question": "What are the defining properties of a convex optimization problem?",
+      "relevant_docs": ["Convex Optimization - Slides.pdf"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q107",
+      "question": "How do constraint propagation algorithms handle temporal reasoning over interval relations?",
+      "relevant_docs": ["Constraint Propagation Algorithms for Temporal Reasoning - A Revised Report (vilain-kautz-book).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q108",
+      "question": "How does AsmDB analyze and mitigate instruction front-end stalls in warehouse-scale data centers?",
+      "relevant_docs": ["AsmDB - Understanding and Mitigating Front-End Stalls in Warehouse-Scale Computers (2019).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q109",
+      "question": "What did the in-depth analysis find about the accuracy of disassembly on full-scale x86-64 binaries?",
+      "relevant_docs": ["An In-Depth Analysis of Disassembly on Full-Scale x86-x64 Binaries - 2016 (sec16_paper_andriesse).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q110",
+      "question": "How can reachability queries be answered efficiently on large directed graphs?",
+      "relevant_docs": ["Answering Reachability Queries on Large Directed Graphs - INF-SCR-10-10 (September, 2010).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q111",
+      "question": "How are Bloom-filter-based algorithms used for approximate data de-duplication in streams?",
+      "relevant_docs": ["Advanced Bloom Filter Based Algorithms for Efficient Approximate Data De-Duplication in Streams - 17th Dec 2012 (1212.3964v1).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q112",
+      "question": "What NUMA API did Andi Kleen propose for controlling memory placement in Linux?",
+      "relevant_docs": ["An NUMA API for Linux - Andi Kleen, Aug 2004.pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q113",
+      "question": "How does the adaptive hash join algorithm adjust to available memory in multiuser database environments?",
+      "relevant_docs": ["An Adaptive Hash Join Algorithm for Multiuser Environments - 1990 (P186).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q114",
+      "question": "What categories of rollback-recovery protocols exist for message-passing systems?",
+      "relevant_docs": ["A Survey of Rollback-Recovery Protocols in Message-Passing Systems (10.1.1.52.4299).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q115",
+      "question": "What did the study of Apple desktop applications reveal about their complex I/O behaviour?",
+      "relevant_docs": ["A File is Not a File - Understanding IO Behavior of Apple Desktop Applications (2011).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q116",
+      "question": "What makes a skiplist algorithm GPU-friendly?",
+      "relevant_docs": ["A GPU-friendly Skiplist Algorith - 2014 (GPUSkiplist).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q117",
+      "question": "What is the nanopass framework for structuring a compiler as many small passes?",
+      "relevant_docs": ["A Nanopass Framework for Compiler Education.pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q118",
+      "question": "What is PlusCal and how does it relate to TLA+ for specifying algorithms?",
+      "relevant_docs": ["A PlusCal User's Manual - C-Syntax Version 1.8 (31 Aug 2018).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q119",
+      "question": "How does a tracing JIT remove heap allocations using partial evaluation?",
+      "relevant_docs": ["Allocation Removal by Partial Evaluation in a Tracing JIT - 2010 (bolz-allocation-removal).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q120",
+      "question": "What does the biography of Alexandre Grothendieck cover about his life and mathematics?",
+      "relevant_docs": ["As If Summoned from the Void - The Life of Alexandre Grothendieck (fea-grothendieck-part2).pdf"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q121",
+      "question": "What data-parallel hashing techniques work well on GPU architectures?",
+      "relevant_docs": ["Data-Parallel Hashing Techniques for GPU Architectures - 11 Jul 2018 (1807.04345).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q122",
+      "question": "How does the Chihuahua garbage collector use transactional memory for concurrent moving collection?",
+      "relevant_docs": ["Chihuahua - A Concurrent, Moving, Garbage Collector using Transactional Memory - 2015 (anderson-transact-2015).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q123",
+      "question": "What are current best practices for training large language models from scratch?",
+      "relevant_docs": ["Current Best Practices for Training LLMs from Scratch - Final (6435aabdc0a041194b243eef).pdf"],
+      "query_type": "semantic"
+    },
+    {
+      "id": "q124",
+      "question": "What is Microsoft's Computational Network Toolkit and what are computational networks?",
+      "relevant_docs": ["An Introduction to Computational Networks and the Computational Network Toolkit - Microsoft (CNTKBook-20160121).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q125",
+      "question": "How are B-tree data structures used in computer forensics?",
+      "relevant_docs": ["Analysis of B-tree Data Structure and its Usage in Computer Forensics (484192.B-tree).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q126",
+      "question": "How can branch mispredictions in CPU microcode be analyzed and exploited?",
+      "relevant_docs": ["Analyzing and Exploiting Branch Mispredictions in Microcode - 2025 (2501.12890v1).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q127",
+      "question": "What are the read, update, and memory tradeoffs when choosing data structures for data-intensive applications?",
+      "relevant_docs": ["Data Structures for Data-Intensive Applications - Tradeoffs and Design Guidelines (fnt23-athanassoulis).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q128",
+      "question": "How can concurrent reference counting and resource management be done in constant time?",
+      "relevant_docs": ["Concurrent Reference Counting and Resource Management in Constant Time - 29 Feb 2020 (2002.07053).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q129",
+      "question": "How are cuckoo filters accelerated on modern GPUs?",
+      "relevant_docs": ["Cuckoo-GPU - Accelerating Cuckoo Filters on Modern GPUs (2603.15486v1).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q130",
+      "question": "What algorithms and techniques does the Competitive Programmer's Handbook cover?",
+      "relevant_docs": ["Competitive Programmer's Handbook - Antti Laaksonen - (10th December, 2017).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q131",
+      "question": "How does false sharing hurt performance on the Intel MIC architecture, and how does padding help?",
+      "relevant_docs": ["Colfax Optimization Techniques for the Intel MIC Architecture - Part 3 of 3 - False Sharing and Padding (2015).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q132",
+      "question": "What is Microsoft's Component Object Model (COM) and how is it implemented?",
+      "relevant_docs": ["Component Object Model - An Overview and Practical Implementation (IJSARTV3I38438636248891114924768).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q133",
+      "question": "How does Futhark implement efficient bounds checking on the GPU?",
+      "relevant_docs": ["Bounds Checking on the GPU - Futhark (hlpp20).pdf"],
+      "query_type": "lexical"
+    },
+    {
+      "id": "q134",
+      "question": "How are bitmap indices designed and evaluated for query performance?",
+      "relevant_docs": ["Bitmap Index Design and Evaluation - 1998 (P355).pdf"],
+      "query_type": "mixed"
+    },
+    {
+      "id": "q135",
+      "question": "How does DeepState bring symbolic execution and fuzzing to unit testing C and C++?",
+      "relevant_docs": ["DeepState - Symbolic Unit Testing for C and C++ - 2018 (bar18).pdf"],
+      "query_type": "lexical"
     }
   ]
 }
